@@ -1,20 +1,23 @@
 package com.beone.kevin.ui.login
 
-import androidx.lifecycle.ViewModelProviders
+
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.beone.kevin.R
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginsFragment : Fragment() {
 
     companion object {
+        private const val TAG = "LoginsFragment"
         fun newInstance() = LoginsFragment()
     }
 
-    private lateinit var viewModel: LoginsViewModel
+    private val vm: LoginsViewModel by viewModel<LoginsViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,8 +28,8 @@ class LoginsFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(LoginsViewModel::class.java)
-        // TODO: Use the ViewModel
+        //viewModel = ViewModelProviders.of(this).get(LoginsViewModel::class.java)
+        Log.d(TAG, "onActivityCreated: ${vm.getRetrofitServiceHash()}")
 
     }
 
