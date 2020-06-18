@@ -16,12 +16,10 @@ val networkModule =  module {
 
     fun provideRetrofit(
         callAdapter: RxJava2CallAdapterFactory,
-        converterAdapter: GsonConverterFactory,
-        client: OkHttpClient
+        converterAdapter: GsonConverterFactory
     ) =
         Retrofit.Builder()
-            .client(client)
-            .baseUrl("")
+            .baseUrl("https://www.google.com")
             .addCallAdapterFactory(callAdapter)
             .addConverterFactory(converterAdapter)
             .build()
@@ -35,7 +33,7 @@ val networkModule =  module {
         provideRxJavaCallAdapter()
     }
     single<Retrofit> {
-        provideRetrofit(get(), get(), get())
+        provideRetrofit(get(), get())
     }
     single<RetrofitService> {
         provideApiDataService(get())

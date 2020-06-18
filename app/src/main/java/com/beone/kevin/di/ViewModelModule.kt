@@ -9,4 +9,7 @@ val viewModelModule = module {
     viewModel<LoginsViewModel> {
         LoginsViewModel(get<RetrofitService>())
     }
+//    viewModel<LoginsViewModel> {
+//        LoginsViewModel(get<RetrofitService>())
+//    }
 }

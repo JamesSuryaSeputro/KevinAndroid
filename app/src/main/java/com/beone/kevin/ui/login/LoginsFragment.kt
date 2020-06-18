@@ -31,6 +31,7 @@ class LoginsFragment : Fragment() {
         //viewModel = ViewModelProviders.of(this).get(LoginsViewModel::class.java)
         Log.d(TAG, "onActivityCreated: ${vm.getRetrofitServiceHash()}")
 
+
     }
 
 }
