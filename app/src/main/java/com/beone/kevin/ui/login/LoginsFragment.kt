@@ -11,10 +11,10 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.beone.kevin.R
-import com.beone.kevin.remote.model.StatusLogin
 import kotlinx.android.synthetic.main.logins_fragment.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.*
+import androidx.lifecycle.Observer as Observer
 
 class LoginsFragment : Fragment() {
 
@@ -25,7 +25,6 @@ class LoginsFragment : Fragment() {
 
     private val vm: LoginsViewModel by viewModel<LoginsViewModel>()
     private lateinit var arrayAdapter: ArrayAdapter<TypeLoginEnum>
-    private lateinit var typeLoginEnum: TypeLoginEnum
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,21 +39,22 @@ class LoginsFragment : Fragment() {
         Log.d(TAG, "onActivityCreated: ${vm.getRetrofitServiceHash()}")
 
 
-
-        val loginObserver = vm.initLiveDataLogin().observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+         vm.initLiveDataLogin().observe(viewLifecycleOwner, Observer {
             if (it.isFailedFetch == true){
                 Toast.makeText(this.requireContext(), "gagal", Toast.LENGTH_SHORT).show()
             }else{
-                if (it.iduser.equals("") && it.username.equals("")){
-                    Toast.makeText(this.requireContext(), "Berhasil Login type=${it.TypeLogin.type} + id ${it.iduser} + username ${it.username}", Toast.LENGTH_SHORT).show()
+                if (it.iduser.equals("") && it.username.equals("") && it.TypeLogin == 0){
+                    Toast.makeText(this.requireContext(), "Failed Login ", Toast.LENGTH_SHORT).show()
+                }else{
+                    Toast.makeText(this.requireContext(), "Berhasil Login type= ${it.TypeLogin} + id ${it.iduser} + username ${it.username}", Toast.LENGTH_SHORT).show()
                     when(it.TypeLogin){
-                        TypeLoginEnum.TKI->{
+                        TypeLoginEnum.TKI.jenis->{
                             //todo add navgraph user
                         }
-                        TypeLoginEnum.PELATIH->{
+                        TypeLoginEnum.PELATIH.jenis->{
                             //todo add navgraph pelatih
                         }
-                        TypeLoginEnum.PEGAWAI->{
+                        TypeLoginEnum.PEGAWAI.jenis->{
                             //todo add navgraph pegawai
                         }
                     }
