@@ -2,6 +2,8 @@ package com.beone.kevin.di
 
 import com.beone.kevin.SharedPreferenceUtils
 import com.beone.kevin.remote.RetrofitService
+import com.beone.kevin.ui.hrd.MenuHrdFragment
+import com.beone.kevin.ui.hrd.MenuHrdViewModel
 import com.beone.kevin.ui.login.LoginsViewModel
 import com.beone.kevin.ui.register.RegisterFragment
 import com.beone.kevin.ui.register.RegisterViewModel
@@ -19,5 +21,7 @@ val viewModelModule = module {
     viewModel<UserPembayaranViewModel> {
         UserPembayaranViewModel(get<RetrofitService>())
     }
-
+    viewModel<MenuHrdViewModel> {
+        MenuHrdViewModel(get<RetrofitService>())
+    }
 }

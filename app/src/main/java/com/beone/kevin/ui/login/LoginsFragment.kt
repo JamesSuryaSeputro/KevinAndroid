@@ -64,10 +64,12 @@ class LoginsFragment : Fragment() {
                                 ?.navigate(R.id.action_loginsFragment_to_nav_user)
                         }
                         TypeLoginEnum.PELATIH.jenis -> {
-                            //todo add navgraph pelatih
+                            view?.findNavController()
+                                ?.navigate(R.id.action_loginsFragment_to_nav_pelatih)
                         }
                         TypeLoginEnum.PEGAWAI.jenis -> {
-                            //todo add navgraph pegawai
+                            view?.findNavController()
+                                ?.navigate(R.id.action_loginsFragment_to_nav_hrd)
                         }
                     }
                 }

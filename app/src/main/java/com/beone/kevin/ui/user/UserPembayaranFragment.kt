@@ -42,6 +42,14 @@ class UserPembayaranFragment : Fragment() {
 
         viewModel.checkPembayaran(sharedPreferenceUtils.getIdUser);
 
+        btn_pick_photo.setOnClickListener{
+            // TODO: 19/06/20 add pick picture     
+        }
+        
+        btn_upload.setOnClickListener{
+            // TODO: 19/06/20 add Upload and message dialog before upload proof of payment
+        }
+        
     }
 
 }

@@ -38,6 +38,6 @@
 
     <include app:graph="@navigation/nav_hrd" />
     <include app:graph="@navigation/nav_user" />
-    <include app:graph="@navigation/nav_pelatih" />
+    <include app:graph="@navigation/nav_pelatih" /><action android:id="@+id/action_global_loginsFragment" app:destination="@id/loginsFragment"/>
 
 </navigation>
