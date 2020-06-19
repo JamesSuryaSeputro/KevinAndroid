@@ -1,6 +1,7 @@
 package com.beone.kevin
 
 import android.app.Application
+import com.beone.kevin.di.SharePrefrenceModule
 import com.beone.kevin.di.networkModule
 import com.beone.kevin.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
@@ -18,7 +19,8 @@ class BaseApp: Application() {
             androidContext(this@BaseApp)
             modules(listOf(
                 networkModule,
-                viewModelModule
+                viewModelModule,
+                SharePrefrenceModule
             ))
         }
     }
