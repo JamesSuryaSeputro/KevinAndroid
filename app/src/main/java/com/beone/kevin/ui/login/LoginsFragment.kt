@@ -3,7 +3,6 @@ package com.beone.kevin.ui.login
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +10,7 @@ import androidx.navigation.findNavController
 import com.beone.kevin.R
 import kotlinx.android.synthetic.main.logins_fragment.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.qualifier.named
 
 class LoginsFragment : Fragment() {
 
@@ -20,6 +20,10 @@ class LoginsFragment : Fragment() {
     }
 
     private val vm: LoginsViewModel by viewModel<LoginsViewModel>()
+
+    private val sharepreference: SharedPreferenceUtils by inject<SharedPreferenceUtils>()
+
+    private lateinit var arrayAdapter: ArrayAdapter<TypeLoginEnum>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,10 +36,77 @@ class LoginsFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         //viewModel = ViewModelProviders.of(this).get(LoginsViewModel::class.java)
         Log.d(TAG, "onActivityCreated: ${vm.getRetrofitServiceHash()}")
-        btn_register.setOnClickListener{
-            view?.findNavController()?.navigate(R.id.action_loginsFragment_to_registerFragment)
+        Log.d(TAG, "onActivityCreated: ${sharepreference.hashCode()}")
+
+        vm.initLiveDataLogin().observe(viewLifecycleOwner, Observer {
+            if (it.isFailedFetch == true) {
+                Toast.makeText(this.requireContext(), "gagal", Toast.LENGTH_SHORT).show()
+            } else {
+                if (it.iduser.equals("") && it.username.equals("") && it.TypeLogin == 0) {
+                    Toast.makeText(this.requireContext(), "Failed Login ", Toast.LENGTH_SHORT)
+                        .show()
+                } else {
+                    Toast.makeText(
+                        this.requireContext(),
+                        "Berhasil Login type= ${it.TypeLogin} + id ${it.iduser} + username ${it.username}",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    sharepreference.putIdUser(it.iduser)
+                    when (it.TypeLogin) {
+                        TypeLoginEnum.TKI.jenis -> {
+                            view?.findNavController()
+                                ?.navigate(R.id.action_loginsFragment_to_nav_user)
+                        }
+                        TypeLoginEnum.PELATIH.jenis -> {
+                            view?.findNavController()
+                                ?.navigate(R.id.action_loginsFragment_to_nav_pelatih)
+                        }
+                        TypeLoginEnum.PEGAWAI.jenis -> {
+                            view?.findNavController()
+                                ?.navigate(R.id.action_loginsFragment_to_nav_hrd)
+                        }
+                    }
+                }
+            }
+        })
+
+        btn_register.setOnClickListener {
+            view?.findNavController()?.navigate(R.id.register_action)
         }
 
+        btn_login.setOnClickListener {
+            when (spr_categorylogin.selectedItemPosition) {
+                TypeLoginEnum.PILIH_LOGIN.jenis -> {
+                    Toast.makeText(this.requireContext(), "Pilih Jenis Login", Toast.LENGTH_SHORT)
+                        .show()
+                }
+                TypeLoginEnum.TKI.jenis -> {
+                    Log.d(TAG, "onActivityCreated: ${TypeLoginEnum.TKI.type}")
+                    vm.loginUser(edt_username.text.toString(), edt_password.text.toString())
+                }
+                TypeLoginEnum.PELATIH.jenis -> {
+                    Log.d(TAG, "onActivityCreated: ${TypeLoginEnum.PELATIH.type}")
+                    vm.loginPelatih(edt_username.text.toString(), edt_password.text.toString())
+                }
+                TypeLoginEnum.PEGAWAI.jenis -> {
+                    Log.d(TAG, "onActivityCreated: ${TypeLoginEnum.PEGAWAI.type}")
+                    vm.loginPegawai(edt_username.text.toString(), edt_password.text.toString())
+                }
+                else -> { // Note the block
+                    Log.w(TAG, "onItemClick: Not Have Object Selected On Enum")
+                }
+            }
+        }
+
+        arrayAdapter = ArrayAdapter(
+            this.requireContext(),
+            android.R.layout.simple_spinner_item,
+            TypeLoginEnum.values()
+        )
+        spr_categorylogin.dropDownVerticalOffset = 20
+        spr_categorylogin.adapter = arrayAdapter
+
     }
+
 
 }
