@@ -9,7 +9,35 @@
         android:id="@+id/loginsFragment"
         android:name="com.beone.kevin.ui.login.LoginsFragment"
         android:label="logins_fragment"
-        tools:layout="@layout/logins_fragment" />
+        tools:layout="@layout/logins_fragment">
 
+        <action
+            android:id="@+id/register_action"
+            app:destination="@+id/registerFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_loginsFragment_to_nav_hrd"
+            app:destination="@id/nav_hrd" />
+        <action
+            android:id="@+id/action_loginsFragment_to_nav_pelatih"
+            app:destination="@id/nav_pelatih" />
+        <action
+            android:id="@+id/action_loginsFragment_to_nav_user"
+            app:destination="@id/nav_user" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.beone.kevin.ui.register.RegisterFragment"
+        android:label="register_fragment"
+        tools:layout="@layout/register_fragment" />
+
+    <include app:graph="@navigation/nav_hrd" />
+    <include app:graph="@navigation/nav_user" />
+    <include app:graph="@navigation/nav_pelatih" /><action android:id="@+id/action_global_loginsFragment" app:destination="@id/loginsFragment"/>
 
 </navigation>
