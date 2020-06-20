@@ -7,7 +7,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import com.beone.kevin.R
+import kotlinx.android.synthetic.main.logins_fragment.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginsFragment : Fragment() {
@@ -30,7 +32,9 @@ class LoginsFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         //viewModel = ViewModelProviders.of(this).get(LoginsViewModel::class.java)
         Log.d(TAG, "onActivityCreated: ${vm.getRetrofitServiceHash()}")
-
+        btn_register.setOnClickListener{
+            view?.findNavController()?.navigate(R.id.action_loginsFragment_to_registerFragment)
+        }
 
     }
 

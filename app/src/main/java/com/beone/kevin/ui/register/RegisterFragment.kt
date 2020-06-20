@@ -1,12 +1,16 @@
 package com.beone.kevin.ui.register
 
-import androidx.lifecycle.ViewModelProviders
+import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.beone.kevin.R
+import kotlinx.android.synthetic.main.register_fragment.*
+
 
 class RegisterFragment : Fragment() {
 
@@ -25,8 +29,16 @@ class RegisterFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(RegisterViewModel::class.java)
-        // TODO: Use the ViewModel
+//        viewModel = ViewModelProviders.of(this).get(RegisterViewModel::class.java)
+        tv_tologin.setOnClickListener {
+            findNavController().navigate(R.id.action_registerFragment_to_loginsFragment)
+        }
+        ll_register.setOnClickListener { hideKeyboard(ll_register) }
     }
 
+    fun hideKeyboard(view: View) {
+        val imm = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(view.windowToken, 0)
+    }
 }
+
