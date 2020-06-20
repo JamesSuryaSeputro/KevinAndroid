@@ -18,7 +18,7 @@ val networkModule =  module {
         converterAdapter: GsonConverterFactory
     ) =
         Retrofit.Builder()
-            .baseUrl("http://192.168.0.101:8080/apitki/public/")
+            .baseUrl("http://192.168.0.108:8080/apitki/public/")
             .addConverterFactory(converterAdapter)
             .build()
 
