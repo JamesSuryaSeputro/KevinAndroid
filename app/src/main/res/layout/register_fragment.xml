@@ -1,23 +1,914 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".ui.register.RegisterFragment">
-    
-    <LinearLayout
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:paddingBottom="40dp">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/ll_register"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Register"
-            android:textSize="20sp"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline1"
-            android:layout_gravity="center_horizontal"/>
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:paddingHorizontal="30dp"
+            android:paddingTop="6dp"
+            android:orientation="vertical">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Register"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
 
-    </LinearLayout>
-</ScrollView>
+            <EditText
+                android:id="@+id/edt_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Username"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/edt_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:id="@+id/edt_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nama"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/edt_nopassport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nomor Passport"
+                android:inputType="text|number" />
+
+            <EditText
+                android:id="@+id/edt_noktp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nomor KTP"
+                android:inputType="number" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <EditText
+                    android:id="@+id/edt_place"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:hint="Tempat"
+                    android:inputType="text" />
+
+                <EditText
+                    android:id="@+id/edt_dateofbirth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:hint="Tanggal Lahir"
+                    android:inputType="date" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edt_age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Umur"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/edt_nationality"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Kewarganegaraan"
+                android:inputType="text" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tv_gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jenis Kelamin:"
+                    android:textSize="18sp" />
+
+                <Spinner
+                    android:id="@+id/spnr_gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/tv_gender"
+                    tools:listitem="@android:layout/simple_spinner_item" />
+
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/edt_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Alamat"
+                android:inputType="text|number" />
+
+            <EditText
+                android:id="@+id/edt_nohp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nomor Telepon / HP"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/edt_noalternative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nomor telepon dalam kondisi darurat"
+                android:inputType="number" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tv_maritalstatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status Pernikahan:"
+                    android:textSize="18sp" />
+
+                <Spinner
+                    android:id="@+id/spnr_maritalstatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/tv_maritalstatus"
+                    tools:listitem="@android:layout/simple_spinner_item" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <EditText
+                    android:id="@+id/edt_height"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:hint="Tinggi Badan"
+                    android:inputType="number" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:text="cm"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/edt_weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:hint="Berat Badan"
+                    android:inputType="number" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:text="kg"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/tv_eyes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:text="Gangguan Penglihatan:"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/edt_left"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:hint="Kiri"
+                    android:inputType="text" />
+
+                <EditText
+                    android:id="@+id/edt_right"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:hint="Kanan"
+                    android:inputType="text" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tv_colorblind"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Buta Warna:"
+                    android:textSize="18sp" />
+
+                <Spinner
+                    android:id="@+id/spnr_colorblind"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/tv_colorblind"
+                    tools:listitem="@android:layout/simple_spinner_item" />
+
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/edt_wage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Upah yang diinginkan/Bulan (Rupiah)"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/tv_fieldofwork"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bidang Kerja yang Diinginkan:"
+                android:textSize="18sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_sector"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Sektor:"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_edtsector1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toEndOf="@+id/tv_sector"
+                    android:text="1."
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/edt_sector1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/tv_edtsector1"
+                    android:inputType="text" />
+
+                <TextView
+                    android:id="@+id/tv_edtsector2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edt_sector1"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toEndOf="@+id/tv_sector"
+                    android:text="2."
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/edt_sector2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edt_sector1"
+                    android:layout_toEndOf="@+id/tv_edtsector2"
+                    android:inputType="text" />
+
+                <TextView
+                    android:id="@+id/tv_edtsector3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edt_sector2"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toEndOf="@+id/tv_sector"
+                    android:text="3."
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/edt_sector3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edt_sector2"
+                    android:layout_toEndOf="@+id/tv_edtsector3"
+                    android:inputType="text" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_job"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Pekerjaan:"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_edtjob1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toEndOf="@+id/tv_job"
+                    android:text="1."
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/edt_job1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/tv_edtjob1"
+                    android:inputType="text" />
+
+                <TextView
+                    android:id="@+id/tv_edtjob2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edt_job1"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toEndOf="@+id/tv_job"
+                    android:text="2."
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/edt_job2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edt_job1"
+                    android:layout_toEndOf="@+id/tv_edtjob2"
+                    android:inputType="text" />
+
+                <TextView
+                    android:id="@+id/tv_edtjob3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edt_job2"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toEndOf="@+id/tv_job"
+                    android:text="3."
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/edt_job3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edt_job2"
+                    android:layout_toEndOf="@+id/tv_edtjob3"
+                    android:inputType="text" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_joblocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Lokasi Kerja:"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_edtjoblocation1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_joblocation"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="6dp"
+                    android:text="1."
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/edt_joblocation1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_joblocation"
+                    android:layout_toEndOf="@id/tv_edtjoblocation1"
+                    android:inputType="text" />
+
+                <TextView
+                    android:id="@+id/tv_edtjoblocation2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edt_joblocation1"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="6dp"
+                    android:text="2."
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/edt_joblocation2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edt_joblocation1"
+                    android:layout_toEndOf="@+id/tv_edtjoblocation2"
+                    android:inputType="text" />
+
+                <TextView
+                    android:id="@+id/tv_edtjoblocation3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edt_joblocation2"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="6dp"
+                    android:text="3."
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/edt_joblocation3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edt_joblocation2"
+                    android:layout_toEndOf="@+id/tv_edtjoblocation3"
+                    android:inputType="text" />
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/edt_lasteducation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Pendidikan Terakhir"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/edt_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Bidang/Jurusan"
+                android:inputType="text" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_language"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Kemampuan Bahasa:"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_mandarin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_language"
+                    android:text="Mandarin"
+                    android:textSize="18sp" />
+
+                <Spinner
+                    android:id="@+id/spnr_mandarin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_language"
+                    android:layout_toEndOf="@+id/tv_mandarin"
+                    tools:listitem="@android:layout/simple_spinner_item" />
+
+                <TextView
+                    android:id="@+id/tv_english"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_mandarin"
+                    android:text="English"
+                    android:textSize="18sp" />
+
+                <Spinner
+                    android:id="@+id/spnr_english"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/spnr_mandarin"
+                    android:layout_toEndOf="@+id/tv_english"
+                    tools:listitem="@android:layout/simple_spinner_item" />
+
+                <TextView
+                    android:id="@+id/tv_otherlanguage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_english"
+                    android:layout_marginTop="6dp"
+                    android:text="Lainnya:"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/edt_language"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_english"
+                    android:layout_toEndOf="@+id/tv_otherlanguage"
+                    android:inputType="text" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_jobcertificate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Sertifikat Kerja"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_edtjobcerficate1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_jobcertificate"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="6dp"
+                    android:text="1."
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/edt_jobcertificate1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_jobcertificate"
+                    android:layout_toEndOf="@id/tv_edtjobcerficate1"
+                    android:inputType="text" />
+
+                <TextView
+                    android:id="@+id/tv_edtjobcerficate2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edt_jobcertificate1"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="6dp"
+                    android:text="2."
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/edt_jobcertificate2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edt_jobcertificate1"
+                    android:layout_toEndOf="@+id/tv_edtjobcerficate2"
+                    android:inputType="text" />
+
+                <TextView
+                    android:id="@+id/tv_edtjobcertificate3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edt_jobcertificate2"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="6dp"
+                    android:text="3."
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/edt_jobcertificate3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edt_jobcertificate2"
+                    android:layout_toEndOf="@+id/tv_edtjobcertificate3"
+                    android:inputType="text" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_workexperience"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Pengalaman Kerja (INDONESIA)"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_edtworkexperience1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_workexperience"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="6dp"
+                    android:text="1."
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/edt_workexperience1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_workexperience"
+                    android:layout_toEndOf="@id/tv_edtworkexperience1"
+                    android:inputType="text" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <EditText
+                    android:id="@+id/edt_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:hint="Tgl"
+                    android:inputType="date" />
+
+                <TextView
+                    android:id="@+id/tv_sd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight="0.4"
+                    android:text="s/d"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/edt_enddate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:hint="Tgl"
+                    android:inputType="date" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_edtworkexperience2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="6dp"
+                    android:text="2."
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/edt_workexperience2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/tv_edtworkexperience2"
+                    android:inputType="text" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <EditText
+                    android:id="@+id/edt_date2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:hint="Tgl"
+                    android:inputType="date" />
+
+                <TextView
+                    android:id="@+id/tv_sd2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight="0.4"
+                    android:text="s/d"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/edt_enddate2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:hint="Tgl"
+                    android:inputType="date" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_mcuresult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Hasil Medical Check up:"
+                    android:textSize="18sp" />
+
+                <Spinner
+                    android:id="@+id/spnr_mcuresult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/tv_mcuresult"
+                    tools:listitem="@android:layout/simple_spinner_item" />
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/edt_checkupdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tgl Pemeriksaaan"
+                android:inputType="date" />
+
+            <EditText
+                android:id="@+id/edt_checkuphc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="RS/Klinik yang memeriksa"
+                android:inputType="text" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_mandarinedu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Pendidikan Bahasa Mandarin:"
+                    android:textSize="18sp" />
+
+                <Spinner
+                    android:id="@+id/spnr_mandarinedu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/tv_mandarinedu"
+                    tools:listitem="@android:layout/simple_spinner_item" />
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/edt_nameedu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Jika ada, Nama Lembaga Pendidikan"
+                android:inputType="text" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <EditText
+                    android:id="@+id/edt_startedudate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:hint="Tgl Mulai Pendidikan"
+                    android:inputType="date" />
+
+                <EditText
+                    android:id="@+id/edt_eduenddate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:hint="s/d Tgl"
+                    android:inputType="date" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginVertical="4dp"
+                android:weightSum="1">
+
+                <EditText
+                    android:id="@+id/tv_filepf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:focusable="false"
+                    android:hint="upload pasfoto"
+                    android:inputType="none" />
+
+                <Button
+                    android:id="@+id/btn_pasfoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:text="upload"
+                    android:background="@android:color/darker_gray"
+                    android:textColor="@android:color/white"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginVertical="4dp"
+                android:weightSum="1">
+
+                <EditText
+                    android:id="@+id/tv_filettd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:focusable="false"
+                    android:hint="upload tanda tangan"
+                    android:inputType="none" />
+
+                <Button
+                    android:id="@+id/btn_ttd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:text="upload"
+                    android:background="@android:color/darker_gray"
+                    android:textColor="@android:color/white"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_signup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="6dp"
+                android:text="Sign Up"
+                android:background="@android:color/holo_blue_dark"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/tv_registered"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:padding="4dp"
+        android:text="Already registered?"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+
+    <TextView
+        android:id="@+id/tv_tologin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_toEndOf="@+id/tv_registered"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="4dp"
+        android:text="Login"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:textStyle="bold" />
+</RelativeLayout>
