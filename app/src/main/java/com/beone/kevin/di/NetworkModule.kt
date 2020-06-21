@@ -13,12 +13,12 @@ val networkModule =  module {
     fun provideGson() = GsonConverterFactory.create()
 
     fun provideRxJavaCallAdapter() = RxJava2CallAdapterFactory.create()
-
+//    http://192.168.0.104:8080/apitki/public/
     fun provideRetrofit(
         converterAdapter: GsonConverterFactory
     ) =
         Retrofit.Builder()
-            .baseUrl("http://192.168.0.108:8080/apitki/public/")
+            .baseUrl("https://krisjaya-2020.et.r.appspot.com/")
             .addConverterFactory(converterAdapter)
             .build()
 
