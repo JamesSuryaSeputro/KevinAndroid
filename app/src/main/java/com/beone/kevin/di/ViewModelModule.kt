@@ -15,13 +15,14 @@ val viewModelModule = module {
     viewModel<LoginsViewModel> {
         LoginsViewModel(get<RetrofitService>())
     }
-    viewModel<RegisterViewModel> {
-        RegisterViewModel(get<RetrofitService>())
-    }
+
     viewModel<UserPembayaranViewModel> {
         UserPembayaranViewModel(get<RetrofitService>())
     }
     viewModel<MenuHrdViewModel> {
         MenuHrdViewModel(get<RetrofitService>())
+    }
+    viewModel<RegisterViewModel> {
+        RegisterViewModel(get<RetrofitService>())
     }
 }
