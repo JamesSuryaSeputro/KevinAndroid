@@ -60,7 +60,7 @@ class RegisterFragment : BaseFormRegisterFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         tv_tologin.setOnClickListener {
-            findNavController().navigate(R.id.action_registerFragment_to_loginsFragment)
+           findNavController().navigate(R.id.action_registerFragment_to_loginsFragment)
         }
 
         initUi()
