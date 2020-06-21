@@ -16,7 +16,6 @@ import com.beone.kevin.R
 import com.beone.kevin.SharedPreferenceUtils
 import kotlinx.android.synthetic.main.logins_fragment.*
 import org.koin.android.ext.android.inject
-import org.koin.androidx.viewmodel.compat.ScopeCompat.viewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.qualifier.named
 import org.koin.java.KoinJavaComponent.inject
