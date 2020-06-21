@@ -8,6 +8,7 @@ import com.beone.kevin.ui.login.LoginsViewModel
 import com.beone.kevin.ui.register.RegisterFragment
 import com.beone.kevin.ui.register.RegisterViewModel
 import com.beone.kevin.ui.user.UserPembayaranViewModel
+import com.beone.kevin.ui.user.uploaddocument.UploadDocumentViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -23,5 +24,8 @@ val viewModelModule = module {
     }
     viewModel<MenuHrdViewModel> {
         MenuHrdViewModel(get<RetrofitService>())
+    }
+    viewModel<UploadDocumentViewModel>{
+        UploadDocumentViewModel(get())
     }
 }

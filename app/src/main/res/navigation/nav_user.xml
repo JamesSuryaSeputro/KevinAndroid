@@ -3,11 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_user"
-    app:startDestination="@id/userPembayaranFragment">
-
+    app:startDestination="@id/userPembayaranFragment"
+    tools:ignore="UnusedNavigation">
+    <fragment
+        android:id="@+id/uploadDocumentFragment"
+        android:name="com.beone.kevin.ui.user.uploaddocument.UploadDocumentFragment"
+        android:label="upload_document_fragment"
+        tools:layout="@layout/upload_document_fragment" />
     <fragment
         android:id="@+id/userPembayaranFragment"
         android:name="com.beone.kevin.ui.user.UserPembayaranFragment"
         android:label="user_pembayaran_fragment"
-        tools:layout="@layout/user_pembayaran_fragment" />
+        tools:layout="@layout/user_pembayaran_fragment">
+        <action
+            android:id="@+id/action_userPembayaranFragment_to_uploadDocumentFragment"
+            app:destination="@id/uploadDocumentFragment"
+            app:popUpTo="@id/userPembayaranFragment" />
+    </fragment>
 </navigation>

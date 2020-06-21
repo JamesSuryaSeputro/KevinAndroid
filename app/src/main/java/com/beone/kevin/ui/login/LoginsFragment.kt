@@ -6,11 +6,20 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.beone.kevin.R
+import com.beone.kevin.SharedPreferenceUtils
 import kotlinx.android.synthetic.main.logins_fragment.*
+import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.compat.ScopeCompat.viewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.qualifier.named
+import org.koin.java.KoinJavaComponent.inject
 
 class LoginsFragment : Fragment() {
 
@@ -54,15 +63,15 @@ class LoginsFragment : Fragment() {
                     sharepreference.putIdUser(it.iduser)
                     when (it.TypeLogin) {
                         TypeLoginEnum.TKI.jenis -> {
-                            view?.findNavController()
+                            this.findNavController()
                                 ?.navigate(R.id.action_loginsFragment_to_nav_user)
                         }
                         TypeLoginEnum.PELATIH.jenis -> {
-                            view?.findNavController()
+                            this.findNavController()
                                 ?.navigate(R.id.action_loginsFragment_to_nav_pelatih)
                         }
                         TypeLoginEnum.PEGAWAI.jenis -> {
-                            view?.findNavController()
+                            this.findNavController()
                                 ?.navigate(R.id.action_loginsFragment_to_nav_hrd)
                         }
                     }
@@ -71,7 +80,7 @@ class LoginsFragment : Fragment() {
         })
 
         btn_register.setOnClickListener {
-            view?.findNavController()?.navigate(R.id.register_action)
+            this.findNavController()?.navigate(R.id.register_action)
         }
 
         btn_login.setOnClickListener {
@@ -100,7 +109,7 @@ class LoginsFragment : Fragment() {
 
         arrayAdapter = ArrayAdapter(
             this.requireContext(),
-            android.R.layout.simple_spinner_item,
+            android.R.layout.simple_spinner_dropdown_item,
             TypeLoginEnum.values()
         )
         spr_categorylogin.dropDownVerticalOffset = 20

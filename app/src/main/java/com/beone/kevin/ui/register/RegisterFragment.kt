@@ -31,7 +31,7 @@ class RegisterFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 //        viewModel = ViewModelProviders.of(this).get(RegisterViewModel::class.java)
         tv_tologin.setOnClickListener {
-            findNavController().navigate(R.id.action_registerFragment_to_loginsFragment)
+           findNavController().navigate(R.id.action_registerFragment_to_loginsFragment)
         }
         ll_register.setOnClickListener { hideKeyboard(ll_register) }
     }
