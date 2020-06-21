@@ -14,6 +14,7 @@
             app:destination="@+id/registerFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"
+            app:launchSingleTop="false"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <action
@@ -32,6 +33,7 @@
         android:id="@+id/registerFragment"
         android:name="com.beone.kevin.ui.register.RegisterFragment"
         android:label="register_fragment"
+
         tools:layout="@layout/register_fragment">
         <action
             android:id="@+id/action_registerFragment_to_loginsFragment"
@@ -41,6 +43,7 @@
     <action
         android:id="@+id/action_global_loginsFragment"
         app:destination="@id/loginsFragment" />
+
 
     <include app:graph="@navigation/nav_hrd" />
     <include app:graph="@navigation/nav_pelatih" />
