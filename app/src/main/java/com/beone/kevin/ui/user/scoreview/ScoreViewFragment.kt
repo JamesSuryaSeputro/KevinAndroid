@@ -1,31 +1,30 @@
-package com.beone.kevin.ui.user
+package com.beone.kevin.ui.user.scoreview
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.beone.kevin.R
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MainUserFragment : Fragment() {
+class ScoreViewFragment : Fragment() {
 
     companion object {
-        fun newInstance() = MainUserFragment()
+        fun newInstance() = ScoreViewFragment()
     }
 
-    private lateinit var viewModel: MainUserViewModel
+    private val viewModel: ScoreViewViewModel by viewModel<ScoreViewViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.main_user_fragment, container, false)
+        return inflater.inflate(R.layout.score_view_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(MainUserViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

@@ -33,12 +33,14 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/tv_location_ktp"
                 android:layout_weight="8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="kkkkksdsdsdsdsds" />
 
             <ImageButton
+                android:id="@+id/btn_uploadKtp"
                 android:layout_weight="1"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
@@ -57,12 +59,14 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/tv_location_kompensasi"
                 android:layout_weight="8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="kkkkksdsdsdsdsds" />
 
             <ImageButton
+                android:id="@+id/btn_uploadKompensasi"
                 android:layout_weight="1"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
@@ -81,6 +85,7 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/tv_location_kesehatan"
                 android:layout_weight="8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -90,6 +95,7 @@
                 android:layout_weight="1"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
+                android:id="@+id/btn_uploadKesehatan"
                 android:src="@drawable/ic_action_name" />
         </LinearLayout>
 
@@ -105,12 +111,14 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/tv_location_suratkerja"
                 android:layout_weight="8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="kkkkksdsdsdsdsds" />
 
             <ImageButton
+                android:id="@+id/btn_uploadSuratKerja"
                 android:layout_weight="1"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
@@ -118,10 +126,17 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/tv_status"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Status : Pending"
             android:textAlignment="center"
             android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btn_uploadall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Upload"/>
     </LinearLayout>
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
