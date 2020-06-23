@@ -18,9 +18,11 @@ class UserPembayaranViewModel(val retrofitService: RetrofitService) : ViewModel(
         return data;
     }
 
+
     fun uploadPembayaran(idUser: String?,image:String?){
         retrofitService.uploadPembayaran(idUser,image).enqueue(object : Callback<StatusDataModel>{
             override fun onFailure(call: Call<StatusDataModel>, t: Throwable) {
+
 
             }
 
@@ -35,7 +37,6 @@ class UserPembayaranViewModel(val retrofitService: RetrofitService) : ViewModel(
 
         })
     }
-
 
     fun checkPembayaran(idUser:String?){
 
@@ -54,7 +55,6 @@ class UserPembayaranViewModel(val retrofitService: RetrofitService) : ViewModel(
             }
 
         })
-
 
     }
 

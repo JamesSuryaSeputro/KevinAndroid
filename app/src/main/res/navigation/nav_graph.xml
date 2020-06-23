@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.beone.kevin.ui.register.RegisterFragment"
+        android:name="com.beone.kevin.ui.registertki.RegisterTkiFragment"
         android:label="register_fragment"
 
         tools:layout="@layout/register_fragment">

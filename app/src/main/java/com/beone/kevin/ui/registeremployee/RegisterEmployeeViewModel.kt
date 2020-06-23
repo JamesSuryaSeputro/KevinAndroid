@@ -1,4 +1,4 @@
-package com.beone.kevin.ui.register
+package com.beone.kevin.ui.registeremployee
 
 import androidx.lifecycle.ViewModel
 
