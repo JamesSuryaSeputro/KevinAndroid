@@ -3,6 +3,9 @@ package com.beone.kevin.di
 import com.beone.kevin.remote.RetrofitService
 import com.beone.kevin.ui.hrd.MenuHrdViewModel
 import com.beone.kevin.ui.login.LoginsViewModel
+
+import com.beone.kevin.ui.registertki.RegisterTkiViewModel
+import com.beone.kevin.ui.user.userpembayaran.UserPembayaranViewModel
 import com.beone.kevin.ui.pelatih.addschedulepelatih.AddSchedulePelatihViewModel
 import com.beone.kevin.ui.pelatih.MainMenu.MainMenuPelatihViewModel
 import com.beone.kevin.ui.pelatih.schedulepelatih.SchedulePelatihViewModel
@@ -32,8 +35,8 @@ val viewModelModule = module {
         UploadDocumentViewModel(get())
     }
 
-    viewModel<RegisterViewModel> {
-        RegisterViewModel(get<RetrofitService>())
+    viewModel<RegisterTkiViewModel> {
+        RegisterTkiViewModel(get<RetrofitService>())
     }
 
     viewModel<ScoreViewViewModel> {

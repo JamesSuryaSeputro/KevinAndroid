@@ -29,6 +29,7 @@ class UserPembayaranFragment : Fragment() {
 
     private val viewModel: UserPembayaranViewModel by inject()
     private val sharedPreferenceUtils: SharedPreferenceUtils by inject()
+
     private var bitmap: Bitmap? = null
 
 
@@ -50,7 +51,10 @@ class UserPembayaranFragment : Fragment() {
                 if (it.status.equals("1")) {
                     // TODO: 19/06/20 add navigation to nextfragment home user
                     view?.findNavController()
+
+
                         ?.navigate(R.id.action_userPembayaranFragment_to_mainUserFragment)
+                  
                 } else {
                     Log.d(TAG, "onActivityCreated: Not Been Check for Payment")
                 }
@@ -73,17 +77,17 @@ class UserPembayaranFragment : Fragment() {
 
 
         btn_pick_photo.setOnClickListener {
-            // TODO: 19/06/20 add pick picture
+
             val intent = Intent()
             intent.action = android.content.Intent.ACTION_GET_CONTENT
             intent.type = "image/*"
-//            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             startActivityForResult(intent,
                 RESULT_GALLERY
             )
         }
 
         btn_upload.setOnClickListener {
+
             var data: String? = ""
             if (bitmap != null) {
                 data = CustomImageUtils.BitmapToString(bitmap!!)
@@ -100,11 +104,13 @@ class UserPembayaranFragment : Fragment() {
         Log.d(TAG, "onActivityResult: ${requestCode} ${resultCode} ${data?.data}")
         when (requestCode) {
             RESULT_GALLERY -> {
+
                 if (data?.data != null) {
                     bitmap =
                         MediaStore.Images.Media.getBitmap(this.context?.contentResolver, data?.data)
                     Glide.with(this).load(bitmap).into(img_bukti_pembayaran)
                 }
+
             }
         }
     }

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.register.BaseFormRegisterFragment">
+    tools:context=".ui.registertki.BaseFormRegisterTkiFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -36,6 +36,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Username"
+                android:text="123"
                 android:inputType="text" />
 
             <EditText
@@ -43,6 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
+                android:text="123"
                 android:inputType="textPassword" />
 
             <EditText
@@ -50,6 +52,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nama"
+                android:text="123"
                 android:inputType="text" />
 
             <EditText
@@ -57,6 +60,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nomor Passport"
+                android:text="123"
                 android:inputType="text|number" />
 
             <EditText
@@ -64,6 +68,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nomor KTP"
+                android:text="123"
                 android:inputType="number" />
 
             <LinearLayout
@@ -78,6 +83,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.6"
                     android:hint="Tempat"
+                    android:text="123"
                     android:inputType="text" />
 
                 <EditText
@@ -86,6 +92,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
                     android:hint="Tanggal Lahir"
+                    android:text="123"
                     android:inputType="date" />
 
             </LinearLayout>
@@ -95,6 +102,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Umur"
+                android:text="123"
                 android:inputType="number" />
 
             <EditText
@@ -102,6 +110,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Kewarganegaraan"
+                android:text="123"
                 android:inputType="text" />
 
             <RelativeLayout
@@ -130,19 +139,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Alamat"
-                android:inputType="text|number" />
+                android:text="123"
+                android:inputType="text" />
 
             <EditText
                 android:id="@+id/edt_nohp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nomor Telepon / HP"
+                android:text="123"
                 android:inputType="number" />
 
             <EditText
                 android:id="@+id/edt_noalternative"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="123"
                 android:hint="Nomor telepon dalam kondisi darurat"
                 android:inputType="number" />
 
@@ -179,6 +191,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.2"
                     android:hint="Tinggi Badan"
+                    android:text="123"
                     android:inputType="number" />
 
                 <TextView
@@ -194,6 +207,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.2"
                     android:hint="Berat Badan"
+                    android:text="123"
                     android:inputType="number" />
 
                 <TextView
@@ -225,6 +239,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
                     android:hint="Kiri"
+                    android:text="123"
                     android:inputType="text" />
 
                 <EditText
@@ -233,6 +248,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
                     android:hint="Kanan"
+                    android:text="123"
                     android:inputType="text" />
 
             </LinearLayout>
@@ -299,6 +315,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toEndOf="@+id/tv_edtsector1"
+                    android:text="123"
                     android:inputType="text" />
 
                 <TextView
@@ -318,6 +335,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/edt_sector1"
                     android:layout_toEndOf="@+id/tv_edtsector2"
+                    android:text="123"
                     android:inputType="text" />
 
                 <TextView
@@ -337,6 +355,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/edt_sector2"
                     android:layout_toEndOf="@+id/tv_edtsector3"
+                    android:text="123"
                     android:inputType="text" />
             </RelativeLayout>
 
@@ -367,6 +386,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toEndOf="@id/tv_edtjob1"
+                    android:text="123"
                     android:inputType="text" />
 
                 <TextView
@@ -386,6 +406,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/edt_job1"
                     android:layout_toEndOf="@+id/tv_edtjob2"
+                    android:text="123"
                     android:inputType="text" />
 
                 <TextView
@@ -405,6 +426,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/edt_job2"
                     android:layout_toEndOf="@+id/tv_edtjob3"
+                    android:text="123"
                     android:inputType="text" />
             </RelativeLayout>
 
@@ -436,6 +458,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tv_joblocation"
                     android:layout_toEndOf="@id/tv_edtjoblocation1"
+                    android:text="123"
                     android:inputType="text" />
 
                 <TextView
@@ -454,6 +477,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/edt_joblocation1"
                     android:layout_toEndOf="@+id/tv_edtjoblocation2"
+                    android:text="123"
                     android:inputType="text" />
 
                 <TextView
@@ -472,6 +496,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/edt_joblocation2"
                     android:layout_toEndOf="@+id/tv_edtjoblocation3"
+                    android:text="123"
                     android:inputType="text" />
             </RelativeLayout>
 
@@ -480,6 +505,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Pendidikan Terakhir"
+                android:text="123"
                 android:inputType="text" />
 
             <EditText
@@ -487,6 +513,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Bidang/Jurusan"
+                android:text="123"
                 android:inputType="text" />
 
             <RelativeLayout
@@ -544,11 +571,12 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/edt_language"
+                    android:id="@+id/edt_otherlanguage"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tv_english"
                     android:layout_toEndOf="@+id/tv_otherlanguage"
+                    android:text="123"
                     android:inputType="text" />
 
             </RelativeLayout>
@@ -581,6 +609,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tv_jobcertificate"
                     android:layout_toEndOf="@id/tv_edtjobcerficate1"
+                    android:text="123"
                     android:inputType="text" />
 
                 <TextView
@@ -599,6 +628,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/edt_jobcertificate1"
                     android:layout_toEndOf="@+id/tv_edtjobcerficate2"
+                    android:text="123"
                     android:inputType="text" />
 
                 <TextView
@@ -617,6 +647,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/edt_jobcertificate2"
                     android:layout_toEndOf="@+id/tv_edtjobcertificate3"
+                    android:text="123"
                     android:inputType="text" />
             </RelativeLayout>
 
@@ -648,6 +679,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tv_workexperience"
                     android:layout_toEndOf="@id/tv_edtworkexperience1"
+                    android:text="123"
                     android:inputType="text" />
 
             </RelativeLayout>
@@ -660,11 +692,12 @@
                 android:weightSum="1">
 
                 <EditText
-                    android:id="@+id/edt_date"
+                    android:id="@+id/edt_startdate1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.3"
                     android:hint="Tgl"
+                    android:text="123"
                     android:inputType="date" />
 
                 <TextView
@@ -678,11 +711,12 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/edt_enddate"
+                    android:id="@+id/edt_enddate1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.3"
                     android:hint="Tgl"
+                    android:text="123"
                     android:inputType="date" />
             </LinearLayout>
 
@@ -704,6 +738,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toEndOf="@id/tv_edtworkexperience2"
+                    android:text="123"
                     android:inputType="text" />
 
             </RelativeLayout>
@@ -716,11 +751,12 @@
                 android:weightSum="1">
 
                 <EditText
-                    android:id="@+id/edt_date2"
+                    android:id="@+id/edt_startdate2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.3"
                     android:hint="Tgl"
+                    android:text="123"
                     android:inputType="date" />
 
                 <TextView
@@ -739,6 +775,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.3"
                     android:hint="Tgl"
+                    android:text="123"
                     android:inputType="date" />
             </LinearLayout>
 
@@ -768,13 +805,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Tgl Pemeriksaaan"
+                android:text="123"
                 android:inputType="date" />
 
             <EditText
-                android:id="@+id/edt_checkuphc"
+                android:id="@+id/edt_checkuprs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="RS/Klinik yang memeriksa"
+                android:text="123"
                 android:inputType="text" />
 
             <RelativeLayout
@@ -803,6 +842,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Jika ada, Nama Lembaga Pendidikan"
+                android:text="123"
                 android:inputType="text" />
 
             <LinearLayout
@@ -817,6 +857,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
                     android:hint="Tgl Mulai Pendidikan"
+                    android:text="123"
                     android:inputType="date" />
 
                 <EditText
@@ -825,6 +866,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.6"
                     android:hint="s/d Tgl"
+                    android:text="123"
                     android:inputType="date" />
             </LinearLayout>
 

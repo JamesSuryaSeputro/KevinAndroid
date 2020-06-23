@@ -1,4 +1,4 @@
-package com.beone.kevin.ui.register
+package com.beone.kevin.ui.registertki
 
 enum class TypeSkillEnum {
     Pilih,
