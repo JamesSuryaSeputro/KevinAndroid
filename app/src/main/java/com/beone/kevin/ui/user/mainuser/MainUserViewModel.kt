@@ -2,6 +2,11 @@ package com.beone.kevin.ui.user.mainuser
 
 import androidx.lifecycle.ViewModel
 
+
 class MainUserViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+
+import com.beone.kevin.remote.RetrofitService
+
+class MainUserViewModel(val retrofitService: RetrofitService) : ViewModel() {
+
 }

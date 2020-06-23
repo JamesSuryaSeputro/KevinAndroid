@@ -13,7 +13,6 @@ import retrofit2.Response
 
 class UserPembayaranViewModel(val retrofitService: RetrofitService) : ViewModel() {
     private var data : MutableLiveData<InfoPembayaranModel> = MutableLiveData()
-//    private var data2 : MutableLiveData<StatusDataModel> = MutableLiveData()
 
     fun initDataPembayaran():LiveData<InfoPembayaranModel>{
         return data;
@@ -23,7 +22,8 @@ class UserPembayaranViewModel(val retrofitService: RetrofitService) : ViewModel(
     fun uploadPembayaran(idUser: String?,image:String?){
         retrofitService.uploadPembayaran(idUser,image).enqueue(object : Callback<StatusDataModel>{
             override fun onFailure(call: Call<StatusDataModel>, t: Throwable) {
-                TODO("Not yet implemented")
+
+
             }
 
             override fun onResponse(
@@ -55,6 +55,7 @@ class UserPembayaranViewModel(val retrofitService: RetrofitService) : ViewModel(
             }
 
         })
+
     }
 
     companion object {

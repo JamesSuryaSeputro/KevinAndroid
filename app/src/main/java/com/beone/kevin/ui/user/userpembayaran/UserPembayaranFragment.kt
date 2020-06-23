@@ -29,7 +29,8 @@ class UserPembayaranFragment : Fragment() {
 
     private val viewModel: UserPembayaranViewModel by inject()
     private val sharedPreferenceUtils: SharedPreferenceUtils by inject()
-    private lateinit var bitmap: Bitmap
+
+    private var bitmap: Bitmap? = null
 
 
     override fun onCreateView(
@@ -50,7 +51,10 @@ class UserPembayaranFragment : Fragment() {
                 if (it.status.equals("1")) {
                     // TODO: 19/06/20 add navigation to nextfragment home user
                     view?.findNavController()
-                        ?.navigate(R.id.action_userPembayaranFragment_to_uploadDocumentFragment)
+
+
+                        ?.navigate(R.id.action_userPembayaranFragment_to_mainUserFragment)
+                  
                 } else {
                     Log.d(TAG, "onActivityCreated: Not Been Check for Payment")
                 }
@@ -73,11 +77,10 @@ class UserPembayaranFragment : Fragment() {
 
 
         btn_pick_photo.setOnClickListener {
-            // TODO: 19/06/20 add pick picture
+
             val intent = Intent()
             intent.action = android.content.Intent.ACTION_GET_CONTENT
             intent.type = "image/*"
-//            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             startActivityForResult(intent,
                 RESULT_GALLERY
             )
@@ -85,10 +88,15 @@ class UserPembayaranFragment : Fragment() {
 
         btn_upload.setOnClickListener {
 
-            val data = CustomImageUtils.BitmapToString(bitmap)
+            var data: String? = ""
+            if (bitmap != null) {
+                data = CustomImageUtils.BitmapToString(bitmap!!)
+            }
             viewModel.uploadPembayaran(sharedPreferenceUtils.getIdUser, data)
+            swp_refresh.isRefreshing = true
 
         }
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -96,9 +104,13 @@ class UserPembayaranFragment : Fragment() {
         Log.d(TAG, "onActivityResult: ${requestCode} ${resultCode} ${data?.data}")
         when (requestCode) {
             RESULT_GALLERY -> {
-                bitmap =
-                    MediaStore.Images.Media.getBitmap(this.context?.contentResolver, data?.data)
-                Glide.with(this).load(bitmap).into(img_bukti_pembayaran)
+
+                if (data?.data != null) {
+                    bitmap =
+                        MediaStore.Images.Media.getBitmap(this.context?.contentResolver, data?.data)
+                    Glide.with(this).load(bitmap).into(img_bukti_pembayaran)
+                }
+
             }
         }
     }

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.user.mainuser.MainUserFragment">
+    tools:context=".ui.pelatih.MainMenu.MainMenuPelatihFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,7 +13,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Menu User"
+            android:text="Menu Pelatih"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline1"
             android:textSize="50sp" />
 
@@ -24,19 +24,40 @@
             android:weightSum="2">
 
             <Button
-                android:id="@+id/btn_lihat_jadwal"
+                android:id="@+id/btn_tambah_jadwal"
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
                 android:layout_weight="1"
-                android:text="Lihat Jadwal" />
+                android:text="Tambah Jadwal" />
 
             <Button
-                android:id="@+id/btn_liat_nilai"
+                android:id="@+id/btn_tmbah_nilai"
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
                 android:layout_weight="1"
-                android:text="Lihat Nilai" />
+                android:text="Tambah Nilai" />
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btn_presensi_ujian"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:text="Presensi Ujian" />
+
+            <Button
+                android:id="@+id/btn_presensi_test"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:text="presensi test" />
         </LinearLayout>
 
         <LinearLayout
@@ -57,10 +78,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
                 android:layout_weight="1"
-                android:text="Logout" />
+                android:text="logout" />
         </LinearLayout>
-
-
     </LinearLayout>
 
 </ScrollView>
