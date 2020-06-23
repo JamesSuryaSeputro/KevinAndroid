@@ -5,11 +5,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.beone.kevin.remote.RetrofitService
-import com.beone.kevin.remote.model.InfoPembayaranModel
 import com.beone.kevin.remote.model.RegisterTKIModel
 import com.beone.kevin.remote.model.StatusDataModel
-import com.beone.kevin.remote.model.StatusLogin
-import com.beone.kevin.ui.user.UserPembayaranViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

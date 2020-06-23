@@ -1,4 +1,4 @@
-package com.beone.kevin.ui.user
+package com.beone.kevin.ui.user.userpembayaran
 
 import android.content.Intent
 import android.graphics.Bitmap
@@ -21,7 +21,8 @@ import org.koin.android.ext.android.inject
 class UserPembayaranFragment : Fragment() {
 
     companion object {
-        fun newInstance() = UserPembayaranFragment()
+        fun newInstance() =
+            UserPembayaranFragment()
         private const val TAG = "UserPembayaranFragment"
         private const val RESULT_GALLERY = 12;
     }
@@ -77,7 +78,9 @@ class UserPembayaranFragment : Fragment() {
             intent.action = android.content.Intent.ACTION_GET_CONTENT
             intent.type = "image/*"
 //            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-            startActivityForResult(intent, RESULT_GALLERY)
+            startActivityForResult(intent,
+                RESULT_GALLERY
+            )
         }
 
         btn_upload.setOnClickListener {

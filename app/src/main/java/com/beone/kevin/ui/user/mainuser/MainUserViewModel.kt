@@ -1,4 +1,4 @@
-package com.beone.kevin.ui.user
+package com.beone.kevin.ui.user.mainuser
 
 import androidx.lifecycle.ViewModel
 

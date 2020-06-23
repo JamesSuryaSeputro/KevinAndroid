@@ -12,7 +12,7 @@
         tools:layout="@layout/upload_document_fragment" />
     <fragment
         android:id="@+id/userPembayaranFragment"
-        android:name="com.beone.kevin.ui.user.UserPembayaranFragment"
+        android:name="com.beone.kevin.ui.user.userpembayaran.UserPembayaranFragment"
         android:label="user_pembayaran_fragment"
         tools:layout="@layout/user_pembayaran_fragment">
         <action

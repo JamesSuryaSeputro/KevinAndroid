@@ -1,10 +1,9 @@
-package com.beone.kevin.ui.user
+package com.beone.kevin.ui.user.userpembayaran
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.beone.kevin.SharedPreferenceUtils
 import com.beone.kevin.remote.RetrofitService
 import com.beone.kevin.remote.model.InfoPembayaranModel
 import com.beone.kevin.remote.model.StatusDataModel
@@ -43,7 +42,7 @@ class UserPembayaranViewModel(val retrofitService: RetrofitService) : ViewModel(
 
         retrofitService.checkPembayaran(idUser).enqueue(object : Callback<InfoPembayaranModel>{
             override fun onFailure(call: Call<InfoPembayaranModel>, t: Throwable) {
-                Log.e(Companion.TAG, "onFailure: ",t )
+                Log.e(TAG, "onFailure: ",t )
             }
 
             override fun onResponse(
