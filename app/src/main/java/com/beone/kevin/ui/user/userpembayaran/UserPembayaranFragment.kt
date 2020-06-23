@@ -1,4 +1,4 @@
-package com.beone.kevin.ui.user
+package com.beone.kevin.ui.user.userpembayaran
 
 import android.content.Intent
 import android.graphics.Bitmap
@@ -21,14 +21,15 @@ import org.koin.android.ext.android.inject
 class UserPembayaranFragment : Fragment() {
 
     companion object {
-        fun newInstance() = UserPembayaranFragment()
+        fun newInstance() =
+            UserPembayaranFragment()
         private const val TAG = "UserPembayaranFragment"
         private const val RESULT_GALLERY = 12;
     }
 
     private val viewModel: UserPembayaranViewModel by inject()
     private val sharedPreferenceUtils: SharedPreferenceUtils by inject()
-    private lateinit var bitmap: Bitmap
+    private var bitmap: Bitmap? = null
 
 
     override fun onCreateView(
@@ -49,13 +50,13 @@ class UserPembayaranFragment : Fragment() {
                 if (it.status.equals("1")) {
                     // TODO: 19/06/20 add navigation to nextfragment home user
                     view?.findNavController()
-                        ?.navigate(R.id.action_userPembayaranFragment_to_uploadDocumentFragment)
+                        ?.navigate(R.id.action_userPembayaranFragment_to_mainUserFragment)
                 } else {
                     Log.d(TAG, "onActivityCreated: Not Been Check for Payment")
                 }
             }
 
-            if (!it.img_bukti.equals("")){
+            if (!it.img_bukti.equals("")) {
                 Glide.with(this)
                     .load(CustomImageUtils.stringToBitmap(it.img_bukti))
                     .error(android.R.color.background_dark)
@@ -77,13 +78,18 @@ class UserPembayaranFragment : Fragment() {
             intent.action = android.content.Intent.ACTION_GET_CONTENT
             intent.type = "image/*"
 //            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-            startActivityForResult(intent, RESULT_GALLERY)
+            startActivityForResult(intent,
+                RESULT_GALLERY
+            )
         }
 
         btn_upload.setOnClickListener {
-
-            val data = CustomImageUtils.BitmapToString(bitmap)
+            var data: String? = ""
+            if (bitmap != null) {
+                data = CustomImageUtils.BitmapToString(bitmap!!)
+            }
             viewModel.uploadPembayaran(sharedPreferenceUtils.getIdUser, data)
+            swp_refresh.isRefreshing = true
 
         }
 
@@ -94,9 +100,11 @@ class UserPembayaranFragment : Fragment() {
         Log.d(TAG, "onActivityResult: ${requestCode} ${resultCode} ${data?.data}")
         when (requestCode) {
             RESULT_GALLERY -> {
-                bitmap =
-                    MediaStore.Images.Media.getBitmap(this.context?.contentResolver, data?.data)
-                Glide.with(this).load(bitmap).into(img_bukti_pembayaran)
+                if (data?.data != null) {
+                    bitmap =
+                        MediaStore.Images.Media.getBitmap(this.context?.contentResolver, data?.data)
+                    Glide.with(this).load(bitmap).into(img_bukti_pembayaran)
+                }
             }
         }
     }

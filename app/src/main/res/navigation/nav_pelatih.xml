@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_pelatih">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_pelatih"
+    app:startDestination="@id/mainMenuPelatihFragment">
 
+    <fragment
+        android:id="@+id/mainMenuPelatihFragment"
+        android:name="com.beone.kevin.ui.pelatih.MainMenu.MainMenuPelatihFragment"
+        android:label="main_menu_pelatih_fragment"
+        tools:layout="@layout/main_menu_pelatih_fragment" >
+        <action
+            android:id="@+id/action_mainMenuPelatihFragment_to_schedulePelatihFragment"
+            app:destination="@id/schedulePelatihFragment"
+            app:popUpTo="@id/mainMenuPelatihFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/schedulePelatihFragment"
+        android:name="com.beone.kevin.ui.pelatih.schedulepelatih.SchedulePelatihFragment"
+        android:label="schedule_pelatih_fragment"
+        tools:layout="@layout/schedule_pelatih_fragment" >
+        <action
+            android:id="@+id/action_schedulePelatihFragment_to_addSchedulePelatihDialogFragment"
+            app:destination="@id/addSchedulePelatihDialogFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <dialog
+        android:id="@+id/addSchedulePelatihDialogFragment"
+        android:name="com.beone.kevin.ui.pelatih.addschedulepelatih.AddSchedulePelatihDialogFragment"
+        tools:layout="@layout/add_schedule_pelatih_fragment"
+        android:label="AddSchedulePelatihDialogFragment" />
 </navigation>

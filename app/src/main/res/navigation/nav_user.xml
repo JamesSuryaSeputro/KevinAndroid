@@ -3,21 +3,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_user"
-    app:startDestination="@id/userPembayaranFragment"
+    app:startDestination="@id/uploadDocumentFragment"
     tools:ignore="UnusedNavigation">
     <fragment
         android:id="@+id/uploadDocumentFragment"
         android:name="com.beone.kevin.ui.user.uploaddocument.UploadDocumentFragment"
         android:label="upload_document_fragment"
-        tools:layout="@layout/upload_document_fragment" />
+        tools:layout="@layout/upload_document_fragment" >
+        <action
+            android:id="@+id/action_uploadDocumentFragment_to_userPembayaranFragment"
+            app:destination="@id/userPembayaranFragment" />
+    </fragment>
     <fragment
         android:id="@+id/userPembayaranFragment"
-        android:name="com.beone.kevin.ui.user.UserPembayaranFragment"
+        android:name="com.beone.kevin.ui.user.userpembayaran.UserPembayaranFragment"
         android:label="user_pembayaran_fragment"
         tools:layout="@layout/user_pembayaran_fragment">
         <action
-            android:id="@+id/action_userPembayaranFragment_to_uploadDocumentFragment"
-            app:destination="@id/uploadDocumentFragment"
-            app:popUpTo="@id/userPembayaranFragment" />
+            android:id="@+id/action_userPembayaranFragment_to_mainUserFragment"
+            app:destination="@id/mainUserFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/mainUserFragment"
+        android:name="com.beone.kevin.ui.user.mainuser.MainUserFragment"
+        android:label="main_user_fragment"
+        tools:layout="@layout/main_user_fragment" >
+        <action
+            android:id="@+id/action_mainUserFragment_to_scoreViewFragment"
+            app:destination="@id/scoreViewFragment"
+            app:popUpTo="@id/mainUserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scoreViewFragment"
+        android:name="com.beone.kevin.ui.user.scoreview.ScoreViewFragment"
+        android:label="score_view_fragment"
+        tools:layout="@layout/score_view_fragment" />
 </navigation>

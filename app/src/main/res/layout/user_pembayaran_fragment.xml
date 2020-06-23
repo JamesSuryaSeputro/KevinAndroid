@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/swp_refresh"
-    tools:context=".ui.user.UserPembayaranFragment">
+    tools:context=".ui.user.userpembayaran.UserPembayaranFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
