@@ -8,7 +8,7 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
-const val HostLocal  = "http://192.168.0.106:8080/apitki/public/"
+const val HostLocal  = "http://192.168.1.5/apitki/public/"
 const val HostGCP = "https://krisjaya-2020.et.r.appspot.com/"
 val networkModule = module {
 

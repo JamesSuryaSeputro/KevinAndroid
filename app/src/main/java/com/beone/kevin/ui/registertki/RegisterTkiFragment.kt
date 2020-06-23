@@ -25,8 +25,8 @@ class RegisterTkiFragment : BaseFormRegisterTkiFragment() {
     }
 
     private val vm: RegisterTkiViewModel by inject()
-    private lateinit var bitmap: Bitmap
-    private lateinit var bitmap2: Bitmap
+    private var bitmapPf: Bitmap? = null
+    private var bitmapTtd: Bitmap? = null
 
     override fun initUi() {
         var genderEnum: TypeGenderEnum
@@ -37,7 +37,8 @@ class RegisterTkiFragment : BaseFormRegisterTkiFragment() {
         var skillEnglishEnum: TypeSkillEnum
         var healthEnum: TypeHealthEnum
 
-        btn_signup.setOnClickListener() {
+        btn_signup.setOnClickListener {
+            Log.d(TAG, "btnSignup: clicked")
             genderEnum = checkSpinnerGender()
             maritalStatusEnum = checkSpinnerMaritalStatus()
             booleanColorBlindEnum = checkSpinnerBooleanColorBlind()
@@ -56,62 +57,91 @@ class RegisterTkiFragment : BaseFormRegisterTkiFragment() {
                         "initUI: health: ${healthEnum} ordinal value: ${healthEnum.ordinal} \n"
             )
 
-            Log.d(TAG, "btnSignup: clicked")
-            val pasfoto = CustomImageUtils.BitmapToString(bitmap)
-            val ttdfoto = CustomImageUtils.BitmapToString(bitmap2)
-            vm.registerTki(
-                RegisterTKIModel(
-                    edt_address.text.toString(),
-                    edt_otherlanguage.text.toString(),
-                    edt_weight.text.toString(),
-                    edt_field.text.toString(),
-                    booleanColorBlindEnum.ordinal.toString(),
-                    healthEnum.ordinal.toString(),
-                    skillEnglishEnum.ordinal.toString(),
-                    genderEnum.ordinal.toString(),
-                    edt_nationality.text.toString(),
-                    edt_checkuprs.text.toString(),
-                    edt_joblocation1.text.toString(),
-                    edt_joblocation2.text.toString(),
-                    edt_joblocation3.text.toString(),
-                    skillMandarinEnum.ordinal.toString(),
-                    edt_right.text.toString(),
-                    edt_left.text.toString(),
-                    edt_nameedu.text.toString(),
-                    edt_noktp.text.toString(),
-                    edt_nopassport.text.toString(),
-                    edt_noalternative.text.toString(),
-                    pasfoto,
-                    edt_password.text.toString(),
-                    edt_job1.text.toString(),
-                    edt_job2.text.toString(),
-                    edt_job3.text.toString(),
-                    booleanMandarinEduEnum.ordinal.toString(),
-                    edt_lasteducation.text.toString(),
-                    edt_workexperience1.text.toString(),
-                    edt_workexperience2.text.toString(),
-                    edt_enddate1.text.toString(),
-                    edt_enddate2.text.toString(),
-                    edt_startdate1.text.toString(),
-                    edt_startdate2.text.toString(),
-                    edt_sector1.text.toString(),
-                    edt_sector2.text.toString(),
-                    edt_sector3.text.toString(),
-                    edt_jobcertificate1.text.toString(),
-                    edt_jobcertificate2.text.toString(),
-                    edt_jobcertificate3.text.toString(),
-                    maritalStatusEnum.ordinal.toString(),
-                    edt_dateofbirth.text.toString(),
-                    edt_checkupdate.text.toString(),
-                    edt_startedudate.text.toString(),
-                    edt_place.text.toString(),
-                    edt_height.text.toString(),
-                    ttdfoto,
-                    edt_age.text.toString(),
-                    edt_wage.text.toString(),
-                    edt_username.text.toString()
-                )
-            )
+            if (edt_address.text.toString() != "" && edt_otherlanguage.text.toString() != "" && edt_weight.text.toString() != ""
+                && edt_field.text.toString() != "" && edt_nationality.text.toString() != "" && edt_checkuprs.text.toString() != ""
+                && edt_joblocation1.text.toString() != "" || edt_joblocation2.text.toString() != "" || edt_joblocation3.text.toString() != ""
+                && edt_right.text.toString() != "" && edt_left.text.toString() != "" && edt_name.text.toString() != ""
+                && edt_mandarinedu.text.toString() != "" && edt_noktp.text.toString() != "" && edt_nopassport.text.toString() != ""
+                && edt_nohp.text.toString() != "" && edt_noalternative.text.toString() != "" && edt_password.text.toString() != ""
+                && edt_job1.text.toString() != "" || edt_job2.text.toString() != "" || edt_job3.text.toString() != ""
+                && edt_lasteducation.text.toString() != "" && edt_workexperience1.text.toString() != "" || edt_workexperience2.text.toString()
+                != "" && edt_enddate1.text.toString() != "" || edt_enddate2.text.toString() != "" && edt_startdate1.text.toString() != ""
+                || edt_startdate2.text.toString() != "" && edt_sector1.text.toString() != "" || edt_sector2.text.toString() != ""
+                || edt_sector3.text.toString() != "" && edt_jobcertificate1.text.toString() != "" || edt_jobcertificate2.text.toString() != ""
+                || edt_jobcertificate3.text.toString() != "" && edt_dateofbirth.text.toString() != "" && edt_checkuprs.text.toString() != ""
+                && edt_mandarinstartdate.text.toString() != "" && edt_mandarinenddate.text.toString() != "" && edt_place.text.toString() == ""
+                && edt_height.text.toString() != "" && edt_age.text.toString() != "" && edt_wage.text.toString() != "" && edt_username.text.toString() != ""
+            ) {
+                var pasfoto: String? = ""
+                var fotoTtd: String? = ""
+                if (bitmapPf != null && bitmapTtd != null) {
+                    pasfoto = bitmapPf?.let { it1 -> CustomImageUtils.BitmapToString(it1) }
+                    fotoTtd = bitmapTtd?.let { it1 -> CustomImageUtils.BitmapToString(it1) }
+                    vm.registerTki(
+                        RegisterTKIModel(
+                            edt_address.text.toString(),
+                            edt_otherlanguage.text.toString(),
+                            edt_weight.text.toString(),
+                            edt_field.text.toString(),
+                            booleanColorBlindEnum.ordinal.toString(),
+                            healthEnum.ordinal.toString(),
+                            skillEnglishEnum.ordinal.toString(),
+                            genderEnum.ordinal.toString(),
+                            edt_nationality.text.toString(),
+                            edt_checkuprs.text.toString(),
+                            edt_joblocation1.text.toString(),
+                            edt_joblocation2.text.toString(),
+                            edt_joblocation3.text.toString(),
+                            skillMandarinEnum.ordinal.toString(),
+                            edt_right.text.toString(),
+                            edt_left.text.toString(),
+                            edt_name.text.toString(),
+                            edt_mandarinedu.text.toString(),
+                            edt_noktp.text.toString(),
+                            edt_nopassport.text.toString(),
+                            edt_nohp.text.toString(),
+                            edt_noalternative.text.toString(),
+                            pasfoto!!,
+                            edt_password.text.toString(),
+                            edt_job1.text.toString(),
+                            edt_job2.text.toString(),
+                            edt_job3.text.toString(),
+                            booleanMandarinEduEnum.ordinal.toString(),
+                            edt_lasteducation.text.toString(),
+                            edt_workexperience1.text.toString(),
+                            edt_workexperience2.text.toString(),
+                            edt_enddate1.text.toString(),
+                            edt_enddate2.text.toString(),
+                            edt_startdate1.text.toString(),
+                            edt_startdate2.text.toString(),
+                            edt_sector1.text.toString(),
+                            edt_sector2.text.toString(),
+                            edt_sector3.text.toString(),
+                            edt_jobcertificate1.text.toString(),
+                            edt_jobcertificate2.text.toString(),
+                            edt_jobcertificate3.text.toString(),
+                            maritalStatusEnum.ordinal.toString(),
+                            edt_dateofbirth.text.toString(),
+                            edt_checkupdate.text.toString(),
+                            edt_mandarinstartdate.text.toString(),
+                            edt_mandarinenddate.text.toString(),
+                            edt_place.text.toString(),
+                            edt_height.text.toString(),
+                            fotoTtd!!,
+                            edt_age.text.toString(),
+                            edt_wage.text.toString(),
+                            edt_username.text.toString()
+                        )
+                    )
+                } else {
+                    Toast.makeText(
+                        this.requireContext(),
+                        "Masih ada yang kosong",
+                        Toast.LENGTH_SHORT
+                    )
+                        .show()
+                }
+            }
         }
     }
 
@@ -123,12 +153,11 @@ class RegisterTkiFragment : BaseFormRegisterTkiFragment() {
         tv_tologin.setOnClickListener {
             findNavController().navigate(R.id.action_registerFragment_to_loginsFragment)
         }
-
         initUi()
 
         vm.initDataRegisterTki().observe(viewLifecycleOwner, Observer {
             if (it.status.equals("1")) {
-                Toast.makeText(this.requireContext(), "Sukses ", Toast.LENGTH_SHORT)
+                Toast.makeText(this.requireContext(), "Sukses", Toast.LENGTH_SHORT)
                     .show()
             }
         })
@@ -155,16 +184,16 @@ class RegisterTkiFragment : BaseFormRegisterTkiFragment() {
         )
         when (requestCode) {
             RESULT_PASFOTO -> {
-                bitmap =
+                bitmapPf =
                     MediaStore.Images.Media.getBitmap(this.context?.contentResolver, data?.data)
-                if (!bitmap.equals("")) {
+                if (bitmapPf != null) {
                     tv_filepf.setText("terisi")
                 }
             }
             RESULT_TTD -> {
-                bitmap2 =
+                bitmapTtd =
                     MediaStore.Images.Media.getBitmap(this.context?.contentResolver, data?.data)
-                if (!bitmap2.equals("")) {
+                if (bitmapTtd != null) {
                     tv_filettd.setText("terisi")
                 }
             }
