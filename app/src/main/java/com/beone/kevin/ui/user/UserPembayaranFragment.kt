@@ -55,7 +55,7 @@ class UserPembayaranFragment : Fragment() {
                 }
             }
 
-            if (!it.img_bukti.equals("")){
+            if (!it.img_bukti.equals("")) {
                 Glide.with(this)
                     .load(CustomImageUtils.stringToBitmap(it.img_bukti))
                     .error(android.R.color.background_dark)
@@ -86,7 +86,6 @@ class UserPembayaranFragment : Fragment() {
             viewModel.uploadPembayaran(sharedPreferenceUtils.getIdUser, data)
 
         }
-
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

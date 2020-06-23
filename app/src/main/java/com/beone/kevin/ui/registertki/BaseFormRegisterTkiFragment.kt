@@ -1,4 +1,4 @@
-package com.beone.kevin.ui.register
+package com.beone.kevin.ui.registertki
 
 import android.content.Context
 import android.os.Bundle
@@ -10,10 +10,10 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.beone.kevin.R
-import kotlinx.android.synthetic.main.base_form_register_fragment.*
+import kotlinx.android.synthetic.main.base_form_register_tki_fragment.*
 
 
-abstract class BaseFormRegisterFragment : Fragment() {
+abstract class BaseFormRegisterTkiFragment : Fragment() {
     private lateinit var genderArrayAdapter: ArrayAdapter<TypeGenderEnum>
     private lateinit var maritalStatusArrayAdapter: ArrayAdapter<TypeMaritalStatusEnum>
     private lateinit var booleanArrayAdapter: ArrayAdapter<TypeBooleanEnum>
@@ -25,7 +25,7 @@ abstract class BaseFormRegisterFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.base_form_register_fragment, container, false)
+        return inflater.inflate(R.layout.base_form_register_tki_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

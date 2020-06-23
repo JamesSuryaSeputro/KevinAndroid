@@ -39,7 +39,6 @@ class UserPembayaranViewModel(val retrofitService: RetrofitService) : ViewModel(
         })
     }
 
-
     fun checkPembayaran(idUser:String?){
 
         retrofitService.checkPembayaran(idUser).enqueue(object : Callback<InfoPembayaranModel>{
@@ -57,8 +56,6 @@ class UserPembayaranViewModel(val retrofitService: RetrofitService) : ViewModel(
             }
 
         })
-
-
     }
 
     companion object {
