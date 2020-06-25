@@ -5,6 +5,8 @@ import android.graphics.Bitmap
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
+import android.view.View
+import android.widget.AdapterView
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -152,6 +154,34 @@ class RegisterTkiFragment : BaseFormRegisterTkiFragment() {
         super.onActivityCreated(savedInstanceState)
         tv_tologin.setOnClickListener {
             findNavController().navigate(R.id.action_registerFragment_to_loginsFragment)
+        }
+        spnr_mandarinedu.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                Log.d(TAG, "Nothing Selected")
+            }
+
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                if (spnr_mandarinedu.selectedItem.toString()!="Ya") {
+                    Log.d(TAG, "selectedItem: " + spnr_mandarinedu.selectedItem)
+                    Log.d(TAG, "selectedItemId: " + spnr_mandarinedu.selectedItemId)
+                    edt_mandarinedu.isEnabled = false
+                    edt_mandarinstartdate.isEnabled = false
+                    edt_mandarinenddate.isEnabled = false
+                    edt_mandarinedu.setText("")
+                    edt_mandarinstartdate.setText("")
+                    edt_mandarinenddate.setText("")
+                }
+                else{
+                    edt_mandarinedu.isEnabled = true
+                    edt_mandarinstartdate.isEnabled = true
+                    edt_mandarinenddate.isEnabled = true
+                }
+            }
         }
         initUi()
 
