@@ -4,6 +4,10 @@ import com.beone.kevin.remote.RetrofitService
 import com.beone.kevin.ui.hrd.MenuHrdViewModel
 import com.beone.kevin.ui.login.LoginsViewModel
 import com.beone.kevin.ui.pelatih.MainMenu.MainMenuPelatihViewModel
+import com.beone.kevin.ui.pelatih.addnilai.AddNilaiViewModel
+import com.beone.kevin.ui.pelatih.schedulepelatih.SchedulePelatihFragment
+import com.beone.kevin.ui.pelatih.schedulepelatih.SchedulePelatihViewModel
+import com.beone.kevin.ui.pelatih.selecttkifortraining.SelectTkiForTrainingViewModel
 import com.beone.kevin.ui.pelatih.addschedulepelatih.AddSchedulePelatihViewModel
 import com.beone.kevin.ui.pelatih.schedulepelatih.SchedulePelatihViewModel
 import com.beone.kevin.ui.registercoach.RegisterCoachViewModel
@@ -13,10 +17,11 @@ import com.beone.kevin.ui.user.mainuser.MainUserViewModel
 import com.beone.kevin.ui.user.scheduleuser.ScheduleUserViewModel
 import com.beone.kevin.ui.user.scoreview.ScoreViewViewModel
 import com.beone.kevin.ui.user.uploaddocument.UploadDocumentViewModel
-import com.beone.kevin.ui.user.userpembayaran.UserPembayaranViewModel
+import org.koin.androidx.viewmodel.compat.SharedViewModelCompat.sharedViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
+
 
 val viewModelModule = module {
 
@@ -66,9 +71,12 @@ val viewModelModule = module {
     viewModel<SchedulePelatihViewModel> {
         SchedulePelatihViewModel(get())
     }
-    viewModel<AddSchedulePelatihViewModel> {
-        AddSchedulePelatihViewModel(
-            get()
-        )
+
+    viewModel<SelectTkiForTrainingViewModel>{
+        SelectTkiForTrainingViewModel(get())
+    }
+
+    viewModel<AddNilaiViewModel>{
+        AddNilaiViewModel(get())
     }
 }

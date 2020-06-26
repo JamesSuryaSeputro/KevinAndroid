@@ -17,24 +17,5 @@ class AddSchedulePelatihViewModel(private val retrofitService: RetrofitService):
 
     fun initLiveData(): LiveData<StatusDataModel> = data
 
-   fun addSchedule(idpelatih:String?, idsubject: SubjectEnum, hari: DayEnum){
-       // TODO: 22/06/20 add jadwal
-       retrofitService.addSchedule(idpelatih,idsubject.subjectdbposition,hari).enqueue(object :
-           Callback<StatusDataModel>{
-           override fun onFailure(call: Call<StatusDataModel>, t: Throwable) {
-           }
 
-           override fun onResponse(
-               call: Call<StatusDataModel>,
-               response: Response<StatusDataModel>
-           ) {
-               if (response.isSuccessful){
-                   data.postValue(StatusDataModel(1))
-               }else{
-                   data.postValue(StatusDataModel(0))
-               }
-
-           }
-       })
-   }
 }

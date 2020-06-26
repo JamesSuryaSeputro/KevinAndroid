@@ -1,10 +1,8 @@
 package com.beone.kevin.remote
 
+
 import com.beone.kevin.remote.model.*
-
-
 import com.beone.kevin.ui.pelatih.DayEnum
-
 import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
@@ -74,6 +72,8 @@ interface RetrofitService {
 
     @POST("registertki")
     @FormUrlEncoded
+
+
     fun registerTki(@Field("username") username: String?,
                     @Field("password") password: String?,
                     @Field("nama") nama: String?,
@@ -127,6 +127,7 @@ interface RetrofitService {
                     @Field("passfoto") passfoto:String?,
                     @Field("ttdfoto") ttdfoto:String?): Call<StatusDataModel>
 
+
     @POST("registerpelatih")
     @FormUrlEncoded
     fun registerPelatih(@Field("username") username: String?,
@@ -146,4 +147,37 @@ interface RetrofitService {
         @Field("idjadwal") idjadwal: String?
     ): Call<StatusDataModel>
 
+    @POST("get_user_all")
+    @FormUrlEncoded
+    fun getAllUserPelatihan(
+        @Field("idjadwal") idjadwal: String?
+    ): Call<UserModel>
+
+    @POST("get_detail_user_pelatihan")
+    @FormUrlEncoded
+    fun getDetailUserPelatihan(@Field("idjadwal") idjadwal: String?): Call<UserModel>
+
+    @POST("add_user_pelatihan")
+    @FormUrlEncoded
+    fun addUserPelatihan(
+        @Field("idjadwal") idjadwal: String?,
+        @Field("iduser") iduser: String?
+    ): Call<StatusDataModel>
+
+    @POST("delete_user_jadwal")
+    @FormUrlEncoded
+    fun deleteUserPelatihan(
+        @Field("idpelatihan") idjadwal: String?
+    ): Call<StatusDataModel>
+
+    @POST("get_detail_user_nilai")
+    @FormUrlEncoded
+    fun getDetailUserNilai(@Field("idjadwal") idjadwal: String?): Call<UserModel>
+
+    @POST("add_tabel_nilai")
+    @FormUrlEncoded
+    fun addNilaiUser(
+        @Field("idpelatihan") idPelatihan: String?,
+        @Field("nilai") nilai: String?
+    ): Call<StatusDataModel>
 }

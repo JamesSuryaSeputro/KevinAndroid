@@ -8,6 +8,9 @@ import android.content.SharedPreferences
 class SharedPreferenceUtils(sharedPref: SharedPreferences) {
     var editor = sharedPref.edit()
 
-    fun putIdUser(idUser: String?) = editor.putString("IDUSER", idUser).commit()
+    fun putIdUser(idUser: String?) {
+        editor.clear().apply()
+        editor.putString("IDUSER", idUser).commit()
+    }
     val getIdUser = sharedPref.getString("IDUSER","NO ID")
 }

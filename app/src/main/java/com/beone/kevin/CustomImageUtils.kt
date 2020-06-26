@@ -8,7 +8,6 @@ import java.io.ByteArrayOutputStream
 import java.lang.Exception
 
 object CustomImageUtils {
-    private const val TAG = "CustomImageUtils"
 
     fun stringToBitmap(imageString: String): Bitmap {
         try {
@@ -16,8 +15,8 @@ object CustomImageUtils {
             val bitmap = BitmapFactory.decodeByteArray(encodeByte,0,encodeByte.size)
             return bitmap
         }catch (e:Exception){
-            throw Exception("Failed to Convert String to Bitmap")
-
+            val bitmap:Bitmap =  Bitmap.createBitmap(1,1,Bitmap.Config.ARGB_8888)
+            return bitmap
         }
     }
 
