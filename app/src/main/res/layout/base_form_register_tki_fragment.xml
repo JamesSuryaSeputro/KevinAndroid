@@ -102,7 +102,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Umur"
-                android:text="123"
+                android:text="12"
                 android:inputType="number" />
 
             <EditText
@@ -279,6 +279,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Upah yang diinginkan/Bulan (Rupiah)"
+                android:text="123"
                 android:inputType="number" />
 
             <TextView
@@ -838,7 +839,7 @@
             </RelativeLayout>
 
             <EditText
-                android:id="@+id/edt_nameedu"
+                android:id="@+id/edt_mandarinedu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Jika ada, Nama Lembaga Pendidikan"
@@ -852,7 +853,7 @@
                 android:weightSum="1">
 
                 <EditText
-                    android:id="@+id/edt_startedudate"
+                    android:id="@+id/edt_mandarinstartdate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
@@ -861,7 +862,7 @@
                     android:inputType="date" />
 
                 <EditText
-                    android:id="@+id/edt_eduenddate"
+                    android:id="@+id/edt_mandarinenddate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.6"
@@ -944,7 +945,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:padding="4dp"
-        android:text="Already registered?"
+        android:text="@string/already_registered"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
 
     <TextView
@@ -957,7 +958,7 @@
         android:clickable="true"
         android:focusable="true"
         android:padding="4dp"
-        android:text="Login"
+        android:text="@string/login"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
         android:textStyle="bold" />
 </RelativeLayout>

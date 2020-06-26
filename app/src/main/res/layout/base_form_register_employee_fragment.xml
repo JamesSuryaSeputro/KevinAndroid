@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.registercoach.RegisterCoachFragment">
+    tools:context=".ui.registeremployee.RegisterEmployeeFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
-                android:text="Register Pelatih"
+                android:text="Register Pegawai"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
 
             <EditText

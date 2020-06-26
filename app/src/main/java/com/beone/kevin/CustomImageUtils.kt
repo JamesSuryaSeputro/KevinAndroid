@@ -17,7 +17,7 @@ object CustomImageUtils {
             return bitmap
         }catch (e:Exception){
             throw Exception("Failed to Convert String to Bitmap")
-            Log.e(TAG, "stringToBitmap: ",e )
+
         }
     }
 
