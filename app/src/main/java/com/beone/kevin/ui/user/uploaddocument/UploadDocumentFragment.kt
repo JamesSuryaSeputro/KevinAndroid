@@ -50,20 +50,20 @@ class UploadDocumentFragment : Fragment() {
         // TODO: Use the ViewModel
 
         viewModel.initLiveData().observe(viewLifecycleOwner, Observer {
-            if (it.scanktp.equals("")){
+            if (!it.scanktp.equals("")){
                 tv_location_ktp.text = "ada"
             }
-            if (it.scansuratkesehatan.equals("")){
+            if (!it.scansuratkesehatan.equals("")){
                 tv_location_kesehatan.text = "ada"
             }
 
-            if (it.scankompensasi.equals("")){
+            if (!it.scankompensasi.equals("")){
                 tv_location_kompensasi.text = "ada"
             }
-            if (it.scansuratkerja.equals("")){
+            if (!it.scansuratkerja.equals("")){
                 tv_location_suratkerja.text = "ada"
             }
-            if (it.status.equals("0")){
+            if (!it.status.equals("0")){
                 tv_status.text =  "Status : Pending"
             }else{
                 tv_status.text =  "Status : Success"

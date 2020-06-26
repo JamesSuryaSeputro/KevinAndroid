@@ -1,6 +1,7 @@
 package com.beone.kevin
 
 import android.content.Intent
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -24,5 +25,7 @@ class MainActivity : AppCompatActivity() {
         //Log.d(Companion.TAG, "onActivityResult: ${requestCode} ${resultCode} ${data.toString()}")
     }
 
-
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+    }
 }

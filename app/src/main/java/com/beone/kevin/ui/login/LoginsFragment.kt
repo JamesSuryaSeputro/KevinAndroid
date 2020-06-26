@@ -42,9 +42,6 @@ class LoginsFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        //viewModel = ViewModelProviders.of(this).get(LoginsViewModel::class.java)
-//        Log.d(TAG, "onActivityCreated: ${vm.getRetrofitServiceHash()}")
-     //   Log.d(TAG, "onActivityCreated: ${sharepreference.hashCode()}")
 
         vm.initLiveDataLogin().observe(viewLifecycleOwner, Observer {
             if (it.isFailedFetch == true) {
@@ -59,7 +56,9 @@ class LoginsFragment : Fragment() {
                         "Berhasil Login type= ${it.TypeLogin} + id ${it.iduser} + username ${it.username}",
                         Toast.LENGTH_SHORT
                     ).show()
+
                     sharepreference.putIdUser(it.iduser)
+
                     when (it.TypeLogin) {
                         TypeLoginEnum.TKI.jenis -> {
                             this.findNavController()
