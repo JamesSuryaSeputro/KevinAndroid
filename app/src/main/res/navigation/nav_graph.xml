@@ -11,7 +11,7 @@
         tools:layout="@layout/logins_fragment">
         <action
             android:id="@+id/register_action"
-            app:destination="@+id/registerFragment"
+            app:destination="@+id/registerTkiFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"
             app:launchSingleTop="false"
@@ -30,11 +30,10 @@
 
     </fragment>
     <fragment
-        android:id="@+id/registerFragment"
+        android:id="@+id/registerTkiFragment"
         android:name="com.beone.kevin.ui.registertki.RegisterTkiFragment"
         android:label="register_fragment"
-
-        tools:layout="@layout/register_fragment">
+        tools:layout="@layout/base_form_register_tki_fragment">
         <action
             android:id="@+id/action_registerFragment_to_loginsFragment"
             app:destination="@id/loginsFragment"

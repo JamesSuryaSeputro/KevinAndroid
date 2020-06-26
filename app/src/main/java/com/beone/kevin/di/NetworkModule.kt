@@ -11,6 +11,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
+
 const val HostLocal = "http://192.168.0.106:8080/apitki/public/"
 const val HostGCP = "https://krisjaya-2020.et.r.appspot.com/"
 
@@ -31,10 +32,12 @@ val networkModule = module {
 
     fun provideClient(httpLoggingInterceptor: HttpLoggingInterceptor) =
         OkHttpClient.Builder()
-            .addInterceptor(httpLoggingInterceptor)
-            .readTimeout(1000,TimeUnit.SECONDS)
             .retryOnConnectionFailure(true)
-            .build()
+            .connectTimeout(10, TimeUnit.SECONDS)
+            .writeTimeout(10, TimeUnit.SECONDS)
+            .readTimeout(30, TimeUnit.SECONDS)
+            .addInterceptor(httpLoggingInterceptor).build()
+
 
     fun provideRxJavaCallAdapter() = RxJava2CallAdapterFactory.create()
 

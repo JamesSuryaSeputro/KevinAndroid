@@ -9,6 +9,37 @@
         android:id="@+id/menuHrdFragment"
         android:name="com.beone.kevin.ui.hrd.MenuHrdFragment"
         android:label="menu_hrd_fragment"
-        tools:layout="@layout/menu_hrd_fragment" />
+        tools:layout="@layout/menu_hrd_fragment" >
+        <action
+            android:id="@+id/action_menuHrdFragment_to_registerCoachFragment"
+            app:destination="@id/registerCoachFragment" />
+        <action
+            android:id="@+id/action_menuHrdFragment_to_registerEmployeeFragment"
+            app:destination="@id/registerEmployeeFragment" />
+    </fragment>
+
     <action android:id="@+id/action_global_menuHrdFragment" app:destination="@id/menuHrdFragment" />
+
+    <fragment
+        android:id="@+id/registerCoachFragment"
+        android:name="com.beone.kevin.ui.registercoach.RegisterCoachFragment"
+        android:label="base_form_register_coach_fragment"
+        tools:layout="@layout/base_form_register_coach_fragment" >
+        <action
+            android:id="@+id/action_registerCoachFragment_to_menuHrdFragment"
+            app:destination="@id/menuHrdFragment"
+            app:popUpTo="@id/menuHrdFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerEmployeeFragment"
+        android:name="com.beone.kevin.ui.registeremployee.RegisterEmployeeFragment"
+        android:label="base_form_register_employee_fragment"
+        tools:layout="@layout/base_form_register_employee_fragment" >
+        <action
+            android:id="@+id/action_registerEmployeeFragment_to_menuHrdFragment"
+            app:destination="@id/menuHrdFragment"
+            app:popUpTo="@id/menuHrdFragment" />
+    </fragment>
+
 </navigation>

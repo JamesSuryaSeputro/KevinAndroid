@@ -42,9 +42,6 @@ class LoginsFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        //viewModel = ViewModelProviders.of(this).get(LoginsViewModel::class.java)
-        Log.d(TAG, "onActivityCreated: ${vm.getRetrofitServiceHash()}")
-        Log.d(TAG, "onActivityCreated: ${sharepreference.getIdUser}")
 
         vm.initLiveDataLogin().observe(viewLifecycleOwner, Observer {
             if (it.isFailedFetch == true) {
