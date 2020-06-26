@@ -14,6 +14,10 @@
             android:id="@+id/action_mainMenuPelatihFragment_to_schedulePelatihFragment"
             app:destination="@id/schedulePelatihFragment"
             app:popUpTo="@id/mainMenuPelatihFragment" />
+        <action
+            android:id="@+id/action_mainMenuPelatihFragment_to_addNilaiFragment"
+            app:destination="@id/addNilaiFragment"
+            app:popUpTo="@id/mainMenuPelatihFragment" />
     </fragment>
     <fragment
         android:id="@+id/schedulePelatihFragment"
@@ -24,10 +28,44 @@
             android:id="@+id/action_schedulePelatihFragment_to_addSchedulePelatihDialogFragment"
             app:destination="@id/addSchedulePelatihDialogFragment"
             app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_schedulePelatihFragment_to_selectTkiForTrainingFragment"
+            app:destination="@id/selectTkiForTrainingFragment" />
     </fragment>
     <dialog
         android:id="@+id/addSchedulePelatihDialogFragment"
         android:name="com.beone.kevin.ui.pelatih.addschedulepelatih.AddSchedulePelatihDialogFragment"
         tools:layout="@layout/add_schedule_pelatih_fragment"
-        android:label="AddSchedulePelatihDialogFragment" />
+        android:label="AddSchedulePelatihDialogFragment" >
+        <argument
+            android:name="setOnCllickDialogFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/selectTkiForTrainingFragment"
+        android:name="com.beone.kevin.ui.pelatih.selecttkifortraining.SelectTkiForTrainingFragment"
+        android:label="select_tki_for_training_fragment"
+        tools:layout="@layout/select_tki_for_training_fragment" >
+        <argument
+            android:name="idpilihan"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_selectTkiForTrainingFragment_to_addSelectTkiForTrainingDialogFragment"
+            app:destination="@id/addSelectTkiForTrainingDialogFragment"
+            app:popUpTo="@id/selectTkiForTrainingFragment"
+            app:popEnterAnim="@anim/fragment_fade_enter"
+            app:popExitAnim="@anim/fragment_fade_exit" />
+    </fragment>
+    <dialog
+        android:id="@+id/addSelectTkiForTrainingDialogFragment"
+        android:name="com.beone.kevin.ui.pelatih.selecttkifortraining.AddSelectTkiForTrainingDialogFragment"
+        android:label="AddSelectTkiForTrainingDialogFragment" >
+        <argument
+            android:name="idPilihan"
+            app:argType="string" />
+    </dialog>
+    <fragment
+        android:id="@+id/addNilaiFragment"
+        android:name="com.beone.kevin.ui.pelatih.addnilai.AddNilaiFragment"
+        android:label="add_nilai_fragment"
+        tools:layout="@layout/add_nilai_fragment" />
 </navigation>

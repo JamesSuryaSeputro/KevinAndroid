@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.pelatih.selecttkifortraining.SelectTkiForTrainingFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select TKI"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline1"
+            android:textSize="30sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_select_tki_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="10"
+            tools:listitem="@layout/select_tki_item" />
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="8dp"
+        android:src="@drawable/ic_action_add"
+        app:fabSize="normal" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

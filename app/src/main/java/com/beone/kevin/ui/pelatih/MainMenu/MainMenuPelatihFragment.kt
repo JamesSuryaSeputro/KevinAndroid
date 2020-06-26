@@ -36,5 +36,11 @@ class MainMenuPelatihFragment : Fragment() {
         btn_tambah_jadwal.setOnClickListener {
             it.findNavController().navigate(R.id.action_mainMenuPelatihFragment_to_schedulePelatihFragment)
         }
+
+        btn_tambah_nilai.setOnClickListener {
+            it.findNavController().navigate(R.id.action_mainMenuPelatihFragment_to_addNilaiFragment)
+        }
+
+
     }
 }

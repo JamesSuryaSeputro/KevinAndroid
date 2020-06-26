@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
         android:hint="Username"
-        android:text="billy"
+        android:text="kevin"
         android:inputType="text" />
 
     <EditText
@@ -38,7 +38,8 @@
         android:id="@+id/spr_categorylogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp" />
+        android:layout_marginHorizontal="30dp"
+        tools:listitem="@layout/support_simple_spinner_dropdown_item"/>
 
     <Button
         android:id="@+id/btn_login"

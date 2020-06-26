@@ -27,7 +27,6 @@ class JadwalAdapter(val itemOnClick: ItemOnClick) : RecyclerView.Adapter<JadwalA
         holder.bind(data[position],itemOnClick)
 
     fun swapData(newData: JadwalPelatihModel) {
-//        this.data = data
         val diffUtils = DiffUtil.calculateDiff(
             JadwalDiffUtilCallBack(
                 data,
