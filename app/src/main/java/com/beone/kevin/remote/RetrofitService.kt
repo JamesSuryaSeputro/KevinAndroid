@@ -127,6 +127,19 @@ interface RetrofitService {
                     @Field("passfoto") passfoto:String?,
                     @Field("ttdfoto") ttdfoto:String?): Call<StatusDataModel>
 
+    @POST("registerpelatih")
+    @FormUrlEncoded
+    fun registerPelatih(@Field("username") username: String?,
+                        @Field("password") password: String?,
+                        @Field("nama_pelatih") namapelatih: String?): Call<StatusDataModel>
+
+    @POST("registerpegawai")
+    @FormUrlEncoded
+    fun registerPegawai(@Field("username") username: String?,
+                        @Field("password") password: String?,
+                        @Field("nama_pegawai") namapegawai: String?,
+                        @Field("nip") nip: String?): Call<StatusDataModel>
+
     @POST("delete_jadwal_pelatih")
     @FormUrlEncoded
     fun deleteSchedulePelatih(

@@ -6,6 +6,8 @@ import com.beone.kevin.ui.login.LoginsViewModel
 import com.beone.kevin.ui.pelatih.MainMenu.MainMenuPelatihViewModel
 import com.beone.kevin.ui.pelatih.addschedulepelatih.AddSchedulePelatihViewModel
 import com.beone.kevin.ui.pelatih.schedulepelatih.SchedulePelatihViewModel
+import com.beone.kevin.ui.registercoach.RegisterCoachViewModel
+import com.beone.kevin.ui.registeremployee.RegisterEmployeeViewModel
 import com.beone.kevin.ui.registertki.RegisterTkiViewModel
 import com.beone.kevin.ui.user.mainuser.MainUserViewModel
 import com.beone.kevin.ui.user.scheduleuser.ScheduleUserViewModel
@@ -14,6 +16,7 @@ import com.beone.kevin.ui.user.uploaddocument.UploadDocumentViewModel
 import com.beone.kevin.ui.user.userpembayaran.UserPembayaranViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
+import retrofit2.Retrofit
 
 val viewModelModule = module {
 
@@ -34,6 +37,14 @@ val viewModelModule = module {
 
     viewModel<RegisterTkiViewModel> {
         RegisterTkiViewModel(get<RetrofitService>())
+    }
+
+    viewModel<RegisterCoachViewModel> {
+        RegisterCoachViewModel(get<RetrofitService>())
+    }
+
+    viewModel<RegisterEmployeeViewModel> {
+        RegisterEmployeeViewModel(get<RetrofitService>())
     }
 
     viewModel<ScoreViewViewModel> {

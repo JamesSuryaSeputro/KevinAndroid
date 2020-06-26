@@ -945,7 +945,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:padding="4dp"
-        android:text="Already registered?"
+        android:text="@string/already_registered"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
 
     <TextView
@@ -958,7 +958,7 @@
         android:clickable="true"
         android:focusable="true"
         android:padding="4dp"
-        android:text="Login"
+        android:text="@string/login"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
         android:textStyle="bold" />
 </RelativeLayout>

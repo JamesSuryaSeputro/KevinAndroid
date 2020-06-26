@@ -9,6 +9,7 @@ import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
 import com.beone.kevin.R
 import kotlinx.android.synthetic.main.base_form_register_coach_fragment.*
+import kotlinx.android.synthetic.main.base_form_register_employee_fragment.*
 
 abstract class BaseFormRegisterCoachFragment : Fragment() {
 
@@ -22,8 +23,8 @@ abstract class BaseFormRegisterCoachFragment : Fragment() {
         return inflater.inflate(R.layout.base_form_register_coach_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         ll_registercoach.setOnClickListener { hideKeyboard(ll_registercoach) }
     }
 

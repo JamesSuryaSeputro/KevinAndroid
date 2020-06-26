@@ -7,15 +7,21 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 
 const val HostLocal  = "http://192.168.1.8/apitki/public/"
+//const val HostLocal = "http://localhost:8080/apitki/public/"
 const val HostGCP = "https://krisjaya-2020.et.r.appspot.com/"
 val networkModule = module {
 
     fun provideGson() = GsonConverterFactory.create()
     fun provideHttpLoging() = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
     fun provideClient(httpLoggingInterceptor: HttpLoggingInterceptor) =
-        OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build()
+        OkHttpClient.Builder()
+            .connectTimeout(10, TimeUnit.SECONDS)
+            .writeTimeout(10, TimeUnit.SECONDS)
+            .readTimeout(30, TimeUnit.SECONDS)
+            .addInterceptor(httpLoggingInterceptor).build()
 
     fun provideRxJavaCallAdapter() = RxJava2CallAdapterFactory.create()
 
