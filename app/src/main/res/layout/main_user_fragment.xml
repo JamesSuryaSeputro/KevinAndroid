@@ -46,7 +46,7 @@
             android:weightSum="2">
 
             <Button
-                android:id="@+id/btn_Profile"
+                android:id="@+id/btn_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
                 android:layout_weight="1"

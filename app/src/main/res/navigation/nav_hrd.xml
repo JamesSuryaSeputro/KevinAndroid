@@ -12,10 +12,24 @@
         tools:layout="@layout/menu_hrd_fragment" >
         <action
             android:id="@+id/action_menuHrdFragment_to_registerCoachFragment"
-            app:destination="@id/registerCoachFragment" />
+            app:destination="@id/registerCoachFragment"
+            />
         <action
             android:id="@+id/action_menuHrdFragment_to_registerEmployeeFragment"
-            app:destination="@id/registerEmployeeFragment" />
+            app:destination="@id/registerEmployeeFragment"
+            app:popUpTo="@id/registerEmployeeFragment">
+        </action>
+        <action
+            android:id="@+id/action_menuHrdFragment_to_registerCoachFragment2"
+            app:popUpTo="@id/registerCoachFragment" />
+        <action
+            android:id="@+id/action_menuHrdFragment_to_checkDocumentFragment"
+            app:destination="@id/checkDocumentFragment"
+            app:popUpTo="@id/checkDocumentFragment" />
+        <action
+            android:id="@+id/action_menuHrdFragment_to_checkPembayaranFragment"
+            app:destination="@id/checkPembayaranFragment"
+            app:popUpTo="@id/checkPembayaranFragment" />
     </fragment>
 
     <action android:id="@+id/action_global_menuHrdFragment" app:destination="@id/menuHrdFragment" />
@@ -24,22 +38,42 @@
         android:id="@+id/registerCoachFragment"
         android:name="com.beone.kevin.ui.registercoach.RegisterCoachFragment"
         android:label="base_form_register_coach_fragment"
-        tools:layout="@layout/base_form_register_coach_fragment" >
-        <action
-            android:id="@+id/action_registerCoachFragment_to_menuHrdFragment"
-            app:destination="@id/menuHrdFragment"
-            app:popUpTo="@id/menuHrdFragment" />
-    </fragment>
+        tools:layout="@layout/base_form_register_coach_fragment" />
 
     <fragment
         android:id="@+id/registerEmployeeFragment"
         android:name="com.beone.kevin.ui.registeremployee.RegisterEmployeeFragment"
         android:label="base_form_register_employee_fragment"
-        tools:layout="@layout/base_form_register_employee_fragment" >
+        tools:layout="@layout/base_form_register_employee_fragment" />
+    <fragment
+        android:id="@+id/checkDocumentFragment"
+        android:name="com.beone.kevin.ui.hrd.checkuserdocument.CheckDocumentFragment"
+        android:label="check_document_fragment"
+        tools:layout="@layout/check_document_fragment" >
         <action
-            android:id="@+id/action_registerEmployeeFragment_to_menuHrdFragment"
-            app:destination="@id/menuHrdFragment"
-            app:popUpTo="@id/menuHrdFragment" />
+            android:id="@+id/action_checkDocumentFragment_to_approveUserDocumentFragment"
+            app:destination="@id/approveUserDocumentFragment"
+            app:popUpTo="@id/approveUserDocumentFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/approveUserDocumentFragment"
+        android:name="com.beone.kevin.ui.hrd.approvetkidocument.ApproveUserDocumentFragment"
+        android:label="approve_user_document_fragment"
+        tools:layout="@layout/approve_user_document_fragment" />
+    <fragment
+        android:id="@+id/checkPembayaranFragment"
+        android:name="com.beone.kevin.ui.hrd.checkuserpayment.CheckPembayaranFragment"
+        android:label="check_pembayaran_fragment"
+        tools:layout="@layout/check_pembayaran_fragment" >
+        <action
+            android:id="@+id/action_checkPembayaranFragment_to_approveUserPaymentFragment"
+            app:destination="@id/approveUserPaymentFragment"
+            app:popUpTo="@id/approveUserPaymentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/approveUserPaymentFragment"
+        android:name="com.beone.kevin.ui.hrd.approvetkipayment.ApproveUserPaymentFragment"
+        android:label="approve_user_payment_fragment"
+        tools:layout="@layout/approve_user_payment_fragment" />
 
 </navigation>

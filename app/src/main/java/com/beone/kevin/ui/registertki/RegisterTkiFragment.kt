@@ -10,11 +10,15 @@ import android.widget.AdapterView
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.beone.kevin.CustomImageUtils
 import com.beone.kevin.R
 import com.beone.kevin.remote.model.RegisterTKIModel
+import com.beone.kevin.ui.pelatih.selecttkifortraining.SelectTkiForTrainingFragmentArgs
 import kotlinx.android.synthetic.main.base_form_register_tki_fragment.*
+import kotlinx.android.synthetic.main.base_form_register_tki_fragment.view.*
 import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 
 class RegisterTkiFragment : BaseFormRegisterTkiFragment() {
@@ -26,7 +30,7 @@ class RegisterTkiFragment : BaseFormRegisterTkiFragment() {
         private const val RESULT_TTD = 13
     }
 
-    private val vm: RegisterTkiViewModel by inject()
+    private val vm: RegisterTkiViewModel by sharedViewModel()
     private var bitmapPf: Bitmap? = null
     private var bitmapTtd: Bitmap? = null
 
@@ -147,8 +151,11 @@ class RegisterTkiFragment : BaseFormRegisterTkiFragment() {
         }
     }
 
+    override fun initProfile() {
+        vm.showProfileUser()
+    }
 
-    override fun setTitleFragment(): String = "Register 2"
+    override fun setTitleFragment(): String = "Register"
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -183,7 +190,11 @@ class RegisterTkiFragment : BaseFormRegisterTkiFragment() {
                 }
             }
         }
-        initUi()
+        if() {
+            initUi()
+        } else {
+
+        }
 
         vm.initDataRegisterTki().observe(viewLifecycleOwner, Observer {
             if (it.status.equals("1")) {

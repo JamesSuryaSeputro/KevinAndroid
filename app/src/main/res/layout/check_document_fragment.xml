@@ -6,16 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.hrd.checkuserpayment.CheckPembayaranFragment">
+    tools:context=".ui.hrd.checkuserdocument.CheckDocumentFragment">
 
     <TextView
-        android:id="@+id/tv_titleuserpayment"
+        android:id="@+id/tv_titleuserdocument"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
         android:gravity="center"
-        android:text="Periksa Pembayaran Calon TKI"
+        android:text="Periksa Dokumen Calon TKI"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
 
     <androidx.recyclerview.widget.RecyclerView

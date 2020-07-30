@@ -1,13 +1,13 @@
 package com.beone.kevin.ui.user.mainuser
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.beone.kevin.R
-
+import kotlinx.android.synthetic.main.main_user_fragment.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainUserFragment : Fragment() {
@@ -27,7 +27,10 @@ class MainUserFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        // TODO: Use the ViewModel
-    }
+        btn_profile.setOnClickListener {
 
+            val action = MainUserFragmentDirections.actionMainUserFragmentToProfilTki(true)
+            this.findNavController().navigate(action)
+        }
+    }
 }
