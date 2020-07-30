@@ -47,7 +47,7 @@ class SelectTkiAdapter(val onSelectTkiListener: OnSelectTkiListener) :
                 "1" -> tv_gender.text = "Pria"
                 "2" -> tv_gender.text = "Wanita"
             }
-            tv_tanggal_terdaftar.text = item.tanggalterdaftar
+            tv_tanggal_terdaftars.text = item.tanggalterdaftar
             if (item.id.isNullOrEmpty()){
                 btn_delete.visibility = View.GONE
             }else{

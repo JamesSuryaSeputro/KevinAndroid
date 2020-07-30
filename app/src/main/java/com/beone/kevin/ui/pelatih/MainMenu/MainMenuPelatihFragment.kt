@@ -41,6 +41,18 @@ class MainMenuPelatihFragment : Fragment() {
             it.findNavController().navigate(R.id.action_mainMenuPelatihFragment_to_addNilaiFragment)
         }
 
+        btn_logout.setOnClickListener {
+            it.findNavController().navigate(R.id.action_global_loginsFragment)
+        }
 
+        btn_presensi_ujian.setOnClickListener {
+            it.findNavController().navigate(R.id.action_mainMenuPelatihFragment_to_presensiUjianFragment)
+        }
+        btn_presensi_test.setOnClickListener {
+            it.findNavController().navigate(R.id.action_mainMenuPelatihFragment_to_presensi_fragment)
+        }
+        btn_Profile.setOnClickListener {
+            it.findNavController().navigate(R.id.action_mainMenuPelatihFragment_to_profilePelatihFragment)
+        }
     }
 }

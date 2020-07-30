@@ -2,7 +2,6 @@ package com.beone.kevin.di
 
 import android.app.Application
 import android.content.Context
-import android.content.SharedPreferences
 import com.beone.kevin.SharedPreferenceUtils
 import org.koin.android.ext.koin.androidApplication
 import org.koin.core.qualifier.named

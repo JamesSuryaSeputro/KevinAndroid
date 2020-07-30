@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.pelatih.presensiujian.PresensiUjianFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Presensi Ujian"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline1"
+            android:textSize="30sp" />
+
+        <Spinner
+            android:id="@+id/spnr_jadwal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@android:layout/simple_dropdown_item_1line" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_presensiujian"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/add_item_nilai_user"
+            tools:itemCount="10"/>
+
+
+    </LinearLayout>
+</FrameLayout>

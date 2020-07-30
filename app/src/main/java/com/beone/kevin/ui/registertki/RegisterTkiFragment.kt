@@ -193,12 +193,12 @@ class RegisterTkiFragment : BaseFormRegisterTkiFragment() {
         })
 
         btn_pasfoto.setOnClickListener {
-            // TODO: 19/06/20 add pick picture
             val intent = Intent()
             intent.action = Intent.ACTION_GET_CONTENT
             intent.type = "image/*"
             startActivityForResult(intent, RESULT_PASFOTO)
         }
+
         btn_ttd.setOnClickListener {
             val intent = Intent()
             intent.action = Intent.ACTION_GET_CONTENT
