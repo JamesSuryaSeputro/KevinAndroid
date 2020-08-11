@@ -36,6 +36,12 @@ class MenuHrdFragment : Fragment() {
         btn_tambah_hrd.setOnClickListener {
             this.findNavController()?.navigate(R.id.action_menuHrdFragment_to_registerEmployeeFragment)
         }
+        btn_memeriksa_dokumen.setOnClickListener {
+            this.findNavController()?.navigate(R.id.action_menuHrdFragment_to_checkDocumentFragment)
+        }
+        btn_memeriksa_pembayaran.setOnClickListener {
+            this.findNavController()?.navigate(R.id.action_menuHrdFragment_to_checkPembayaranFragment)
+        }
         btn_logout.setOnClickListener{
             view?.findNavController()?.navigate(R.id.action_global_loginsFragment)
         }

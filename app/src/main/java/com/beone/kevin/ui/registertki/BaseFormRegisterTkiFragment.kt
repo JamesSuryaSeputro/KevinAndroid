@@ -2,6 +2,7 @@ package com.beone.kevin.ui.registertki
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,8 +10,10 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import com.beone.kevin.R
 import kotlinx.android.synthetic.main.base_form_register_tki_fragment.*
+import kotlinx.android.synthetic.main.base_form_register_tki_fragment.view.*
 
 
 abstract class BaseFormRegisterTkiFragment : Fragment() {
@@ -19,6 +22,12 @@ abstract class BaseFormRegisterTkiFragment : Fragment() {
     private lateinit var booleanArrayAdapter: ArrayAdapter<TypeBooleanEnum>
     private lateinit var skillArrayAdapter: ArrayAdapter<TypeSkillEnum>
     private lateinit var healthArrayAdapter: ArrayAdapter<TypeHealthEnum>
+    private var isProfil: Boolean = false
+    val args: RegisterTkiFragmentArgs by navArgs<RegisterTkiFragmentArgs>()
+
+    open fun getProfil(): Boolean {
+        return isProfil
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,11 +37,27 @@ abstract class BaseFormRegisterTkiFragment : Fragment() {
         return inflater.inflate(R.layout.base_form_register_tki_fragment, container, false)
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        isProfil = args.profil
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         tv_title.text = setTitleFragment()
         initSpinner()
         ll_register.setOnClickListener { hideKeyboard(ll_register) }
+
+        Log.d("a", "isProfil: " + isProfil)
+        if (isProfil) {
+            tv_title.text = getString(R.string.profil)
+            view.ll_pasfoto.visibility = View.GONE
+            view.ll_ttd.visibility = View.GONE
+            btn_signup.visibility = View.GONE
+            tv_registered.visibility = View.GONE
+            tv_tologin.visibility = View.GONE
+        } else {
+            img_pasfoto.visibility = View.GONE
+        }
     }
 
     abstract fun initUi()
@@ -143,7 +168,11 @@ abstract class BaseFormRegisterTkiFragment : Fragment() {
     fun checkSpinnerBooleanMandarinEdu(): TypeBooleanEnum {
         when (spnr_mandarinedu.selectedItem) {
             TypeBooleanEnum.Pilih -> {
-                Toast.makeText(requireContext(), "Pilih pendidikan bahasa Mandarin", Toast.LENGTH_SHORT)
+                Toast.makeText(
+                    requireContext(),
+                    "Pilih pendidikan bahasa Mandarin",
+                    Toast.LENGTH_SHORT
+                )
                     .show()
 
                 return TypeBooleanEnum.Pilih
@@ -160,10 +189,14 @@ abstract class BaseFormRegisterTkiFragment : Fragment() {
         }
     }
 
-    fun checkSpinnerSkillMandarin(): TypeSkillEnum{
+    fun checkSpinnerSkillMandarin(): TypeSkillEnum {
         when (spnr_mandarin.selectedItem) {
             TypeSkillEnum.Pilih -> {
-                Toast.makeText(requireContext(), "Pilih kemampuan bahasa Mandarin", Toast.LENGTH_SHORT)
+                Toast.makeText(
+                    requireContext(),
+                    "Pilih kemampuan bahasa Mandarin",
+                    Toast.LENGTH_SHORT
+                )
                     .show()
 
                 return TypeSkillEnum.Pilih
@@ -181,10 +214,14 @@ abstract class BaseFormRegisterTkiFragment : Fragment() {
         }
     }
 
-    fun checkSpinnerSkillEnglish(): TypeSkillEnum{
+    fun checkSpinnerSkillEnglish(): TypeSkillEnum {
         when (spnr_english.selectedItem) {
             TypeSkillEnum.Pilih -> {
-                Toast.makeText(requireContext(), "Pilih Kemampuan bahasa Inggris", Toast.LENGTH_SHORT)
+                Toast.makeText(
+                    requireContext(),
+                    "Pilih Kemampuan bahasa Inggris",
+                    Toast.LENGTH_SHORT
+                )
                     .show()
 
                 return TypeSkillEnum.Pilih
@@ -202,7 +239,7 @@ abstract class BaseFormRegisterTkiFragment : Fragment() {
         }
     }
 
-    fun checkSpinnerHealth(): TypeHealthEnum{
+    fun checkSpinnerHealth(): TypeHealthEnum {
         when (spnr_mcuresult.selectedItem) {
             TypeHealthEnum.Pilih -> {
                 Toast.makeText(requireContext(), "Pilih hasil medical check up", Toast.LENGTH_SHORT)

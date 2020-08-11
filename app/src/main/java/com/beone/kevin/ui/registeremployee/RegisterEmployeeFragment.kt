@@ -3,8 +3,6 @@ package com.beone.kevin.ui.registeremployee
 import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
-import com.beone.kevin.R
 import kotlinx.android.synthetic.main.base_form_register_employee_fragment.*
 import org.koin.android.ext.android.inject
 

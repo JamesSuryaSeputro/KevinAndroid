@@ -63,7 +63,8 @@ class UploadDocumentFragment : Fragment() {
                 tv_location_suratkerja.text = "ada"
             }
 
-            if (it.status.equals(0)){
+            if (it.status.equals("0")){
+
                 tv_status.text =  "Status : Pending"
             }else{
                 tv_status.text =  "Status : Success"

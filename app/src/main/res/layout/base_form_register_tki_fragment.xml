@@ -31,6 +31,14 @@
                 android:text="register"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
 
+            <ImageView
+                android:id="@+id/img_pasfoto"
+                android:layout_width="120dp"
+                android:layout_height="160dp"
+                android:layout_marginVertical="12dp"
+                android:layout_gravity="center"
+                android:background="@android:color/darker_gray"/>
+
             <EditText
                 android:id="@+id/edt_username"
                 android:layout_width="match_parent"
@@ -830,6 +838,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ll_pasfoto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -857,6 +866,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ll_ttd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"

@@ -2,12 +2,18 @@ package com.beone.kevin.di
 
 import com.beone.kevin.remote.RetrofitService
 import com.beone.kevin.ui.hrd.MenuHrdViewModel
+import com.beone.kevin.ui.hrd.approvetkidocument.ApproveUserDocumentViewModel
+import com.beone.kevin.ui.hrd.approvetkipayment.ApproveUserPaymentViewModel
+import com.beone.kevin.ui.hrd.checkuserdocument.CheckDocumentViewModel
+import com.beone.kevin.ui.hrd.checkuserpayment.CheckPembayaranViewModel
 import com.beone.kevin.ui.login.LoginsViewModel
 import com.beone.kevin.ui.pelatih.MainMenu.MainMenuPelatihViewModel
 import com.beone.kevin.ui.pelatih.addnilai.AddNilaiViewModel
+
 import com.beone.kevin.ui.pelatih.presensi.PresensiViewModel
 import com.beone.kevin.ui.pelatih.presensiujian.PresensiUjianViewModel
 import com.beone.kevin.ui.pelatih.profile.ProfilePelatihViewModel
+
 import com.beone.kevin.ui.pelatih.schedulepelatih.SchedulePelatihViewModel
 import com.beone.kevin.ui.pelatih.selecttkifortraining.SelectTkiForTrainingViewModel
 import com.beone.kevin.ui.registercoach.RegisterCoachViewModel
@@ -31,6 +37,7 @@ val viewModelModule = module {
     viewModel<UserPembayaranViewModel> {
         UserPembayaranViewModel(get<RetrofitService>())
     }
+
     viewModel<MenuHrdViewModel> {
         MenuHrdViewModel(get<RetrofitService>())
     }
@@ -78,6 +85,7 @@ val viewModelModule = module {
     viewModel<AddNilaiViewModel> {
         AddNilaiViewModel(get())
     }
+
     viewModel<PresensiViewModel> {
         PresensiViewModel(get())
     }
@@ -87,5 +95,21 @@ val viewModelModule = module {
     }
     viewModel<ProfilePelatihViewModel>{
         ProfilePelatihViewModel(get())
+
+    viewModel<CheckDocumentViewModel>{
+        CheckDocumentViewModel(get())
+    }
+
+    viewModel<ApproveUserDocumentViewModel>{
+        ApproveUserDocumentViewModel(get())
+    }
+
+    viewModel<CheckPembayaranViewModel>{
+        CheckPembayaranViewModel(get())
+    }
+
+    viewModel<ApproveUserPaymentViewModel>{
+        ApproveUserPaymentViewModel(get())
+
     }
 }
