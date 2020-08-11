@@ -12,6 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 
+
 const val HostLocal = "http://192.168.1.4/apitki/public/"
 const val HostGCP = "https://krisjaya-2020.et.r.appspot.com/"
 

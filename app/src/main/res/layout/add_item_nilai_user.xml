@@ -5,10 +5,11 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="8dp"
+    android:id="@+id/linearview"
     android:weightSum="10">
 
     <ImageView
-        android:id="@+id/img_profile"
+        android:id="@+id/img_profiles"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="3"

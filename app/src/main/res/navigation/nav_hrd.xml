@@ -30,6 +30,7 @@
             android:id="@+id/action_menuHrdFragment_to_checkPembayaranFragment"
             app:destination="@id/checkPembayaranFragment"
             app:popUpTo="@id/checkPembayaranFragment" />
+
     </fragment>
 
     <action android:id="@+id/action_global_menuHrdFragment" app:destination="@id/menuHrdFragment" />
@@ -45,6 +46,7 @@
         android:name="com.beone.kevin.ui.registeremployee.RegisterEmployeeFragment"
         android:label="base_form_register_employee_fragment"
         tools:layout="@layout/base_form_register_employee_fragment" />
+
     <fragment
         android:id="@+id/checkDocumentFragment"
         android:name="com.beone.kevin.ui.hrd.checkuserdocument.CheckDocumentFragment"

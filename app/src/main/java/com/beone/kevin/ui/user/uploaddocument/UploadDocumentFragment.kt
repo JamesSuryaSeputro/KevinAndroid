@@ -47,7 +47,6 @@ class UploadDocumentFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        // TODO: Use the ViewModel
 
         viewModel.initLiveData().observe(viewLifecycleOwner, Observer {
             if (!it.scanktp.equals("")){
@@ -63,7 +62,9 @@ class UploadDocumentFragment : Fragment() {
             if (!it.scansuratkerja.equals("")){
                 tv_location_suratkerja.text = "ada"
             }
+
             if (it.status.equals("0")){
+
                 tv_status.text =  "Status : Pending"
             }else{
                 tv_status.text =  "Status : Success"

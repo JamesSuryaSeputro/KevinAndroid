@@ -42,7 +42,7 @@ class LoginsFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        Log.d(TAG, "onActivityCreated: ${sharepreference.getIdUser}")
+
         vm.initLiveDataLogin().observe(viewLifecycleOwner, Observer {
             if (it.isFailedFetch == true) {
                 Toast.makeText(this.requireContext(), "gagal", Toast.LENGTH_SHORT).show()
