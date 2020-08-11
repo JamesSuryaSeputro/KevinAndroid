@@ -40,7 +40,7 @@
             tools:text="Cowok" />
 
         <TextView
-            android:id="@+id/tv_tanggal_terdaftar"
+            android:id="@+id/tv_tanggal_terdaftars"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline1"

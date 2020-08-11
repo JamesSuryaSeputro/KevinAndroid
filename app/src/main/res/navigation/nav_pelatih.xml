@@ -18,6 +18,24 @@
             android:id="@+id/action_mainMenuPelatihFragment_to_addNilaiFragment"
             app:destination="@id/addNilaiFragment"
             app:popUpTo="@id/mainMenuPelatihFragment" />
+        <action
+            android:id="@+id/action_mainMenuPelatihFragment_to_presensi_fragment"
+            app:destination="@id/presensiFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/fragment_open_enter"
+            app:popExitAnim="@anim/fragment_open_exit"
+            app:popUpTo="@id/mainMenuPelatihFragment" />
+        <action
+            android:id="@+id/action_mainMenuPelatihFragment_to_presensiUjianFragment"
+            app:destination="@id/presensiUjianFragment"
+            app:popUpTo="@id/mainMenuPelatihFragment" />
+        <action
+            android:id="@+id/action_mainMenuPelatihFragment_to_profilePelatihFragment"
+            app:destination="@id/profilePelatihFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popUpTo="@id/mainMenuPelatihFragment" />
     </fragment>
     <fragment
         android:id="@+id/schedulePelatihFragment"
@@ -68,4 +86,19 @@
         android:name="com.beone.kevin.ui.pelatih.addnilai.AddNilaiFragment"
         android:label="add_nilai_fragment"
         tools:layout="@layout/add_nilai_fragment" />
+    <fragment
+        android:id="@+id/presensiUjianFragment"
+        android:name="com.beone.kevin.ui.pelatih.presensiujian.PresensiUjianFragment"
+        android:label="presensi_ujian_fragment"
+        tools:layout="@layout/presensi_ujian_fragment" />
+    <fragment
+        android:id="@+id/presensiFragment"
+        android:name="com.beone.kevin.ui.pelatih.presensi.PresensiFragment"
+        android:label="presensi_fragment"
+        tools:layout="@layout/presensi_fragment" />
+    <fragment
+        android:id="@+id/profilePelatihFragment"
+        android:name="com.beone.kevin.ui.pelatih.profile.ProfilePelatihFragment"
+        android:label="profile_pelatih_fragment"
+        tools:layout="@layout/profile_pelatih_fragment" />
 </navigation>

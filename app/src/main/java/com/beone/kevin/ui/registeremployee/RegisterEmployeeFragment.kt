@@ -19,9 +19,6 @@ class RegisterEmployeeFragment : BaseFormRegisterEmployeeFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        tv_employeetologin.setOnClickListener {
-            findNavController().navigate(R.id.action_registerEmployeeFragment_to_menuHrdFragment)
-        }
 
         vm.initDataRegisterEmployee().observe(viewLifecycleOwner, Observer {
             if (it.status.equals("1")) {

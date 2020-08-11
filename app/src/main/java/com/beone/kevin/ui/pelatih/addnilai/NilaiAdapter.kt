@@ -2,12 +2,9 @@ package com.beone.kevin.ui.pelatih.addnilai
 
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.EditorInfo
-import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.beone.kevin.CustomImageUtils
@@ -16,10 +13,10 @@ import com.beone.kevin.remote.model.UserModel
 import com.beone.kevin.remote.model.UserModelItem
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.add_item_nilai_user.view.*
+import kotlinx.android.synthetic.main.select_tki_item.view.*
 import kotlinx.android.synthetic.main.select_tki_item.view.img_profile
 import kotlinx.android.synthetic.main.select_tki_item.view.tv_gender
 import kotlinx.android.synthetic.main.select_tki_item.view.tv_nama
-import kotlinx.android.synthetic.main.select_tki_item.view.tv_tanggal_terdaftar
 
 class NilaiAdapter(val onSelectTkiListener: OnSelectTkiListener) :
     RecyclerView.Adapter<NilaiAdapter.SelectTkiViewHolder>() {
@@ -48,15 +45,13 @@ class NilaiAdapter(val onSelectTkiListener: OnSelectTkiListener) :
     class SelectTkiViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(item: UserModelItem, onSelectTkiListener: OnSelectTkiListener) = with(itemView) {
             Glide.with(itemView).load(CustomImageUtils.stringToBitmap(item.passfoto))
-                .into(img_profile)
+                .into(img_profiles)
 
             tv_nama.text = item.nama
             when(item.jeniskelamin){
                 "1" -> tv_gender.text = "Pria"
                 "2" -> tv_gender.text = "Wanita"
             }
-            tv_tanggal_terdaftar.text = item.tanggalterdaftar
-
 
             if (item.nilai !=null){
                 edt_nilai.setText(item.nilai)

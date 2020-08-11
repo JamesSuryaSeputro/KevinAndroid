@@ -19,9 +19,6 @@ class RegisterCoachFragment : BaseFormRegisterCoachFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        tv_coachtologin.setOnClickListener {
-            findNavController().navigate(R.id.action_registerCoachFragment_to_menuHrdFragment)
-        }
 
         vm.initDataRegisterCoach().observe(viewLifecycleOwner, Observer {
             if (it.status.equals("1")) {
