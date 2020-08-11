@@ -64,14 +64,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="3">
 
             <Button
                 android:id="@+id/btn_dataUser"
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
                 android:layout_weight="1"
-                android:text="data user (TKI" />
+                android:text="data user (TKI)" />
+
+            <Button
+                android:id="@+id/btn_memeriksa_dokumen"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:text="Memeriksa Dokumen" />
 
             <Button
                 android:id="@+id/btn_logout"
@@ -80,6 +87,5 @@
                 android:layout_weight="1"
                 android:text="Logout" />
         </LinearLayout>
-
     </LinearLayout>
 </ScrollView>

@@ -32,10 +32,24 @@
             android:id="@+id/action_mainUserFragment_to_scoreViewFragment"
             app:destination="@id/scoreViewFragment"
             app:popUpTo="@id/mainUserFragment" />
+        <action
+            android:id="@+id/action_mainUserFragment_to_profilTki"
+            app:destination="@id/profilTki"
+            app:popUpTo="@id/profilTki" />
     </fragment>
     <fragment
         android:id="@+id/scoreViewFragment"
         android:name="com.beone.kevin.ui.user.scoreview.ScoreViewFragment"
         android:label="score_view_fragment"
         tools:layout="@layout/score_view_fragment" />
+    <fragment
+        android:id="@+id/profilTki"
+        android:name="com.beone.kevin.ui.registertki.RegisterTkiFragment"
+        android:label="profil_tki"
+        tools:layout="@layout/base_form_register_tki_fragment">
+        <argument
+            android:name="profil"
+            app:argType="boolean" />
+    </fragment>
+
 </navigation>
