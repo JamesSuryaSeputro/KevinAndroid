@@ -74,10 +74,7 @@ class SelectTkiForTrainingFragment : Fragment(),
     }
 
     override fun onDeleteTki(idUser: String?) {
-        viewModel.deleteUserToJadwal(idUser);
+        viewModel.deleteUserToJadwal(idUser)
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-    }
 }

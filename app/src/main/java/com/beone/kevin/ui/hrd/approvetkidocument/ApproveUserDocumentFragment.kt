@@ -82,7 +82,7 @@ class ApproveUserDocumentFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        btn_approve.setOnClickListener() {
+        btn_approve.setOnClickListener {
             viewModel.approveDocument(iduser, sharedPreferenceUtils.getIdUser, "1")
             this.findNavController().popBackStack()
         }

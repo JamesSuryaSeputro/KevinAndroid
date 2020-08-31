@@ -15,7 +15,7 @@ class UserPembayaranViewModel(val retrofitService: RetrofitService) : ViewModel(
     private var data : MutableLiveData<InfoPembayaranModel> = MutableLiveData()
 
     fun initDataPembayaran():LiveData<InfoPembayaranModel>{
-        return data;
+        return data
     }
 
 

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.beone.kevin.R
 import kotlinx.android.synthetic.main.main_user_fragment.*
@@ -31,6 +32,9 @@ class MainUserFragment : Fragment() {
 
             val action = MainUserFragmentDirections.actionMainUserFragmentToProfilTki(true)
             this.findNavController().navigate(action)
+        }
+        btn_logout.setOnClickListener{
+            it.findNavController().navigate(R.id.action_global_loginsFragment)
         }
     }
 }

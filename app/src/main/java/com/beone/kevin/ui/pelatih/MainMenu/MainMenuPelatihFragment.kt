@@ -26,11 +26,6 @@ class MainMenuPelatihFragment : Fragment() {
         return inflater.inflate(R.layout.main_menu_pelatih_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        // TODO: Use the ViewModel
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         btn_tambah_jadwal.setOnClickListener {

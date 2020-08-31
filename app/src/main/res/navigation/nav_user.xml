@@ -36,6 +36,7 @@
             android:id="@+id/action_mainUserFragment_to_profilTki"
             app:destination="@id/profilTki"
             app:popUpTo="@id/profilTki" />
+
     </fragment>
     <fragment
         android:id="@+id/scoreViewFragment"
@@ -51,5 +52,4 @@
             android:name="profil"
             app:argType="boolean" />
     </fragment>
-
 </navigation>

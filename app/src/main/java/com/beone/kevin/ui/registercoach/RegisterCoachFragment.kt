@@ -21,9 +21,10 @@ class RegisterCoachFragment : BaseFormRegisterCoachFragment() {
         super.onActivityCreated(savedInstanceState)
 
         vm.initDataRegisterCoach().observe(viewLifecycleOwner, Observer {
-            if (it.status.equals("1")) {
+            if (it.status.equals(1)) {
                 Toast.makeText(this.requireContext(), "Sukses", Toast.LENGTH_SHORT)
                     .show()
+                clearAll()
             }
         })
 
@@ -45,4 +46,9 @@ class RegisterCoachFragment : BaseFormRegisterCoachFragment() {
         }
     }
 
+    fun clearAll(){
+        edt_coachusername.setText("")
+        edt_coachpassword.setText("")
+        edt_coachname.setText("")
+    }
 }

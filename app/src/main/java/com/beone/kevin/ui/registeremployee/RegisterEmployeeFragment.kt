@@ -3,6 +3,7 @@ package com.beone.kevin.ui.registeremployee
 import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.Observer
+import kotlinx.android.synthetic.main.base_form_register_coach_fragment.*
 import kotlinx.android.synthetic.main.base_form_register_employee_fragment.*
 import org.koin.android.ext.android.inject
 
@@ -19,9 +20,10 @@ class RegisterEmployeeFragment : BaseFormRegisterEmployeeFragment() {
         super.onActivityCreated(savedInstanceState)
 
         vm.initDataRegisterEmployee().observe(viewLifecycleOwner, Observer {
-            if (it.status.equals("1")) {
+            if (it.status.equals(1)) {
                 Toast.makeText(this.requireContext(), "Sukses", Toast.LENGTH_SHORT)
                     .show()
+                clearAll()
             }
         })
 
@@ -43,5 +45,12 @@ class RegisterEmployeeFragment : BaseFormRegisterEmployeeFragment() {
                     .show()
             }
         }
+    }
+
+    fun clearAll(){
+        edt_employeeusername.setText("")
+        edt_employeepassword.setText("")
+        edt_employeename.setText("")
+        edt_nip.setText("")
     }
 }

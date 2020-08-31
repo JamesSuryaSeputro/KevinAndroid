@@ -31,16 +31,16 @@ class MenuHrdFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         // TODO: Use the ViewModel
         btn_tambah_pelatih.setOnClickListener {
-            this.findNavController()?.navigate(R.id.action_menuHrdFragment_to_registerCoachFragment)
+            this.findNavController().navigate(R.id.action_menuHrdFragment_to_registerCoachFragment)
         }
         btn_tambah_hrd.setOnClickListener {
-            this.findNavController()?.navigate(R.id.action_menuHrdFragment_to_registerEmployeeFragment)
+            this.findNavController().navigate(R.id.action_menuHrdFragment_to_registerEmployeeFragment)
         }
         btn_memeriksa_dokumen.setOnClickListener {
-            this.findNavController()?.navigate(R.id.action_menuHrdFragment_to_checkDocumentFragment)
+            this.findNavController().navigate(R.id.action_menuHrdFragment_to_checkDocumentFragment)
         }
         btn_memeriksa_pembayaran.setOnClickListener {
-            this.findNavController()?.navigate(R.id.action_menuHrdFragment_to_checkPembayaranFragment)
+            this.findNavController().navigate(R.id.action_menuHrdFragment_to_checkPembayaranFragment)
         }
         btn_logout.setOnClickListener{
             view?.findNavController()?.navigate(R.id.action_global_loginsFragment)

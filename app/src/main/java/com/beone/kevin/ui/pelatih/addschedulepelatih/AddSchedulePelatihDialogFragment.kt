@@ -29,11 +29,6 @@ class AddSchedulePelatihDialogFragment : BottomSheetDialogFragment() {
         private const val TAG = "AddSchedulePelatihDialog"
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     private val addSchedulePelatihViewModel: SchedulePelatihViewModel by sharedViewModel<SchedulePelatihViewModel>()
     private val sharedPreferenceUtils: SharedPreferenceUtils by inject<SharedPreferenceUtils>()
     override fun onCreateView(
@@ -82,10 +77,6 @@ class AddSchedulePelatihDialogFragment : BottomSheetDialogFragment() {
 
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-    }
-
     fun checkSpinnerSubject(): SubjectEnum {
         when (spnr_subject.selectedItem) {
             SubjectEnum.Bahasa -> {
@@ -119,8 +110,4 @@ class AddSchedulePelatihDialogFragment : BottomSheetDialogFragment() {
         }
     }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-
-    }
 }

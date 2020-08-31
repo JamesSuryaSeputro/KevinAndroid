@@ -23,9 +23,4 @@ class ScoreViewFragment : Fragment() {
         return inflater.inflate(R.layout.score_view_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        // TODO: Use the ViewModel
-    }
-
 }

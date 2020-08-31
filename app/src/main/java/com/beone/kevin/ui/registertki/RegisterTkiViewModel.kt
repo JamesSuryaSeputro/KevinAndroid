@@ -12,6 +12,7 @@ import com.beone.kevin.ui.hrd.checkuserpayment.CheckPembayaranViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import retrofit2.http.Field
 
 class RegisterTkiViewModel(val retrofitService: RetrofitService) : ViewModel() {
 
@@ -30,42 +31,28 @@ class RegisterTkiViewModel(val retrofitService: RetrofitService) : ViewModel() {
     }
 
     fun registerTki(a:RegisterTKIModel? ){
-            retrofitService.registerTki(a?.username, a?.password, a?.nama, a?.nopassport, a?.noktp, a?.tempatlahir,
-                a?.tanggallahir, a?.umur, a?.kewarganegaraan, a?.jeniskelamin, a?.alamat, a?.notelp, a?.notelpalternative,
-                a?.statuspernikahan, a?.tinggibadan, a?.beratbadan, a?.matakiri, a?.matakanan, a?.butawarna,
-                a?.upahyangdiinginkan, a?.sektor1, a?.sektor2, a?.sektor3, a?.pekerjaan1, a?.pekerjaan2,
-                a?.pekerjaan3, a?.lokasi1, a?.lokasi2, a?.lokasi3, a?.pendidikanterakhir, a?.bidang, a?.mandarin,
-                a?.inggris, a?.bahasalain, a?.sertifikatkerja1, a?.sertifikatkerja2, a?.sertifikatkerja3,
-                a?.pengalamankerja1, a?.pengalamankerjatanggalmulai1, a?.pengalamankerjaselesai1, a?.pengalamankerja2,
-                a?.pengalamankerjatanggalmulai2, a?.pengalamankerjaselesai2, a?.hasilmedicalcheckup, a?.tanggalmedicalcheck,
-                a?.klinikmedicalcheck, a?.pendidikanbahasamandarin, a?.namalembagapendidikan, a?.tglmulaipendidikanmandarin,
-                a?.tglselesaipendidikanmandarin, a?.passfoto, a?.ttdfoto).enqueue(object : Callback<StatusDataModel> {
-                override fun onFailure(call: Call<StatusDataModel>, t: Throwable) {
-                    Log.e(TAG, "onFailure: ",t )
-                }
-
-                override fun onResponse(
-                    call: Call<StatusDataModel>,
-                    response: Response<StatusDataModel>
-                ) {
-                    if (response.isSuccessful && response.body()!= null){
-                        data.postValue(response.body())
+            retrofitService.registerTki(a?.username, a?.password, a?.nama, a?.no_passport, a?.no_ktp, a?.tempatlahir, a?.tanggallahir,
+                a?.kewarganegaraan, a?.jeniskelamin, a?.alamat, a?.notelp, a?.passfoto, a?.ttdfoto).enqueue(
+                object : Callback<StatusDataModel> {
+                    override fun onFailure(call: Call<StatusDataModel>, t: Throwable) {
+                        Log.e(TAG, "onFailure: ", t)
                     }
-                }
-            })
+
+                    override fun onResponse(
+                        call: Call<StatusDataModel>,
+                        response: Response<StatusDataModel>
+                    ) {
+                        if (response.isSuccessful && response.body() != null) {
+                            data.postValue(response.body())
+                            Log.d(TAG, "onResponse: successful")
+                        }
+                    }
+                })
         }
 
     fun showProfileUser(a:RegisterTKIModel? ){
-        retrofitService.getProfilUser(a?.username, a?.password, a?.nama, a?.nopassport, a?.noktp, a?.tempatlahir,
-            a?.tanggallahir, a?.umur, a?.kewarganegaraan, a?.jeniskelamin, a?.alamat, a?.notelp, a?.notelpalternative,
-            a?.statuspernikahan, a?.tinggibadan, a?.beratbadan, a?.matakiri, a?.matakanan, a?.butawarna,
-            a?.upahyangdiinginkan, a?.sektor1, a?.sektor2, a?.sektor3, a?.pekerjaan1, a?.pekerjaan2,
-            a?.pekerjaan3, a?.lokasi1, a?.lokasi2, a?.lokasi3, a?.pendidikanterakhir, a?.bidang, a?.mandarin,
-            a?.inggris, a?.bahasalain, a?.sertifikatkerja1, a?.sertifikatkerja2, a?.sertifikatkerja3,
-            a?.pengalamankerja1, a?.pengalamankerjatanggalmulai1, a?.pengalamankerjaselesai1, a?.pengalamankerja2,
-            a?.pengalamankerjatanggalmulai2, a?.pengalamankerjaselesai2, a?.hasilmedicalcheckup, a?.tanggalmedicalcheck,
-            a?.klinikmedicalcheck, a?.pendidikanbahasamandarin, a?.namalembagapendidikan, a?.tglmulaipendidikanmandarin,
-            a?.tglselesaipendidikanmandarin, a?.passfoto, a?.ttdfoto).enqueue(object :
+        retrofitService.getProfilUser(a?.username, a?.password, a?.nama, a?.no_passport, a?.no_ktp, a?.tempatlahir, a?.tanggallahir,
+            a?.kewarganegaraan, a?.jeniskelamin, a?.alamat, a?.notelp, a?.passfoto, a?.ttdfoto).enqueue(object :
             Callback<RegisterTKIModel> {
             override fun onFailure(call: Call<RegisterTKIModel>, t: Throwable) {
                 Log.e(TAG, "onFailure: ",t )

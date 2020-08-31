@@ -15,6 +15,7 @@ import com.beone.kevin.CustomImageUtils
 import com.beone.kevin.R
 import com.beone.kevin.remote.model.RegisterTKIModel
 import com.beone.kevin.ui.pelatih.selecttkifortraining.SelectTkiForTrainingFragmentArgs
+import kotlinx.android.synthetic.main.base_form_register_employee_fragment.*
 import kotlinx.android.synthetic.main.base_form_register_tki_fragment.*
 import kotlinx.android.synthetic.main.base_form_register_tki_fragment.view.*
 import org.koin.android.ext.android.inject
@@ -36,124 +37,56 @@ class RegisterTkiFragment : BaseFormRegisterTkiFragment() {
 
     override fun initUi() {
         var genderEnum: TypeGenderEnum
-        var maritalStatusEnum: TypeMaritalStatusEnum
-        var booleanColorBlindEnum: TypeBooleanEnum
-        var booleanMandarinEduEnum: TypeBooleanEnum
-        var skillMandarinEnum: TypeSkillEnum
-        var skillEnglishEnum: TypeSkillEnum
-        var healthEnum: TypeHealthEnum
 
         btn_signup.setOnClickListener {
             Log.d(TAG, "btnSignup: clicked")
             genderEnum = checkSpinnerGender()
-            maritalStatusEnum = checkSpinnerMaritalStatus()
-            booleanColorBlindEnum = checkSpinnerBooleanColorBlind()
-            booleanMandarinEduEnum = checkSpinnerBooleanMandarinEdu()
-            skillMandarinEnum = checkSpinnerSkillMandarin()
-            skillEnglishEnum = checkSpinnerSkillEnglish()
-            healthEnum = checkSpinnerHealth()
-
             Log.d(
-                TAG, "initUI: gender: ${genderEnum} ordinal value: ${genderEnum.ordinal} \n" +
-                        "initUI: maritalstatus: ${maritalStatusEnum} ordinal value: ${maritalStatusEnum.ordinal} \n" +
-                        "initUI: boolean color: ${booleanColorBlindEnum} ordinal value: ${booleanColorBlindEnum.ordinal} \n" +
-                        "initUI: boolean mandarin: ${booleanMandarinEduEnum} ordinal value: ${booleanMandarinEduEnum.ordinal} \n" +
-                        "initUI: skill mandarin: ${skillMandarinEnum} ordinal value: ${skillMandarinEnum.ordinal} \n" +
-                        "initUI: skill english: ${skillEnglishEnum} ordinal value: ${skillEnglishEnum.ordinal} \n" +
-                        "initUI: health: ${healthEnum} ordinal value: ${healthEnum.ordinal} \n"
+                TAG, "initUI: gender: ${genderEnum} ordinal value: ${genderEnum.ordinal} \n"
             )
 
-            if (edt_address.text.toString() != "" && edt_otherlanguage.text.toString() != "" && edt_weight.text.toString() != ""
-                && edt_field.text.toString() != "" && edt_nationality.text.toString() != "" && edt_checkuprs.text.toString() != ""
-                && edt_joblocation1.text.toString() != "" || edt_joblocation2.text.toString() != "" || edt_joblocation3.text.toString() != ""
-                && edt_right.text.toString() != "" && edt_left.text.toString() != "" && edt_name.text.toString() != ""
-                && edt_mandarinedu.text.toString() != "" && edt_noktp.text.toString() != "" && edt_nopassport.text.toString() != ""
-                && edt_nohp.text.toString() != "" && edt_noalternative.text.toString() != "" && edt_password.text.toString() != ""
-                && edt_job1.text.toString() != "" || edt_job2.text.toString() != "" || edt_job3.text.toString() != ""
-                && edt_lasteducation.text.toString() != "" && edt_workexperience1.text.toString() != "" || edt_workexperience2.text.toString()
-                != "" && edt_enddate1.text.toString() != "" || edt_enddate2.text.toString() != "" && edt_startdate1.text.toString() != ""
-                || edt_startdate2.text.toString() != "" && edt_sector1.text.toString() != "" || edt_sector2.text.toString() != ""
-                || edt_sector3.text.toString() != "" && edt_jobcertificate1.text.toString() != "" || edt_jobcertificate2.text.toString() != ""
-                || edt_jobcertificate3.text.toString() != "" && edt_dateofbirth.text.toString() != "" && edt_checkuprs.text.toString() != ""
-                && edt_mandarinstartdate.text.toString() != "" && edt_mandarinenddate.text.toString() != "" && edt_place.text.toString() == ""
-                && edt_height.text.toString() != "" && edt_age.text.toString() != "" && edt_wage.text.toString() != "" && edt_username.text.toString() != ""
-            ) {
+            if(genderEnum.ordinal != 0) {
                 var pasfoto: String? = ""
                 var fotoTtd: String? = ""
-                if (bitmapPf != null && bitmapTtd != null) {
+                if (edt_address.text.toString() != "" && edt_nationality.text.toString() != "" && edt_name.text.toString() != ""
+                    && edt_noktp.text.toString() != "" && edt_nopassport.text.toString() != "" && edt_nohp.text.toString() != ""
+                    && edt_password.text.toString() != "" && edt_place.text.toString() != "" && edt_username.text.toString() != ""
+                    && bitmapPf != null && bitmapTtd != null
+                ) {
                     pasfoto = bitmapPf?.let { it1 -> CustomImageUtils.BitmapToString(it1) }
                     fotoTtd = bitmapTtd?.let { it1 -> CustomImageUtils.BitmapToString(it1) }
                     vm.registerTki(
                         RegisterTKIModel(
                             edt_address.text.toString(),
-                            edt_otherlanguage.text.toString(),
-                            edt_weight.text.toString(),
-                            edt_field.text.toString(),
-                            booleanColorBlindEnum.ordinal.toString(),
-                            healthEnum.ordinal.toString(),
-                            skillEnglishEnum.ordinal.toString(),
                             genderEnum.ordinal.toString(),
                             edt_nationality.text.toString(),
-                            edt_checkuprs.text.toString(),
-                            edt_joblocation1.text.toString(),
-                            edt_joblocation2.text.toString(),
-                            edt_joblocation3.text.toString(),
-                            skillMandarinEnum.ordinal.toString(),
-                            edt_right.text.toString(),
-                            edt_left.text.toString(),
                             edt_name.text.toString(),
-                            edt_mandarinedu.text.toString(),
                             edt_noktp.text.toString(),
                             edt_nopassport.text.toString(),
                             edt_nohp.text.toString(),
-                            edt_noalternative.text.toString(),
                             pasfoto!!,
                             edt_password.text.toString(),
-                            edt_job1.text.toString(),
-                            edt_job2.text.toString(),
-                            edt_job3.text.toString(),
-                            booleanMandarinEduEnum.ordinal.toString(),
-                            edt_lasteducation.text.toString(),
-                            edt_workexperience1.text.toString(),
-                            edt_workexperience2.text.toString(),
-                            edt_enddate1.text.toString(),
-                            edt_enddate2.text.toString(),
-                            edt_startdate1.text.toString(),
-                            edt_startdate2.text.toString(),
-                            edt_sector1.text.toString(),
-                            edt_sector2.text.toString(),
-                            edt_sector3.text.toString(),
-                            edt_jobcertificate1.text.toString(),
-                            edt_jobcertificate2.text.toString(),
-                            edt_jobcertificate3.text.toString(),
-                            maritalStatusEnum.ordinal.toString(),
                             edt_dateofbirth.text.toString(),
-                            edt_checkupdate.text.toString(),
-                            edt_mandarinstartdate.text.toString(),
-                            edt_mandarinenddate.text.toString(),
                             edt_place.text.toString(),
-                            edt_height.text.toString(),
                             fotoTtd!!,
-                            edt_age.text.toString(),
-                            edt_wage.text.toString(),
                             edt_username.text.toString()
                         )
                     )
                 } else {
+                    Log.d(TAG, "masih kosong ")
                     Toast.makeText(
                         this.requireContext(),
                         "Masih ada yang kosong",
                         Toast.LENGTH_SHORT
-                    )
-                        .show()
+                    ).show()
                 }
             }
         }
     }
 
-    override fun initProfile() {
-        vm.showProfileUser()
-    }
+//    override fun initProfile() {
+//        vm.showProfileUser()
+//    }
 
     override fun setTitleFragment(): String = "Register"
 
@@ -162,44 +95,12 @@ class RegisterTkiFragment : BaseFormRegisterTkiFragment() {
         tv_tologin.setOnClickListener {
             findNavController().navigate(R.id.action_registerFragment_to_loginsFragment)
         }
-        spnr_mandarinedu.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-                Log.d(TAG, "Nothing Selected")
-            }
-
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-                if (spnr_mandarinedu.selectedItem.toString()!="Ya") {
-                    Log.d(TAG, "selectedItem: " + spnr_mandarinedu.selectedItem)
-                    Log.d(TAG, "selectedItemId: " + spnr_mandarinedu.selectedItemId)
-                    edt_mandarinedu.isEnabled = false
-                    edt_mandarinstartdate.isEnabled = false
-                    edt_mandarinenddate.isEnabled = false
-                    edt_mandarinedu.setText("")
-                    edt_mandarinstartdate.setText("")
-                    edt_mandarinenddate.setText("")
-                }
-                else{
-                    edt_mandarinedu.isEnabled = true
-                    edt_mandarinstartdate.isEnabled = true
-                    edt_mandarinenddate.isEnabled = true
-                }
-            }
-        }
-        if() {
-            initUi()
-        } else {
-
-        }
+        initUi()
 
         vm.initDataRegisterTki().observe(viewLifecycleOwner, Observer {
-            if (it.status.equals("1")) {
-                Toast.makeText(this.requireContext(), "Sukses", Toast.LENGTH_SHORT)
-                    .show()
+            if (it.status.equals(1)) {
+                Toast.makeText(this.requireContext(), "Sukses", Toast.LENGTH_SHORT).show()
+                clearAll()
             }
         })
 
@@ -239,5 +140,22 @@ class RegisterTkiFragment : BaseFormRegisterTkiFragment() {
                 }
             }
         }
+    }
+
+    fun clearAll(){
+        edt_address.setText("")
+        edt_nationality.setText("")
+        edt_name.setText("")
+        edt_noktp.setText("")
+        edt_nopassport.setText("")
+        edt_nohp.setText("")
+        tv_filepf.setText("")
+        bitmapPf = null
+        edt_password.setText("")
+        edt_dateofbirth.setText("")
+        edt_place.setText("")
+        tv_filettd.setText("")
+        bitmapTtd = null
+        edt_username.setText("")
     }
 }

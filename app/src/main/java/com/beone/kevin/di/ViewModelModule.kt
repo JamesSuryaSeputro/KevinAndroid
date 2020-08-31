@@ -89,12 +89,14 @@ val viewModelModule = module {
     viewModel<PresensiViewModel> {
         PresensiViewModel(get())
     }
-    
+
     viewModel<PresensiUjianViewModel> {
         PresensiUjianViewModel(get())
     }
-    viewModel<ProfilePelatihViewModel>{
+
+    viewModel<ProfilePelatihViewModel> {
         ProfilePelatihViewModel(get())
+    }
 
     viewModel<CheckDocumentViewModel>{
         CheckDocumentViewModel(get())
@@ -110,6 +112,5 @@ val viewModelModule = module {
 
     viewModel<ApproveUserPaymentViewModel>{
         ApproveUserPaymentViewModel(get())
-
     }
 }

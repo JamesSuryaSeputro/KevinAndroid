@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import com.beone.kevin.R
 import com.beone.kevin.SharedPreferenceUtils
 import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.profile_pelatih_fragment.*
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -37,11 +38,6 @@ class ProfilePelatihFragment : Fragment() {
             tv_active_since.text = "Active since :" + it.datecreated
         })
         viewModel.getprofile(sharedPreferenceUtils.getIdUser)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
     }
 
 

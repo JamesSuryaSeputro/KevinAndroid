@@ -24,7 +24,7 @@ class UserPembayaranFragment : Fragment() {
         fun newInstance() =
             UserPembayaranFragment()
         private const val TAG = "UserPembayaranFragment"
-        private const val RESULT_GALLERY = 12;
+        private const val RESULT_GALLERY = 12
     }
 
     private val viewModel: UserPembayaranViewModel by inject()
@@ -43,7 +43,7 @@ class UserPembayaranFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         viewModel.initDataPembayaran().observe(viewLifecycleOwner, Observer {
-            tv_nama.text = it.nama;
+            tv_nama.text = it.nama
             swp_refresh.isRefreshing = false
 
             if (!it.status.isNullOrEmpty()) {
@@ -68,10 +68,10 @@ class UserPembayaranFragment : Fragment() {
 
         })
 
-        viewModel.checkPembayaran(sharedPreferenceUtils.getIdUser);
+        viewModel.checkPembayaran(sharedPreferenceUtils.getIdUser)
 
         swp_refresh.setOnRefreshListener {
-            viewModel.checkPembayaran(sharedPreferenceUtils.getIdUser);
+            viewModel.checkPembayaran(sharedPreferenceUtils.getIdUser)
         }
 
 
@@ -106,7 +106,7 @@ class UserPembayaranFragment : Fragment() {
 
                 if (data?.data != null) {
                     bitmap =
-                        MediaStore.Images.Media.getBitmap(this.context?.contentResolver, data?.data)
+                        MediaStore.Images.Media.getBitmap(this.context?.contentResolver, data.data)
                     Glide.with(this).load(bitmap).into(img_bukti_pembayaran)
                 }
 

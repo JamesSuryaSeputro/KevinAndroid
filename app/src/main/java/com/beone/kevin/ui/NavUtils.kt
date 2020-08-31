@@ -1,4 +1,3 @@
 package com.beone.kevin.ui
 
-class NavUtils {
-}
+class NavUtils

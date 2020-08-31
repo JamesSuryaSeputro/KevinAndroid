@@ -18,16 +18,12 @@ import kotlinx.android.synthetic.main.base_form_register_tki_fragment.view.*
 
 abstract class BaseFormRegisterTkiFragment : Fragment() {
     private lateinit var genderArrayAdapter: ArrayAdapter<TypeGenderEnum>
-    private lateinit var maritalStatusArrayAdapter: ArrayAdapter<TypeMaritalStatusEnum>
-    private lateinit var booleanArrayAdapter: ArrayAdapter<TypeBooleanEnum>
-    private lateinit var skillArrayAdapter: ArrayAdapter<TypeSkillEnum>
-    private lateinit var healthArrayAdapter: ArrayAdapter<TypeHealthEnum>
-    private var isProfil: Boolean = false
-    val args: RegisterTkiFragmentArgs by navArgs<RegisterTkiFragmentArgs>()
+   // private var isProfil: Boolean = false
+//    val args: RegisterTkiFragmentArgs by navArgs<RegisterTkiFragmentArgs>()
 
-    open fun getProfil(): Boolean {
-        return isProfil
-    }
+//    open fun getProfil(): Boolean {
+//        return isProfil
+//    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,27 +33,28 @@ abstract class BaseFormRegisterTkiFragment : Fragment() {
         return inflater.inflate(R.layout.base_form_register_tki_fragment, container, false)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        isProfil = args.profil
-    }
+//    override fun onCreate(savedInstanceState: Bundle?) {
+////        super.onCreate(savedInstanceState)
+////        isProfil = args.profil
+////    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         tv_title.text = setTitleFragment()
         initSpinner()
         ll_register.setOnClickListener { hideKeyboard(ll_register) }
 
-        Log.d("a", "isProfil: " + isProfil)
-        if (isProfil) {
-            tv_title.text = getString(R.string.profil)
-            view.ll_pasfoto.visibility = View.GONE
-            view.ll_ttd.visibility = View.GONE
-            btn_signup.visibility = View.GONE
-            tv_registered.visibility = View.GONE
-            tv_tologin.visibility = View.GONE
-        } else {
+//        Log.d("a", "isProfil: " + isProfil)
+//        if (isProfil) {
+//            tv_title.text = getString(R.string.profil)
+//            view.ll_pasfoto.visibility = View.GONE
+//            view.ll_ttd.visibility = View.GONE
+//            btn_signup.visibility = View.GONE
+//            tv_registered.visibility = View.GONE
+//            tv_tologin.visibility = View.GONE
+//        } else {
             img_pasfoto.visibility = View.GONE
-        }
+//        }
     }
 
     abstract fun initUi()
@@ -69,34 +66,8 @@ abstract class BaseFormRegisterTkiFragment : Fragment() {
             android.R.layout.simple_spinner_dropdown_item,
             TypeGenderEnum.values()
         )
-        maritalStatusArrayAdapter = ArrayAdapter(
-            requireContext(),
-            android.R.layout.simple_spinner_dropdown_item,
-            TypeMaritalStatusEnum.values()
-        )
-        booleanArrayAdapter = ArrayAdapter(
-            requireContext(),
-            android.R.layout.simple_spinner_dropdown_item,
-            TypeBooleanEnum.values()
-        )
-        skillArrayAdapter = ArrayAdapter(
-            requireContext(),
-            android.R.layout.simple_spinner_dropdown_item,
-            TypeSkillEnum.values()
-        )
-        healthArrayAdapter = ArrayAdapter(
-            requireContext(),
-            android.R.layout.simple_spinner_dropdown_item,
-            TypeHealthEnum.values()
-        )
 
         spnr_gender.adapter = genderArrayAdapter
-        spnr_maritalstatus.adapter = maritalStatusArrayAdapter
-        spnr_colorblind.adapter = booleanArrayAdapter
-        spnr_mandarinedu.adapter = booleanArrayAdapter
-        spnr_mandarin.adapter = skillArrayAdapter
-        spnr_english.adapter = skillArrayAdapter
-        spnr_mcuresult.adapter = healthArrayAdapter
     }
 
     fun hideKeyboard(view: View) {
@@ -122,140 +93,6 @@ abstract class BaseFormRegisterTkiFragment : Fragment() {
                 return TypeGenderEnum.Wanita
             }
             else -> throw Exception("Wrong type for gender")
-        }
-    }
-
-    fun checkSpinnerMaritalStatus(): TypeMaritalStatusEnum {
-        when (spnr_maritalstatus.selectedItem) {
-            TypeMaritalStatusEnum.Status_Pernikahan -> {
-                Toast.makeText(requireContext(), "Pilih status pernikahan", Toast.LENGTH_SHORT)
-                    .show()
-
-                return TypeMaritalStatusEnum.Status_Pernikahan
-            }
-            TypeMaritalStatusEnum.Menikah -> {
-
-                return TypeMaritalStatusEnum.Menikah
-            }
-            TypeMaritalStatusEnum.Lajang -> {
-
-                return TypeMaritalStatusEnum.Lajang
-            }
-            else -> throw Exception("Wrong type for marital status")
-        }
-    }
-
-    fun checkSpinnerBooleanColorBlind(): TypeBooleanEnum {
-        when (spnr_colorblind.selectedItem) {
-            TypeBooleanEnum.Pilih -> {
-                Toast.makeText(requireContext(), "Buta warna belum dipilih", Toast.LENGTH_SHORT)
-                    .show()
-
-                return TypeBooleanEnum.Pilih
-            }
-            TypeBooleanEnum.Ya -> {
-
-                return TypeBooleanEnum.Ya
-            }
-            TypeBooleanEnum.Tidak -> {
-
-                return TypeBooleanEnum.Tidak
-            }
-            else -> throw Exception("Wrong type for boolean color blind")
-        }
-    }
-
-    fun checkSpinnerBooleanMandarinEdu(): TypeBooleanEnum {
-        when (spnr_mandarinedu.selectedItem) {
-            TypeBooleanEnum.Pilih -> {
-                Toast.makeText(
-                    requireContext(),
-                    "Pilih pendidikan bahasa Mandarin",
-                    Toast.LENGTH_SHORT
-                )
-                    .show()
-
-                return TypeBooleanEnum.Pilih
-            }
-            TypeBooleanEnum.Ya -> {
-
-                return TypeBooleanEnum.Ya
-            }
-            TypeBooleanEnum.Tidak -> {
-
-                return TypeBooleanEnum.Tidak
-            }
-            else -> throw Exception("Wrong type for boolean mandarin edu")
-        }
-    }
-
-    fun checkSpinnerSkillMandarin(): TypeSkillEnum {
-        when (spnr_mandarin.selectedItem) {
-            TypeSkillEnum.Pilih -> {
-                Toast.makeText(
-                    requireContext(),
-                    "Pilih kemampuan bahasa Mandarin",
-                    Toast.LENGTH_SHORT
-                )
-                    .show()
-
-                return TypeSkillEnum.Pilih
-            }
-            TypeSkillEnum.Kurang -> {
-                return TypeSkillEnum.Kurang
-            }
-            TypeSkillEnum.Cukup -> {
-                return TypeSkillEnum.Cukup
-            }
-            TypeSkillEnum.Baik -> {
-                return TypeSkillEnum.Baik
-            }
-            else -> throw Exception("Wrong type for skill mandarin")
-        }
-    }
-
-    fun checkSpinnerSkillEnglish(): TypeSkillEnum {
-        when (spnr_english.selectedItem) {
-            TypeSkillEnum.Pilih -> {
-                Toast.makeText(
-                    requireContext(),
-                    "Pilih Kemampuan bahasa Inggris",
-                    Toast.LENGTH_SHORT
-                )
-                    .show()
-
-                return TypeSkillEnum.Pilih
-            }
-            TypeSkillEnum.Kurang -> {
-                return TypeSkillEnum.Kurang
-            }
-            TypeSkillEnum.Cukup -> {
-                return TypeSkillEnum.Cukup
-            }
-            TypeSkillEnum.Baik -> {
-                return TypeSkillEnum.Baik
-            }
-            else -> throw Exception("Wrong type for skill english")
-        }
-    }
-
-    fun checkSpinnerHealth(): TypeHealthEnum {
-        when (spnr_mcuresult.selectedItem) {
-            TypeHealthEnum.Pilih -> {
-                Toast.makeText(requireContext(), "Pilih hasil medical check up", Toast.LENGTH_SHORT)
-                    .show()
-
-                return TypeHealthEnum.Pilih
-            }
-            TypeHealthEnum.Sehat -> {
-
-                return TypeHealthEnum.Sehat
-            }
-            TypeHealthEnum.Tidak -> {
-
-                return TypeHealthEnum.Tidak
-            }
-            else -> throw Exception("Wrong type for health")
         }
     }
 }

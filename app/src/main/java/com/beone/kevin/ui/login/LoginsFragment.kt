@@ -62,15 +62,15 @@ class LoginsFragment : Fragment() {
                     when (it.TypeLogin) {
                         TypeLoginEnum.TKI.jenis -> {
                             this.findNavController()
-                                ?.navigate(R.id.action_loginsFragment_to_nav_user)
+                                .navigate(R.id.action_loginsFragment_to_nav_user)
                         }
                         TypeLoginEnum.PELATIH.jenis -> {
                             this.findNavController()
-                                ?.navigate(R.id.action_loginsFragment_to_nav_pelatih)
+                                .navigate(R.id.action_loginsFragment_to_nav_pelatih)
                         }
                         TypeLoginEnum.PEGAWAI.jenis -> {
                             this.findNavController()
-                                ?.navigate(R.id.action_loginsFragment_to_nav_hrd)
+                                .navigate(R.id.action_loginsFragment_to_nav_hrd)
                         }
                     }
                 }
@@ -78,7 +78,7 @@ class LoginsFragment : Fragment() {
         })
 
         btn_register.setOnClickListener {
-            this.findNavController()?.navigate(R.id.register_action)
+            this.findNavController().navigate(R.id.register_action)
         }
 
         btn_login.setOnClickListener {

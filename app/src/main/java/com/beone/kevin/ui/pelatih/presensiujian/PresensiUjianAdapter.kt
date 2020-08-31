@@ -79,8 +79,5 @@ class PresensiUjianAdapter(private val presensiUjianListener: PresensiUjianListe
             return oldData.get(oldItemPosition).equals(newData.get(newItemPosition))
         }
 
-        override fun getChangePayload(oldItemPosition: Int, newItemPosition: Int): Any? {
-            return super.getChangePayload(oldItemPosition, newItemPosition)
-        }
     }
 }

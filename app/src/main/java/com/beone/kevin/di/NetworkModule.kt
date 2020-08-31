@@ -13,14 +13,14 @@ import java.util.concurrent.TimeUnit
 
 
 
-const val HostLocal = "http://192.168.1.4/apitki/public/"
+const val HostLocal = "http://192.168.1.9/apitki/public/"
 const val HostGCP = "https://krisjaya-2020.et.r.appspot.com/"
 
 fun provideIP(): String {
     if (BuildConfig.DEBUG) {
-        return HostLocal
-    } else {
         return HostGCP
+    } else {
+        return HostLocal
     }
 }
 

@@ -46,7 +46,7 @@ class SchedulePelatihFragment : Fragment(),
             adapter.swapData(it)
         })
 
-        viewModel.getData(sharedPreferenceUtils.getIdUser);
+        viewModel.getData(sharedPreferenceUtils.getIdUser)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

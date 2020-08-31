@@ -43,8 +43,8 @@ class UserPaymentAdapter (val onClickUser: OnClickUser) :
 
         class UserPaymentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             fun bind(item: CheckUserDataModelItem, onClickUser: OnClickUser) = with(itemView) {
-                tv_user.setText(item.nama)
-                tv_datecreated.setText(item.datecreated)
+                tv_user.text = item.nama
+                tv_datecreated.text = item.datecreated
                 setOnClickListener {
                     onClickUser.onClick(item.iduser, item.nama)
                 }
