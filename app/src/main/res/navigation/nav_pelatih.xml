@@ -98,7 +98,7 @@
         tools:layout="@layout/presensi_fragment" />
     <fragment
         android:id="@+id/profilePelatihFragment"
-        android:name="com.beone.kevin.ui.pelatih.profile.ProfilePelatihFragment"
+        android:name="com.beone.kevin.ui.pelatih.profilecoach.ProfilePelatihFragment"
         android:label="profile_pelatih_fragment"
         tools:layout="@layout/profile_pelatih_fragment" />
 </navigation>

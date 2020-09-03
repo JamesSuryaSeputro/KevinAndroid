@@ -1,12 +1,16 @@
 package com.beone.kevin.ui.hrd
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.beone.kevin.remote.RetrofitService
+import com.beone.kevin.remote.model.ProfilePegawaiModel
+import com.beone.kevin.remote.model.ProfilePelatihModel
+import com.beone.kevin.remote.model.StatusDataModel
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
-class MenuHrdViewModel(retrofitService: RetrofitService) : ViewModel() {
-    // TODO: Implement the ViewModel
-
-
-
+class MenuHrdViewModel(private val retrofitService: RetrofitService) : ViewModel() {
 
 }

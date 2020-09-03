@@ -68,7 +68,7 @@ class ApproveUserDocumentFragment : Fragment() {
         })
 
         viewModel.initDataStatus().observe(viewLifecycleOwner, Observer {
-            if (it.status.equals("1")) {
+            if (it.status.equals(1)) {
 
                 Toast.makeText(this.requireContext(), "Dokumen Disetujui", Toast.LENGTH_SHORT)
                     .show()

@@ -42,11 +42,11 @@ class MenuHrdFragment : Fragment() {
         btn_memeriksa_pembayaran.setOnClickListener {
             this.findNavController().navigate(R.id.action_menuHrdFragment_to_checkPembayaranFragment)
         }
+        btn_profile.setOnClickListener {
+            this.findNavController().navigate(R.id.action_menuHrdFragment_to_profileHrdFragment)
+        }
         btn_logout.setOnClickListener{
             view?.findNavController()?.navigate(R.id.action_global_loginsFragment)
         }
     }
-
-
-
 }

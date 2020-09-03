@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="8dp"
-    tools:context=".ui.pelatih.profilecoach.ProfilePelatihFragment">
+    tools:context=".ui.hrd.profilehrd.ProfileHrdFragment">
 
     <TextView
         android:layout_width="match_parent"
@@ -23,13 +23,13 @@
         android:layout_gravity="center"
         android:layout_marginBottom="4dp">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/img_view_coachprofile"
-        android:layout_width="100dp"
-        android:layout_height="100dp" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_view_employeeprofile"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
 
         <ImageButton
-            android:id="@+id/btn_pick_coachimg"
+            android:id="@+id/btn_pick_employeeimg"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:background="@android:color/transparent"
@@ -52,7 +52,7 @@
             android:textSize="20sp" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/coach_name"
+            android:id="@+id/employee_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/tv_nama"
@@ -76,13 +76,37 @@
             android:textSize="20sp" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/coach_username"
+            android:id="@+id/employee_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/tv_username"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
             android:textSize="20sp"
             tools:text="Kevin123" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_nip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NIP:"
+            android:layout_marginEnd="4dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+            android:textSize="20sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/employee_nip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/tv_nip"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+            android:textSize="20sp"
+            tools:text="012345" />
 
     </RelativeLayout>
 </LinearLayout>

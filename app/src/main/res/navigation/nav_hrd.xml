@@ -30,6 +30,10 @@
             android:id="@+id/action_menuHrdFragment_to_checkPembayaranFragment"
             app:destination="@id/checkPembayaranFragment"
             app:popUpTo="@id/checkPembayaranFragment" />
+        <action
+            android:id="@+id/action_menuHrdFragment_to_profileHrdFragment"
+            app:destination="@id/profileHrdFragment"
+            app:popUpTo="@id/profileHrdFragment" />
 
     </fragment>
 
@@ -77,5 +81,10 @@
         android:name="com.beone.kevin.ui.hrd.approvetkipayment.ApproveUserPaymentFragment"
         android:label="approve_user_payment_fragment"
         tools:layout="@layout/approve_user_payment_fragment" />
+    <fragment
+        android:id="@+id/profileHrdFragment"
+        android:name="com.beone.kevin.ui.hrd.profilehrd.ProfileHrdFragment"
+        android:label="profile_hrd_fragment"
+        tools:layout="@layout/profile_hrd_fragment" />
 
 </navigation>

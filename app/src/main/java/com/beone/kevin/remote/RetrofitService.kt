@@ -155,9 +155,27 @@ interface RetrofitService {
     @FormUrlEncoded
     fun addPresensiTest(@Field("idjadwal") idjadwal: String?, @Field("iduser") iduser: String?):Call<StatusDataModel>
 
-    @POST("get_profile_pelatih")
+    @POST("profile_pelatih")
     @FormUrlEncoded
-    fun getProfilePelatih(@Field("iduser")iduser:String?):Call<ProfilePelatihModel>
+    fun getProfilePelatih(@Field("id_pelatih") idpelatih:String?):Call<ProfilePelatihModel>
+
+    @POST("update_foto_pelatih")
+    @FormUrlEncoded
+    fun updateFotoPelatih(
+        @Field("id_pelatih") idpelatih:String?,
+        @Field("foto") foto:String?
+    ):Call<StatusDataModel>
+
+    @POST("profile_pegawai")
+    @FormUrlEncoded
+    fun getProfilePegawai(@Field("id_pegawai") idpegawai:String?):Call<ProfilePegawaiModel>
+
+    @POST("update_foto_pegawai")
+    @FormUrlEncoded
+    fun updateFotoPegawai(
+        @Field("id_pegawai") idpegawai:String?,
+        @Field("foto") foto:String?
+    ):Call<StatusDataModel>
 
     @GET("getuserdata")
     fun getUserData(): Call<CheckUserDataModel>

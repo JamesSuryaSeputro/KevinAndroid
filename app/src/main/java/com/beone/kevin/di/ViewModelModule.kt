@@ -6,13 +6,14 @@ import com.beone.kevin.ui.hrd.approvetkidocument.ApproveUserDocumentViewModel
 import com.beone.kevin.ui.hrd.approvetkipayment.ApproveUserPaymentViewModel
 import com.beone.kevin.ui.hrd.checkuserdocument.CheckDocumentViewModel
 import com.beone.kevin.ui.hrd.checkuserpayment.CheckPembayaranViewModel
+import com.beone.kevin.ui.hrd.profilehrd.ProfileHrdViewModel
 import com.beone.kevin.ui.login.LoginsViewModel
 import com.beone.kevin.ui.pelatih.MainMenu.MainMenuPelatihViewModel
 import com.beone.kevin.ui.pelatih.addnilai.AddNilaiViewModel
 
 import com.beone.kevin.ui.pelatih.presensi.PresensiViewModel
 import com.beone.kevin.ui.pelatih.presensiujian.PresensiUjianViewModel
-import com.beone.kevin.ui.pelatih.profile.ProfilePelatihViewModel
+import com.beone.kevin.ui.pelatih.profilecoach.ProfilePelatihViewModel
 
 import com.beone.kevin.ui.pelatih.schedulepelatih.SchedulePelatihViewModel
 import com.beone.kevin.ui.pelatih.selecttkifortraining.SelectTkiForTrainingViewModel
@@ -112,5 +113,9 @@ val viewModelModule = module {
 
     viewModel<ApproveUserPaymentViewModel>{
         ApproveUserPaymentViewModel(get())
+    }
+
+    viewModel<ProfileHrdViewModel>{
+        ProfileHrdViewModel(get())
     }
 }
