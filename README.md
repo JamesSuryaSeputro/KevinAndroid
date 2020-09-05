@@ -1,1 +1,1 @@
-[![JamesSuryaSeputro](https://circleci.com/gh/JamesSuryaSeputro/KevinAndroid.svg?style=svg)](https://circleci.com/gh/JamesSuryaSeputro/KevinAndroid?branch=james)
+[![JamesSuryaSeputro](https://circleci.com/gh/JamesSuryaSeputro/KevinAndroid.svg?style=shield](https://circleci.com/gh/JamesSuryaSeputro/KevinAndroid?branch=james)
