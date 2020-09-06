@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
+    tools:context=".ui.user.profileuser.ProfileUserFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Profile"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline1"
+        android:textSize="30sp" />
+
+    <ImageView
+        android:id="@+id/img_pasfoto"
+        android:layout_width="120dp"
+        android:layout_height="160dp"
+        android:layout_gravity="center"
+        android:layout_marginVertical="12dp"
+        android:background="@android:color/darker_gray" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="Nama:"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+            android:textSize="20sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tki_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/tv_nama"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+            android:textSize="20sp"
+            tools:text="pendaftar TKI" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="Username:"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+            android:textSize="20sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tki_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/tv_username"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+            android:textSize="20sp"
+            tools:text="Kevin123" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_nopassport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="No. Passport:"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+            android:textSize="20sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/no_passport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/tv_nopassport"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+            android:textSize="20sp"
+            tools:text="1234567890" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_noktp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="No. KTP:"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+            android:textSize="20sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/no_ktp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/tv_noktp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+            android:textSize="20sp"
+            tools:text="1234567890" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_ttl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="Tempat/Tgl Lahir: "
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+            android:textSize="20sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tempat_lahir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/tv_ttl"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+            android:textSize="20sp"
+            tools:text="Jakarta" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/comma"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/comma"
+            android:layout_toEndOf="@+id/tempat_lahir"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+            android:textSize="20sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tanggal_lahir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/comma"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+            android:textSize="20sp"
+            tools:text="01-20-1998" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_WN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="Kegawarganegaraan: "
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+            android:textSize="20sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/WN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/tv_WN"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+            android:textSize="20sp"
+            tools:text="Indonesia" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_jeniskelamin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="Jenis Kelamin: "
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+            android:textSize="20sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/jenis_kelamin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/tv_jeniskelamin"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+            android:textSize="20sp"
+            tools:text="Laki-laki" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_alamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="Alamat: "
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+            android:textSize="20sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/alamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/tv_alamat"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+            android:textSize="20sp"
+            tools:text="Jl. Bumi Agung no. 15" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_notelp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="No. Telepon: "
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+            android:textSize="20sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/no_telp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/tv_notelp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+            android:textSize="20sp"
+            tools:text="025830230" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_activesince"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="Active Since: "
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+            android:textSize="20sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/active_since"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/tv_activesince"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+            android:textSize="20sp"
+            tools:text="2020" />
+
+    </RelativeLayout>
+</LinearLayout>

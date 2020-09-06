@@ -62,7 +62,7 @@ class ProfilePelatihFragment : Fragment() {
             startActivityForResult(intent, RESULT_FOTO)
         }
 
-        viewModel.getprofile(sharedPreferenceUtils.getIdUser)
+        viewModel.getProfile(sharedPreferenceUtils.getIdUser)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

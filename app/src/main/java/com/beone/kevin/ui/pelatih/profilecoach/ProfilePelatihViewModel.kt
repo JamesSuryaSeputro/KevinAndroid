@@ -20,7 +20,7 @@ class ProfilePelatihViewModel(private val retrofitService: RetrofitService) : Vi
 
     fun initdata2():LiveData<StatusDataModel> = statusDataModel
 
-    fun getprofile(iduser:String?){
+    fun getProfile(iduser:String?){
         retrofitService.getProfilePelatih(iduser).enqueue(object : Callback<ProfilePelatihModel>{
             override fun onFailure(call: Call<ProfilePelatihModel>, t: Throwable) {
 
@@ -31,7 +31,7 @@ class ProfilePelatihViewModel(private val retrofitService: RetrofitService) : Vi
                 response: Response<ProfilePelatihModel>
             ) {
                 if (response.isSuccessful)
-                profilePelatihModel.postValue(response.body())
+                    profilePelatihModel.postValue(response.body())
             }
 
         })

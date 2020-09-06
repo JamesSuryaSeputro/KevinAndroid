@@ -4,7 +4,6 @@ package com.beone.kevin.remote
 import com.beone.kevin.remote.model.*
 import com.beone.kevin.ui.pelatih.DayEnum
 import retrofit2.Call
-import retrofit2.Callback
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
@@ -149,33 +148,43 @@ interface RetrofitService {
 
     @POST("add_presensi_ujian")
     @FormUrlEncoded
-    fun addPresensiUjian(@Field("idjadwal") idjadwal: String?, @Field("iduser") iduser: String?):Call<StatusDataModel>
+    fun addPresensiUjian(
+        @Field("idjadwal") idjadwal: String?,
+        @Field("iduser") iduser: String?
+    ): Call<StatusDataModel>
 
     @POST("add_presensi_test")
     @FormUrlEncoded
-    fun addPresensiTest(@Field("idjadwal") idjadwal: String?, @Field("iduser") iduser: String?):Call<StatusDataModel>
+    fun addPresensiTest(
+        @Field("idjadwal") idjadwal: String?,
+        @Field("iduser") iduser: String?
+    ): Call<StatusDataModel>
+
+    @POST("profile_user")
+    @FormUrlEncoded
+    fun getProfileUser(@Field("id_user") iduser: String?): Call<ProfileUserModel>
 
     @POST("profile_pelatih")
     @FormUrlEncoded
-    fun getProfilePelatih(@Field("id_pelatih") idpelatih:String?):Call<ProfilePelatihModel>
+    fun getProfilePelatih(@Field("id_pelatih") idpelatih: String?): Call<ProfilePelatihModel>
 
     @POST("update_foto_pelatih")
     @FormUrlEncoded
     fun updateFotoPelatih(
-        @Field("id_pelatih") idpelatih:String?,
-        @Field("foto") foto:String?
-    ):Call<StatusDataModel>
+        @Field("id_pelatih") idpelatih: String?,
+        @Field("foto") foto: String?
+    ): Call<StatusDataModel>
 
     @POST("profile_pegawai")
     @FormUrlEncoded
-    fun getProfilePegawai(@Field("id_pegawai") idpegawai:String?):Call<ProfilePegawaiModel>
+    fun getProfilePegawai(@Field("id_pegawai") idpegawai: String?): Call<ProfilePegawaiModel>
 
     @POST("update_foto_pegawai")
     @FormUrlEncoded
     fun updateFotoPegawai(
-        @Field("id_pegawai") idpegawai:String?,
-        @Field("foto") foto:String?
-    ):Call<StatusDataModel>
+        @Field("id_pegawai") idpegawai: String?,
+        @Field("foto") foto: String?
+    ): Call<StatusDataModel>
 
     @GET("getuserdata")
     fun getUserData(): Call<CheckUserDataModel>
@@ -186,9 +195,11 @@ interface RetrofitService {
 
     @POST("approveuserdocument")
     @FormUrlEncoded
-    fun approveUserDocument(@Field("iduser") iduser: String?,
-                            @Field("idpegawai") idpegawai: String?,
-                            @Field("status") status: String?): Call<StatusDataModel>
+    fun approveUserDocument(
+        @Field("iduser") iduser: String?,
+        @Field("idpegawai") idpegawai: String?,
+        @Field("status") status: String?
+    ): Call<StatusDataModel>
 
     @GET("getuserpaymentdata")
     fun getUserPaymentData(): Call<CheckUserDataModel>
@@ -199,23 +210,9 @@ interface RetrofitService {
 
     @POST("approveuserpayment")
     @FormUrlEncoded
-    fun approveUserPayment(@Field("iduser") iduser: String?,
-                           @Field("idpegawai") idpegawai: String?,
-                           @Field("status") status: String?): Call<StatusDataModel>
-
-    @GET("profiluser")
-    fun getProfilUser(@Field("username") username: String?,
-                      @Field("password") password: String?,
-                      @Field("nama") nama: String?,
-                      @Field("no_passport") nopassport: String?,
-                      @Field("no_ktp") noktp: String?,
-                      @Field("tempatlahir") tempatlahir: String?,
-                      @Field("tanggallahir") tanggallahir: String?,
-                      @Field("kewarganegaraan") kewarganegaraan:String?,
-                      @Field("jeniskelamin") jeniskelamin:String?,
-                      @Field("alamat") alamat:String?,
-                      @Field("notelp") notelp:String?,
-                      @Field("passfoto") passfoto:String?,
-                      @Field("ttdfoto") ttdfoto:String?): Call<RegisterTKIModel>
-
+    fun approveUserPayment(
+        @Field("iduser") iduser: String?,
+        @Field("idpegawai") idpegawai: String?,
+        @Field("status") status: String?
+    ): Call<StatusDataModel>
 }

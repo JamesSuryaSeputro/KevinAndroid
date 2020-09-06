@@ -1,8 +1,5 @@
 package com.beone.kevin
 
-import android.app.Activity
-import android.app.Application
-import android.content.Context
 import android.content.SharedPreferences
 
 class SharedPreferenceUtils(sharedPref: SharedPreferences) {
@@ -12,5 +9,11 @@ class SharedPreferenceUtils(sharedPref: SharedPreferences) {
         editor.clear().apply()
         editor.putString("IDUSER", idUser).commit()
     }
-    val getIdUser = sharedPref.getString("IDUSER","NO ID")
+
+
+    fun removeIdUser(){
+        editor.clear().commit()
+    }
+
+    val getIdUser = sharedPref.getString("IDUSER", "NO ID")
 }

@@ -53,7 +53,7 @@ abstract class BaseFormRegisterTkiFragment : Fragment() {
 //            tv_registered.visibility = View.GONE
 //            tv_tologin.visibility = View.GONE
 //        } else {
-            img_pasfoto.visibility = View.GONE
+       //     img_pasfoto.visibility = View.GONE
 //        }
     }
 

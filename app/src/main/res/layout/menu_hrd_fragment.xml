@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.hrd.MenuHrdFragment">
+    tools:context=".ui.hrd.MainMenu.MenuHrdFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,6 +16,29 @@
             android:text="Menu HRD"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline1"
             android:textSize="50sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="4dp"
+        android:weightSum="2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID: "
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline1"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/id_pegawai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline1"
+            android:textSize="12sp"
+            tools:text = "1"/>
+    </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

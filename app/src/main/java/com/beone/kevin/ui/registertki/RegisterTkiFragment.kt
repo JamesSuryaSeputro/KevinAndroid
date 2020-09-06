@@ -5,20 +5,12 @@ import android.graphics.Bitmap
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
-import android.view.View
-import android.widget.AdapterView
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import com.beone.kevin.CustomImageUtils
 import com.beone.kevin.R
-import com.beone.kevin.remote.model.RegisterTKIModel
-import com.beone.kevin.ui.pelatih.selecttkifortraining.SelectTkiForTrainingFragmentArgs
-import kotlinx.android.synthetic.main.base_form_register_employee_fragment.*
 import kotlinx.android.synthetic.main.base_form_register_tki_fragment.*
-import kotlinx.android.synthetic.main.base_form_register_tki_fragment.view.*
-import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 
@@ -45,7 +37,7 @@ class RegisterTkiFragment : BaseFormRegisterTkiFragment() {
                 TAG, "initUI: gender: ${genderEnum} ordinal value: ${genderEnum.ordinal} \n"
             )
 
-            if(genderEnum.ordinal != 0) {
+            if (genderEnum.ordinal != 0) {
                 var pasfoto: String? = ""
                 var fotoTtd: String? = ""
                 if (edt_address.text.toString() != "" && edt_nationality.text.toString() != "" && edt_name.text.toString() != ""
@@ -56,21 +48,19 @@ class RegisterTkiFragment : BaseFormRegisterTkiFragment() {
                     pasfoto = bitmapPf?.let { it1 -> CustomImageUtils.BitmapToString(it1) }
                     fotoTtd = bitmapTtd?.let { it1 -> CustomImageUtils.BitmapToString(it1) }
                     vm.registerTki(
-                        RegisterTKIModel(
-                            edt_address.text.toString(),
-                            genderEnum.ordinal.toString(),
-                            edt_nationality.text.toString(),
-                            edt_name.text.toString(),
-                            edt_noktp.text.toString(),
-                            edt_nopassport.text.toString(),
-                            edt_nohp.text.toString(),
-                            pasfoto!!,
-                            edt_password.text.toString(),
-                            edt_dateofbirth.text.toString(),
-                            edt_place.text.toString(),
-                            fotoTtd!!,
-                            edt_username.text.toString()
-                        )
+                        edt_username.text.toString(),
+                        edt_password.text.toString(),
+                        edt_name.text.toString(),
+                        edt_nopassport.text.toString(),
+                        edt_noktp.text.toString(),
+                        edt_place.text.toString(),
+                        edt_dateofbirth.text.toString(),
+                        edt_nationality.text.toString(),
+                        genderEnum.ordinal.toString(),
+                        edt_address.text.toString(),
+                        edt_nohp.text.toString(),
+                        pasfoto!!,
+                        fotoTtd!!
                     )
                 } else {
                     Log.d(TAG, "masih kosong ")
@@ -83,10 +73,6 @@ class RegisterTkiFragment : BaseFormRegisterTkiFragment() {
             }
         }
     }
-
-//    override fun initProfile() {
-//        vm.showProfileUser()
-//    }
 
     override fun setTitleFragment(): String = "Register"
 
@@ -108,14 +94,16 @@ class RegisterTkiFragment : BaseFormRegisterTkiFragment() {
             val intent = Intent()
             intent.action = Intent.ACTION_GET_CONTENT
             intent.type = "image/*"
-            startActivityForResult(intent, RESULT_PASFOTO)
+            startActivityForResult(Intent.createChooser(intent, "Select image"),
+                RESULT_TTD)
         }
 
         btn_ttd.setOnClickListener {
             val intent = Intent()
             intent.action = Intent.ACTION_GET_CONTENT
             intent.type = "image/*"
-            startActivityForResult(intent, RESULT_TTD)
+            startActivityForResult(Intent.createChooser(intent, "Select image"),
+                RESULT_TTD)
         }
     }
 
@@ -142,7 +130,7 @@ class RegisterTkiFragment : BaseFormRegisterTkiFragment() {
         }
     }
 
-    fun clearAll(){
+    fun clearAll() {
         edt_address.setText("")
         edt_nationality.setText("")
         edt_name.setText("")

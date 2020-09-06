@@ -1,7 +1,7 @@
 package com.beone.kevin.di
 
 import com.beone.kevin.remote.RetrofitService
-import com.beone.kevin.ui.hrd.MenuHrdViewModel
+import com.beone.kevin.ui.hrd.MainMenu.MenuHrdViewModel
 import com.beone.kevin.ui.hrd.approvetkidocument.ApproveUserDocumentViewModel
 import com.beone.kevin.ui.hrd.approvetkipayment.ApproveUserPaymentViewModel
 import com.beone.kevin.ui.hrd.checkuserdocument.CheckDocumentViewModel
@@ -21,6 +21,7 @@ import com.beone.kevin.ui.registercoach.RegisterCoachViewModel
 import com.beone.kevin.ui.registeremployee.RegisterEmployeeViewModel
 import com.beone.kevin.ui.registertki.RegisterTkiViewModel
 import com.beone.kevin.ui.user.mainuser.MainUserViewModel
+import com.beone.kevin.ui.user.profileuser.ProfileUserViewModel
 import com.beone.kevin.ui.user.scheduleuser.ScheduleUserViewModel
 import com.beone.kevin.ui.user.scoreview.ScoreViewViewModel
 import com.beone.kevin.ui.user.uploaddocument.UploadDocumentViewModel
@@ -117,5 +118,9 @@ val viewModelModule = module {
 
     viewModel<ProfileHrdViewModel>{
         ProfileHrdViewModel(get())
+    }
+
+    viewModel<ProfileUserViewModel>{
+        ProfileUserViewModel(get())
     }
 }

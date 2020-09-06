@@ -1,6 +1,6 @@
 package com.beone.kevin.remote.model
 
-data class RegisterTKIModel(
+data class ProfileUserModel(
     val alamat: String,
     val jeniskelamin: String,
     val kewarganegaraan: String,
@@ -9,9 +9,8 @@ data class RegisterTKIModel(
     val no_passport: String,
     val notelp: String,
     val passfoto: String,
-    val password: String,
     val tanggallahir: String,
     val tempatlahir: String,
-    val ttdfoto: String,
-    val username: String
+    val username: String,
+    val year: String
 )

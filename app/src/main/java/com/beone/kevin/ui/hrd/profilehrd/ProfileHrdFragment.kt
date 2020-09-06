@@ -2,23 +2,19 @@ package com.beone.kevin.ui.hrd.profilehrd
 
 import android.content.Intent
 import android.graphics.Bitmap
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.provider.MediaStore
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.beone.kevin.CustomImageUtils
 import com.beone.kevin.R
 import com.beone.kevin.SharedPreferenceUtils
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.profile_hrd_fragment.*
-import kotlinx.android.synthetic.main.profile_pelatih_fragment.*
-import kotlinx.android.synthetic.main.profile_pelatih_fragment.coach_name
-import kotlinx.android.synthetic.main.profile_pelatih_fragment.coach_username
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 

@@ -1,4 +1,4 @@
-package com.beone.kevin.ui.hrd
+package com.beone.kevin.ui.hrd.MainMenu
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

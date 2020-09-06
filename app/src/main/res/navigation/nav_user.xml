@@ -33,10 +33,9 @@
             app:destination="@id/scoreViewFragment"
             app:popUpTo="@id/mainUserFragment" />
         <action
-            android:id="@+id/action_mainUserFragment_to_profilTki"
-            app:destination="@id/profilTki"
-            app:popUpTo="@id/profilTki" />
-
+            android:id="@+id/action_mainUserFragment_to_profileUserFragment"
+            app:destination="@id/profileUserFragment"
+            app:popUpTo="@id/mainUserFragment" />
     </fragment>
     <fragment
         android:id="@+id/scoreViewFragment"
@@ -44,12 +43,9 @@
         android:label="score_view_fragment"
         tools:layout="@layout/score_view_fragment" />
     <fragment
-        android:id="@+id/profilTki"
-        android:name="com.beone.kevin.ui.registertki.RegisterTkiFragment"
-        android:label="profil_tki"
-        tools:layout="@layout/base_form_register_tki_fragment">
-        <argument
-            android:name="profil"
-            app:argType="boolean" />
-    </fragment>
+        android:id="@+id/profileUserFragment"
+        android:name="com.beone.kevin.ui.user.profileuser.ProfileUserFragment"
+        android:label="profile_user_fragment"
+        tools:layout="@layout/profile_user_fragment" />
+
 </navigation>

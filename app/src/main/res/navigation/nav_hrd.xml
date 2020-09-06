@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/menuHrdFragment"
-        android:name="com.beone.kevin.ui.hrd.MenuHrdFragment"
+        android:name="com.beone.kevin.ui.hrd.MainMenu.MenuHrdFragment"
         android:label="menu_hrd_fragment"
         tools:layout="@layout/menu_hrd_fragment" >
         <action

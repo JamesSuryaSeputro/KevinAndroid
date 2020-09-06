@@ -1,14 +1,21 @@
 package com.beone.kevin.ui.pelatih.MainMenu
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.constraintlayout.widget.Constraints.TAG
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.beone.kevin.R
+import com.beone.kevin.SharedPreferenceUtils
 import kotlinx.android.synthetic.main.main_menu_pelatih_fragment.*
+import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
+
 
 class MainMenuPelatihFragment : Fragment() {
 
@@ -19,6 +26,8 @@ class MainMenuPelatihFragment : Fragment() {
 
     private val viewModel: MainMenuPelatihViewModel by viewModel<MainMenuPelatihViewModel>()
 
+    private val sharepreference: SharedPreferenceUtils by inject<SharedPreferenceUtils>()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,6 +37,8 @@ class MainMenuPelatihFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        id_pelatih.text = sharepreference.getIdUser
+
         btn_tambah_jadwal.setOnClickListener {
             it.findNavController().navigate(R.id.action_mainMenuPelatihFragment_to_schedulePelatihFragment)
         }
@@ -37,6 +48,8 @@ class MainMenuPelatihFragment : Fragment() {
         }
 
         btn_logout.setOnClickListener {
+            sharepreference.removeIdUser()
+            Log.d(TAG, "IdUser:" + sharepreference.getIdUser)
             it.findNavController().navigate(R.id.action_global_loginsFragment)
         }
 
