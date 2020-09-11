@@ -72,6 +72,9 @@ class ApproveUserDocumentFragment : Fragment() {
 
                 Toast.makeText(this.requireContext(), "Dokumen Disetujui", Toast.LENGTH_SHORT)
                     .show()
+
+                btn_approve.visibility = View.GONE
+                btn_decline.text = "Kembali"
             }
         })
 
@@ -84,7 +87,6 @@ class ApproveUserDocumentFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         btn_approve.setOnClickListener {
             viewModel.approveDocument(iduser, sharedPreferenceUtils.getIdUser, "1")
-            this.findNavController().popBackStack()
         }
 
         btn_decline.setOnClickListener {

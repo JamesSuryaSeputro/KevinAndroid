@@ -112,41 +112,43 @@ class UploadDocumentFragment : Fragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         Log.d(TAG, "onActivityResult: ${requestCode} ${resultCode} ${data?.data}")
-        when (requestCode) {
-            RESULT_KTP -> {
-                if (data?.data != null) {
-                    bitmapKtp = MediaStore.Images.Media.getBitmap(
-                        this.requireContext().contentResolver,
-                        data.data
-                    )
-                    tv_location_ktp.text = data.data.toString()
+        if (data != null) {
+            when (requestCode) {
+                RESULT_KTP -> {
+                    if (data?.data != null) {
+                        bitmapKtp = MediaStore.Images.Media.getBitmap(
+                            this.requireContext().contentResolver,
+                            data.data
+                        )
+                        tv_location_ktp.text = data.data.toString()
+                    }
                 }
-            }
-            RESULT_KOMPENSASI -> {
-                if (data?.data != null) {
-                    bitmapKompensasi = MediaStore.Images.Media.getBitmap(
-                        this.requireContext().contentResolver,
-                        data.data
-                    )
-                    tv_location_kompensasi.text = data.data.toString()
+                RESULT_KOMPENSASI -> {
+                    if (data?.data != null) {
+                        bitmapKompensasi = MediaStore.Images.Media.getBitmap(
+                            this.requireContext().contentResolver,
+                            data.data
+                        )
+                        tv_location_kompensasi.text = data.data.toString()
+                    }
                 }
-            }
-            RESULT_KESEHATAN -> {
-                if (data?.data != null) {
-                    bitmapKesehatan = MediaStore.Images.Media.getBitmap(
-                        this.requireContext().contentResolver,
-                        data.data
-                    )
-                    tv_location_kesehatan.text = data.data.toString()
+                RESULT_KESEHATAN -> {
+                    if (data?.data != null) {
+                        bitmapKesehatan = MediaStore.Images.Media.getBitmap(
+                            this.requireContext().contentResolver,
+                            data.data
+                        )
+                        tv_location_kesehatan.text = data.data.toString()
+                    }
                 }
-            }
-            RESULT_KERJA -> {
-                if (data?.data != null) {
-                    bitmapKerja = MediaStore.Images.Media.getBitmap(
-                        this.requireContext().contentResolver,
-                        data.data
-                    )
-                    tv_location_suratkerja.text = data.data.toString()
+                RESULT_KERJA -> {
+                    if (data?.data != null) {
+                        bitmapKerja = MediaStore.Images.Media.getBitmap(
+                            this.requireContext().contentResolver,
+                            data.data
+                        )
+                        tv_location_suratkerja.text = data.data.toString()
+                    }
                 }
             }
         }

@@ -14,7 +14,10 @@ import com.beone.kevin.CustomImageUtils
 import com.beone.kevin.R
 import com.beone.kevin.SharedPreferenceUtils
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.profile_hrd_fragment.*
+import kotlinx.android.synthetic.main.profile_pelatih_fragment.*
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
@@ -44,6 +47,8 @@ class ProfileHrdFragment : Fragment() {
             employee_nip.text = it.nip
             Glide.with(this)
                 .load(CustomImageUtils.stringToBitmap(it.foto))
+                .apply(RequestOptions.skipMemoryCacheOf(true))
+                .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE))
                 .error(android.R.color.background_dark)
                 .into(img_view_employeeprofile)
         })
@@ -68,16 +73,20 @@ class ProfileHrdFragment : Fragment() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        when (requestCode) {
-            RESULT_FOTO -> {
-                bitmap =
-                    MediaStore.Images.Media.getBitmap(this.context?.contentResolver, data?.data)
-                if (bitmap != null) {
-                    var foto: String? = ""
-                    foto = bitmap?.let { it1 -> CustomImageUtils.BitmapToString(it1) }
-                    viewModel.updatefoto(sharedPreferenceUtils.getIdUser, foto)
-                    if(fragmentManager != null){
-                        fragmentManager?.beginTransaction()?.detach(this)?.attach(this)?.commit()
+        if (data != null) {
+            when (requestCode) {
+                RESULT_FOTO -> {
+                    bitmap =
+                        MediaStore.Images.Media.getBitmap(this.context?.contentResolver, data?.data)
+                    if (bitmap != null) {
+                        var foto: String? = ""
+                        foto = bitmap?.let { it1 -> CustomImageUtils.BitmapToString(it1) }
+                        viewModel.updatefoto(sharedPreferenceUtils.getIdUser, foto)
+
+                        Glide.with(this)
+                            .load(foto?.let { CustomImageUtils.stringToBitmap(it) })
+                            .error(android.R.color.background_dark)
+                            .into(img_view_employeeprofile)
                     }
                 }
             }

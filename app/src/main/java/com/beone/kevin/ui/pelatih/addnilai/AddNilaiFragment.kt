@@ -72,6 +72,4 @@ class AddNilaiFragment : Fragment(), AdapterView.OnItemSelectedListener,
             arrayDataSpiner.getItem(spnr_jadwal.selectedItemPosition)?.id_jadwal
         )
     }
-
-
 }

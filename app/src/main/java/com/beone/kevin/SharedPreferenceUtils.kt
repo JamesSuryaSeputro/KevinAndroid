@@ -6,10 +6,9 @@ class SharedPreferenceUtils(sharedPref: SharedPreferences) {
     var editor = sharedPref.edit()
 
     fun putIdUser(idUser: String?) {
-        editor.clear().apply()
+       //editor.clear().apply()
         editor.putString("IDUSER", idUser).commit()
     }
-
 
     fun removeIdUser(){
         editor.clear().commit()

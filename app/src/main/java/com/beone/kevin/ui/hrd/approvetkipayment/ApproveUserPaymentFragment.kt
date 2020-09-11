@@ -56,6 +56,9 @@ class ApproveUserPaymentFragment : Fragment() {
 
                 Toast.makeText(this.requireContext(), "Payment Disetujui", Toast.LENGTH_SHORT)
                     .show()
+
+                btn_approvepayment.visibility = View.GONE
+                btn_declinepayment.text = "Kembali"
             }
         })
 
@@ -66,7 +69,6 @@ class ApproveUserPaymentFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         btn_approvepayment.setOnClickListener {
             viewModel.approvePayment(iduser, sharedPreferenceUtils.getIdUser, "1")
-            this.findNavController().popBackStack()
         }
 
         btn_declinepayment.setOnClickListener {

@@ -1,5 +1,6 @@
 package com.beone.kevin.ui.hrd.MainMenu
 
+import android.content.ContentValues
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -36,6 +37,7 @@ class MenuHrdFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        Log.d(ContentValues.TAG, "getiduser: " + sharepreference.getIdUser)
         id_pegawai.text = sharepreference.getIdUser
 
         btn_tambah_pelatih.setOnClickListener {
@@ -54,8 +56,8 @@ class MenuHrdFragment : Fragment() {
             this.findNavController().navigate(R.id.action_menuHrdFragment_to_profileHrdFragment)
         }
         btn_logout.setOnClickListener{
+            Log.d(ContentValues.TAG, "btn_logout: " + sharepreference.removeIdUser())
             sharepreference.removeIdUser()
-            Log.d(TAG, "IdUser:" + sharepreference.getIdUser)
             view?.findNavController()?.navigate(R.id.action_global_loginsFragment)
         }
     }

@@ -1,5 +1,6 @@
 package com.beone.kevin.ui.pelatih.MainMenu
 
+import android.content.ContentValues
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -37,6 +38,7 @@ class MainMenuPelatihFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        Log.d(ContentValues.TAG, "getiduser: " + sharepreference.getIdUser)
         id_pelatih.text = sharepreference.getIdUser
 
         btn_tambah_jadwal.setOnClickListener {
@@ -48,8 +50,8 @@ class MainMenuPelatihFragment : Fragment() {
         }
 
         btn_logout.setOnClickListener {
+            Log.d(ContentValues.TAG, "btn_logout: " + sharepreference.removeIdUser())
             sharepreference.removeIdUser()
-            Log.d(TAG, "IdUser:" + sharepreference.getIdUser)
             it.findNavController().navigate(R.id.action_global_loginsFragment)
         }
 

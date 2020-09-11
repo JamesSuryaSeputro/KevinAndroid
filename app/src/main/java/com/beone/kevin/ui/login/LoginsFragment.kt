@@ -57,20 +57,24 @@ class LoginsFragment : Fragment() {
                         Toast.LENGTH_SHORT
                     ).show()
 
+                    Log.d(TAG, "putiduser: " + sharepreference.putIdUser(it.iduser))
                     sharepreference.putIdUser(it.iduser)
 
                     when (it.TypeLogin) {
                         TypeLoginEnum.TKI.jenis -> {
                             this.findNavController()
                                 .navigate(R.id.action_loginsFragment_to_nav_user)
+                            sharepreference.getIdUser
                         }
                         TypeLoginEnum.PELATIH.jenis -> {
                             this.findNavController()
                                 .navigate(R.id.action_loginsFragment_to_nav_pelatih)
+                            sharepreference.getIdUser
                         }
                         TypeLoginEnum.PEGAWAI.jenis -> {
                             this.findNavController()
                                 .navigate(R.id.action_loginsFragment_to_nav_hrd)
+                            sharepreference.getIdUser
                         }
                     }
                 }

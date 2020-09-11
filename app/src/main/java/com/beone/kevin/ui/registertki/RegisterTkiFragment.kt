@@ -94,16 +94,20 @@ class RegisterTkiFragment : BaseFormRegisterTkiFragment() {
             val intent = Intent()
             intent.action = Intent.ACTION_GET_CONTENT
             intent.type = "image/*"
-            startActivityForResult(Intent.createChooser(intent, "Select image"),
-                RESULT_TTD)
+            startActivityForResult(
+                Intent.createChooser(intent, "Select image"),
+                RESULT_PASFOTO
+            )
         }
 
         btn_ttd.setOnClickListener {
             val intent = Intent()
             intent.action = Intent.ACTION_GET_CONTENT
             intent.type = "image/*"
-            startActivityForResult(Intent.createChooser(intent, "Select image"),
-                RESULT_TTD)
+            startActivityForResult(
+                Intent.createChooser(intent, "Select image"),
+                RESULT_TTD
+            )
         }
     }
 
@@ -112,19 +116,21 @@ class RegisterTkiFragment : BaseFormRegisterTkiFragment() {
         Log.d(
             TAG, "onActivityResult: ${requestCode} ${resultCode} ${data?.data}"
         )
-        when (requestCode) {
-            RESULT_PASFOTO -> {
-                bitmapPf =
-                    MediaStore.Images.Media.getBitmap(this.context?.contentResolver, data?.data)
-                if (bitmapPf != null) {
-                    tv_filepf.setText("terisi")
+        if (data != null) {
+            when (requestCode) {
+                RESULT_PASFOTO -> {
+                    bitmapPf =
+                        MediaStore.Images.Media.getBitmap(this.context?.contentResolver, data?.data)
+                    if (bitmapPf != null) {
+                        tv_filepf.setText("terisi")
+                    }
                 }
-            }
-            RESULT_TTD -> {
-                bitmapTtd =
-                    MediaStore.Images.Media.getBitmap(this.context?.contentResolver, data?.data)
-                if (bitmapTtd != null) {
-                    tv_filettd.setText("terisi")
+                RESULT_TTD -> {
+                    bitmapTtd =
+                        MediaStore.Images.Media.getBitmap(this.context?.contentResolver, data?.data)
+                    if (bitmapTtd != null) {
+                        tv_filettd.setText("terisi")
+                    }
                 }
             }
         }

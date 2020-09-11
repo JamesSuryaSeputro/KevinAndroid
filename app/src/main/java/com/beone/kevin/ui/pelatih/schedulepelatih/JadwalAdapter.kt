@@ -43,8 +43,8 @@ class JadwalAdapter(val itemOnClick: ItemOnClick) : RecyclerView.Adapter<JadwalA
     class JadwalViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(item: JadwalPelatihModelItem,itemOnClick: ItemOnClick) = with(itemView) {
-            tv_hari.text = item.hari.name
-            tv_subject.text = item.nama_subject
+            tv_hari.text =  item.hari.name
+            tv_subject.text = item.id_jadwal + " - " + item.nama_subject
             setOnClickListener {
                 itemOnClick.onDetail(item.id_jadwal)
             }

@@ -74,6 +74,4 @@ class LoginsViewModel(val retrofitService: RetrofitService) : ViewModel() {
         })
     }
 
-
-
 }

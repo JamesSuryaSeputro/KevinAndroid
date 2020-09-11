@@ -61,10 +61,7 @@ class AddSchedulePelatihDialogFragment : BottomSheetDialogFragment() {
             if (it.status.equals(1)) {
                 Toast.makeText(requireContext(), "Success Add jadwal", Toast.LENGTH_SHORT).show()
                 dismiss()
-            }else{
-                Toast.makeText(requireContext(), "Gagal Add Jadwal", Toast.LENGTH_SHORT).show()
             }
-
         })
 
         btn_add_jadwal.setOnClickListener {

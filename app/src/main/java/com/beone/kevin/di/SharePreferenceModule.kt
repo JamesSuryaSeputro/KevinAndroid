@@ -7,7 +7,7 @@ import org.koin.android.ext.koin.androidApplication
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
-val SharePrefrenceModule = module {
+val SharePreferenceModule = module {
     single(named("UserPrefs")) {
         provideSharePreference(androidApplication())
     }
@@ -18,5 +18,4 @@ val SharePrefrenceModule = module {
 
 fun provideSharePreference(application:Application) = application.getSharedPreferences("config",
     Context.MODE_PRIVATE)
-
 
