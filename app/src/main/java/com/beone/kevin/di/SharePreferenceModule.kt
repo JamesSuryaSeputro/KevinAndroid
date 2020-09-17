@@ -11,7 +11,7 @@ val SharePreferenceModule = module {
     single(named("UserPrefs")) {
         provideSharePreference(androidApplication())
     }
-    single {
+    factory {
         SharedPreferenceUtils(get(named("UserPrefs")))
     }
 }

@@ -49,17 +49,16 @@ class UploadDocumentFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         viewModel.initLiveData().observe(viewLifecycleOwner, Observer {
-            if (!it.scanktp.equals("")){
+            if (!"".equals(it.scanktp)){
                 tv_location_ktp.text = "ada"
             }
-            if (!it.scansuratkesehatan.equals("")){
+            if (!"".equals(it.scansuratkesehatan)){
                 tv_location_kesehatan.text = "ada"
             }
-
-            if (!it.scankompensasi.equals("")){
+            if (!"".equals(it.scankompensasi)){
                 tv_location_kompensasi.text = "ada"
             }
-            if (!it.scansuratkerja.equals("")){
+            if (!"".equals(it.scansuratkerja)){
                 tv_location_suratkerja.text = "ada"
             }
 
