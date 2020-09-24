@@ -56,8 +56,8 @@ class MenuHrdFragment : Fragment() {
             this.findNavController().navigate(R.id.action_menuHrdFragment_to_profileHrdFragment)
         }
         btn_logout.setOnClickListener{
-            Log.d(ContentValues.TAG, "btn_logout: " + sharepreference.removeIdUser())
-            sharepreference.removeIdUser()
+            Log.d(ContentValues.TAG, "btn_logout: " + sharepreference.removeUser())
+            sharepreference.removeUser()
             view?.findNavController()?.navigate(R.id.action_global_loginsFragment)
         }
     }

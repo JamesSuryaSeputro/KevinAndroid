@@ -50,8 +50,8 @@ class MainMenuPelatihFragment : Fragment() {
         }
 
         btn_logout.setOnClickListener {
-            Log.d(ContentValues.TAG, "btn_logout: " + sharepreference.removeIdUser())
-            sharepreference.removeIdUser()
+            Log.d(ContentValues.TAG, "btn_logout: " + sharepreference.removeUser())
+            sharepreference.removeUser()
             it.findNavController().navigate(R.id.action_global_loginsFragment)
         }
 

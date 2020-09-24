@@ -19,33 +19,5 @@
         android:name="com.beone.kevin.ui.user.userpembayaran.UserPembayaranFragment"
         android:label="user_pembayaran_fragment"
         tools:layout="@layout/user_pembayaran_fragment">
-        <action
-            android:id="@+id/action_userPembayaranFragment_to_mainUserFragment"
-            app:destination="@id/mainUserFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/mainUserFragment"
-        android:name="com.beone.kevin.ui.user.mainuser.MainUserFragment"
-        android:label="main_user_fragment"
-        tools:layout="@layout/main_user_fragment" >
-        <action
-            android:id="@+id/action_mainUserFragment_to_scoreViewFragment"
-            app:destination="@id/scoreViewFragment"
-            app:popUpTo="@id/mainUserFragment" />
-        <action
-            android:id="@+id/action_mainUserFragment_to_profileUserFragment"
-            app:destination="@id/profileUserFragment"
-            app:popUpTo="@id/mainUserFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/scoreViewFragment"
-        android:name="com.beone.kevin.ui.user.scoreview.ScoreViewFragment"
-        android:label="score_view_fragment"
-        tools:layout="@layout/score_view_fragment" />
-    <fragment
-        android:id="@+id/profileUserFragment"
-        android:name="com.beone.kevin.ui.user.profileuser.ProfileUserFragment"
-        android:label="profile_user_fragment"
-        tools:layout="@layout/profile_user_fragment" />
-
 </navigation>

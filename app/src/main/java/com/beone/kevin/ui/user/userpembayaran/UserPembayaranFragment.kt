@@ -14,6 +14,7 @@ import androidx.navigation.findNavController
 import com.beone.kevin.CustomImageUtils
 import com.beone.kevin.R
 import com.beone.kevin.SharedPreferenceUtils
+import com.beone.kevin.ui.user.mainuser.MainUserActivity
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.user_pembayaran_fragment.*
 import org.koin.android.ext.android.inject
@@ -48,11 +49,9 @@ class UserPembayaranFragment : Fragment() {
 
             if (!it.status.isNullOrEmpty()) {
                 if (it.status.equals("1")) {
-                    // TODO: 19/06/20 add navigation to nextfragment home user
-                    view?.findNavController()
 
-
-                        ?.navigate(R.id.action_userPembayaranFragment_to_mainUserFragment)
+                    val intent = Intent (activity, MainUserActivity::class.java)
+                    activity?.startActivity(intent)
                   
                 } else {
                     Log.d(TAG, "onActivityCreated: Not Been Check for Payment")

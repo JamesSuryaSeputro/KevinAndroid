@@ -30,11 +30,6 @@
             android:text="Tata Krama : "
             android:textSize="20sp"
             android:textAlignment="textStart" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Tata Krama : "
-            android:textSize="20sp"
-            android:textAlignment="center" />
+
     </LinearLayout>
 </FrameLayout>

@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">PT ECO TUMBUH MAKMUR</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="add_schdule">Add Jadwal</string>
+
+    <string name="add_schedule">Add Jadwal</string>
     <string name="add_tki">Add TKI</string>
     <string name="already_registered">Already registered?</string>
     <string name="login">Login</string>
@@ -10,4 +9,8 @@
     <string name="comma">,&#032;</string>
     <string name="male">Laki-laki</string>
     <string name="female">Perempuan</string>
+    <string name="title_home">Home</string>
+    <string name="title_schedule">Jadwal</string>
+    <string name="title_score">Nilai</string>
+    <string name="welcome">Welcome,</string>
 </resources>

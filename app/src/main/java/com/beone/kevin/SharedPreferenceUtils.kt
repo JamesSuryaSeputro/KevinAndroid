@@ -6,13 +6,17 @@ class SharedPreferenceUtils(sharedPref: SharedPreferences) {
     var editor = sharedPref.edit()
 
     fun putIdUser(idUser: String?) {
-       //editor.clear().apply()
         editor.putString("IDUSER", idUser).commit()
     }
 
-    fun removeIdUser(){
+    fun putNamaUser(namaUser: String?) {
+        editor.putString("NAMAUSER", namaUser).commit()
+    }
+
+    fun removeUser(){
         editor.clear().commit()
     }
 
     val getIdUser = sharedPref.getString("IDUSER", "NO ID")
+    val getNamaUser = sharedPref.getString("NAMAUSER", "NO NAME")
 }

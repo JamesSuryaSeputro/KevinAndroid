@@ -6,5 +6,6 @@ data class StatusLogin (
     var TypeLogin:Int,
     var isFailedFetch:Boolean = false,
     val iduser:String,
-    val username:String
+    val username:String,
+    val nama:String
 )

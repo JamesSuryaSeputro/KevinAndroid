@@ -58,23 +58,22 @@ class LoginsFragment : Fragment() {
                     ).show()
 
                     Log.d(TAG, "putiduser: " + sharepreference.putIdUser(it.iduser))
+                    Log.d(TAG, "putnamauser: " + sharepreference.putIdUser(it.nama))
                     sharepreference.putIdUser(it.iduser)
+                    sharepreference.putNamaUser(it.nama)
 
                     when (it.TypeLogin) {
                         TypeLoginEnum.TKI.jenis -> {
                             this.findNavController()
                                 .navigate(R.id.action_loginsFragment_to_nav_user)
-                            sharepreference.getIdUser
                         }
                         TypeLoginEnum.PELATIH.jenis -> {
                             this.findNavController()
                                 .navigate(R.id.action_loginsFragment_to_nav_pelatih)
-                            sharepreference.getIdUser
                         }
                         TypeLoginEnum.PEGAWAI.jenis -> {
                             this.findNavController()
                                 .navigate(R.id.action_loginsFragment_to_nav_hrd)
-                            sharepreference.getIdUser
                         }
                     }
                 }

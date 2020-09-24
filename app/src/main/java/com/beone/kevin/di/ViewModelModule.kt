@@ -20,7 +20,6 @@ import com.beone.kevin.ui.pelatih.selecttkifortraining.SelectTkiForTrainingViewM
 import com.beone.kevin.ui.registercoach.RegisterCoachViewModel
 import com.beone.kevin.ui.registeremployee.RegisterEmployeeViewModel
 import com.beone.kevin.ui.registertki.RegisterTkiViewModel
-import com.beone.kevin.ui.user.mainuser.MainUserViewModel
 import com.beone.kevin.ui.user.profileuser.ProfileUserViewModel
 import com.beone.kevin.ui.user.scheduleuser.ScheduleUserViewModel
 import com.beone.kevin.ui.user.scoreview.ScoreViewViewModel
@@ -62,10 +61,6 @@ val viewModelModule = module {
 
     viewModel<ScoreViewViewModel> {
         ScoreViewViewModel(get())
-    }
-
-    viewModel<MainUserViewModel> {
-        MainUserViewModel(get())
     }
 
     viewModel<ScheduleUserViewModel> {
