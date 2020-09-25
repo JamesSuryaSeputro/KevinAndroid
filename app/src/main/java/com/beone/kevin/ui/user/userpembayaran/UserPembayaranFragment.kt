@@ -10,7 +10,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.navigation.findNavController
 import com.beone.kevin.CustomImageUtils
 import com.beone.kevin.R
 import com.beone.kevin.SharedPreferenceUtils
@@ -50,9 +49,10 @@ class UserPembayaranFragment : Fragment() {
             if (!it.status.isNullOrEmpty()) {
                 if (it.status.equals("1")) {
 
-                    val intent = Intent (activity, MainUserActivity::class.java)
+                    val intent = Intent(activity, MainUserActivity::class.java)
+                    intent.addFlags( Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
                     activity?.startActivity(intent)
-                  
+
                 } else {
                     Log.d(TAG, "onActivityCreated: Not Been Check for Payment")
                 }
@@ -79,7 +79,8 @@ class UserPembayaranFragment : Fragment() {
             val intent = Intent()
             intent.action = android.content.Intent.ACTION_GET_CONTENT
             intent.type = "image/*"
-            startActivityForResult(intent,
+            startActivityForResult(
+                intent,
                 RESULT_GALLERY
             )
         }

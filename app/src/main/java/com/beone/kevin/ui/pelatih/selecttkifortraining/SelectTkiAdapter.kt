@@ -10,7 +10,6 @@ import com.beone.kevin.R
 import com.beone.kevin.remote.model.UserModel
 import com.beone.kevin.remote.model.UserModelItem
 import com.bumptech.glide.Glide
-import kotlinx.android.synthetic.main.schedule_pelatih_fragment.view.*
 import kotlinx.android.synthetic.main.select_tki_item.view.*
 
 class SelectTkiAdapter(val onSelectTkiListener: OnSelectTkiListener) :

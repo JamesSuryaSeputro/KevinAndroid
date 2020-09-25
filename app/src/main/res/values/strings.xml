@@ -13,4 +13,7 @@
     <string name="title_schedule">Jadwal</string>
     <string name="title_score">Nilai</string>
     <string name="welcome">Welcome,</string>
+    <string name="options_menu">options_menu</string>
+    <string name="profile">Profile</string>
+    <string name="logout">Logout</string>
 </resources>
