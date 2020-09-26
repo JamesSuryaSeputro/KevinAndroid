@@ -18,16 +18,58 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:textSize="25sp"
-            tools:text="Bahasa" />
-
-        <TextView
-            android:id="@+id/tv_hari"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:textSize="20sp"
             tools:text="Bahasa" />
 
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_hari"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            tools:text="Senin, pk. " />
+
+            <TextView
+                android:id="@+id/tv_jadwaljammulai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/tv_hari"
+                android:textSize="16sp"
+                tools:text="11:00 - " />
+
+            <TextView
+                android:id="@+id/tv_jadwaljamselesai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/tv_jadwaljammulai"
+                android:textSize="16sp"
+                tools:text="12:00" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_jadwaltanggalmulai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            tools:text="yyyy-mm-dd - " />
+
+        <TextView
+            android:id="@+id/tv_jadwaltanggalselesai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/tv_jadwaltanggalmulai"
+            android:textSize="16sp"
+            tools:text="yyyy-mm-dd" />
+
+        </RelativeLayout>
     </LinearLayout>
 
     <ImageButton

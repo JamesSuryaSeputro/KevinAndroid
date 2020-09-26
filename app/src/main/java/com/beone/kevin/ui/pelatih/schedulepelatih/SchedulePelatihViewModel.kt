@@ -27,7 +27,7 @@ class SchedulePelatihViewModel(private val retrofitService: RetrofitService) : V
         Log.d(TAG, "getData: ${iduser}")
         retrofitService.getSchedullerAllPelatih(iduser).enqueue(object : Callback<JadwalPelatihModel>{
             override fun onFailure(call: Call<JadwalPelatihModel>, t: Throwable) {
-                Log.e(Companion.TAG, "onFailure: ",t )
+                Log.e(TAG, "onFailure: ",t )
             }
 
             override fun onResponse(
@@ -60,9 +60,9 @@ class SchedulePelatihViewModel(private val retrofitService: RetrofitService) : V
         })
     }
 
-    fun addSchedule(iduser: String?, idsubject: SubjectEnum, hari: DayEnum){
+    fun addSchedule(iduser: String?, idsubject: SubjectEnum, hari: DayEnum, tglmulai: String, tglselesai: String, jammulai: String, jamselesai: String){
 
-        retrofitService.addSchedule(iduser,idsubject.subjectdbposition,hari).enqueue(object :
+        retrofitService.addSchedule(iduser,idsubject.subjectdbposition,hari,tglmulai,tglselesai,jammulai,jamselesai).enqueue(object :
             Callback<StatusDataModel>{
             override fun onFailure(call: Call<StatusDataModel>, t: Throwable) {
                 Log.e(TAG, "onFailure: ",t )

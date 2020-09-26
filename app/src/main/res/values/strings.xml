@@ -16,4 +16,14 @@
     <string name="options_menu">options_menu</string>
     <string name="profile">Profile</string>
     <string name="logout">Logout</string>
+    <string name="subject">Subject</string>
+    <string name="hari">Hari</string>
+    <string name="date_format">yyyy-mm-dd</string>
+    <string name="tanggal_mulai">Tanggal mulai:</string>
+    <string name="tanggal_selesai">Tanggal selesai:</string>
+    <string name="jam_mulai">Jam mulai:</string>
+    <string name="jam_selesai">Jam selesai:</string>
+    <string name="time_format">hh:mm:ss</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

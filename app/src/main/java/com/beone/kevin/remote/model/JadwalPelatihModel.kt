@@ -8,7 +8,11 @@ data class JadwalPelatihModelItem(
     val hari: DayEnum,
     val id_jadwal: String,
     val id_subject: String,
-    val nama_subject: String
+    val jam_mulai: String,
+    val jam_selesai: String,
+    val nama_subject: String,
+    val tgl_mulai: String,
+    val tgl_selesai: String
 ){
     override fun toString(): String {
         return  "${nama_subject} ${hari}"

@@ -12,32 +12,138 @@
         android:layout_height="wrap_content"
         android:text="@string/add_schedule"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
-        android:textSize="40sp" />
+        android:textSize="30sp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Subject" />
+        android:text="@string/subject" />
 
     <Spinner
         android:id="@+id/spnr_subject"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        tools:listitem="@android:layout/simple_list_item_1"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="hari" />
+        android:text="@string/hari" />
 
     <Spinner
         android:id="@+id/spnr_hari"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        tools:listitem="@android:layout/simple_list_item_1"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_tglmulai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tanggal_mulai" />
+
+        <ImageButton
+            android:id="@+id/pick_startdate"
+            style="@style/Base.Widget.AppCompat.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/tv_tglmulai"
+            android:src="@drawable/calendar_18dp" />
+
+        <TextView
+            android:id="@+id/tv_pickedstartdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/pick_startdate"
+            tools:text="@string/date_format" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_tglselesai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tanggal_selesai" />
+
+        <ImageButton
+            android:id="@+id/pick_enddate"
+            style="@style/Base.Widget.AppCompat.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/tv_tglselesai"
+            android:src="@drawable/calendar_18dp" />
+
+        <TextView
+            android:id="@+id/tv_pickedenddate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/pick_enddate"
+            tools:text="@string/date_format" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_jammulai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/jam_mulai" />
+
+        <ImageButton
+            android:id="@+id/pick_starttime"
+            style="@style/Base.Widget.AppCompat.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/tv_jammulai"
+            android:src="@drawable/time_18dp" />
+
+        <TextView
+            android:id="@+id/tv_pickedstarttime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/pick_starttime"
+            tools:text="@string/time_format" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_jamselesai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/jam_selesai" />
+
+        <ImageButton
+            android:id="@+id/pick_endtime"
+            style="@style/Base.Widget.AppCompat.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/tv_jamselesai"
+            android:src="@drawable/time_18dp" />
+
+        <TextView
+            android:id="@+id/tv_pickedendtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/pick_endtime"
+            tools:text="@string/time_format" />
+    </RelativeLayout>
 
     <Button
         android:id="@+id/btn_add_jadwal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add " />
+        android:text="Add" />
 
 </LinearLayout>

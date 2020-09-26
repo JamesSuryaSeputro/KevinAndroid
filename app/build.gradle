@@ -57,7 +57,8 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    implementation 'com.google.android.material:material:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'com.wdullaer:materialdatetimepicker:4.2.3'
 
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
@@ -76,7 +77,6 @@ dependencies {
     implementation "org.koin:koin-androidx-viewmodel:2.1.5"
     // or Koin for Android Fragment Factory (unstable version)
     implementation "org.koin:koin-androidx-fragment:2.1.5"
-
 
     implementation "com.github.bumptech.glide:glide:4.11.0"
     kapt "com.github.bumptech.glide:compiler:4.11.0"

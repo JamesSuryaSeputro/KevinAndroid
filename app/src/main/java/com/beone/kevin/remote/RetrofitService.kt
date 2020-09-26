@@ -62,7 +62,11 @@ interface RetrofitService {
     fun addSchedule(
         @Field("iduser") iduser: String?,
         @Field("idsubject") idsubject: Int,
-        @Field("hari") hari: DayEnum
+        @Field("hari") hari: DayEnum,
+        @Field("tglmulai") tglmulai: String?,
+        @Field("tglselesai") tglselesai: String?,
+        @Field("jammulai") jammulai: String?,
+        @Field("jamselesai") jamselesai: String?
     ): Call<StatusDataModel>
 
     @POST("get_jadwal_pelatihan_all")
