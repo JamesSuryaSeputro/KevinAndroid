@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
             android:layout_marginTop="20dp"
-            android:text="Rp. 10.0000.000"
+            android:text="Rp. 10.000.000"
             android:textAlignment="center"
             android:textStyle="bold" />
 
