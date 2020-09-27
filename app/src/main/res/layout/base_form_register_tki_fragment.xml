@@ -46,6 +46,13 @@
                 android:inputType="textPassword" />
 
             <EditText
+                android:id="@+id/edt_confirmpassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Confirm Password"
+                android:inputType="textPassword" />
+
+            <EditText
                 android:id="@+id/edt_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -70,23 +77,34 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:weightSum="1">
+                android:weightSum="8">
 
                 <EditText
                     android:id="@+id/edt_place"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.6"
+                    android:layout_weight="6"
                     android:hint="Tempat"
                     android:inputType="text" />
 
-                <EditText
-                    android:id="@+id/edt_dateofbirth"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/tv_dateofbirth"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.4"
+                    android:layout_weight="1"
                     android:hint="Tanggal Lahir"
-                    android:inputType="date" />
+                    android:background="?attr/editTextBackground"
+                    android:textAppearance="?android:attr/textAppearanceMediumInverse"
+                    android:textColor="?attr/editTextColor"
+                    android:focusable="false" />
+
+                <ImageButton
+                    android:id="@+id/pick_date"
+                    style="@style/Base.Widget.AppCompat.ImageButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/calendar_18dp" />
 
             </LinearLayout>
 

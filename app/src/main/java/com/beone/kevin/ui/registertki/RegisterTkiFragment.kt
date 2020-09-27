@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.beone.kevin.CustomImageUtils
 import com.beone.kevin.R
+import kotlinx.android.synthetic.main.base_form_register_coach_fragment.*
 import kotlinx.android.synthetic.main.base_form_register_tki_fragment.*
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
@@ -40,7 +41,9 @@ class RegisterTkiFragment : BaseFormRegisterTkiFragment() {
             if (genderEnum.ordinal != 0) {
                 var pasfoto: String? = ""
                 var fotoTtd: String? = ""
-                if (edt_address.text.toString() != "" && edt_nationality.text.toString() != "" && edt_name.text.toString() != ""
+                if (edt_password.text.toString() != edt_confirmpassword.text.toString()){
+                    Toast.makeText(this.requireContext(), "Password tidak sama", Toast.LENGTH_SHORT).show()
+                } else if (edt_address.text.toString() != "" && edt_nationality.text.toString() != "" && edt_name.text.toString() != ""
                     && edt_noktp.text.toString() != "" && edt_nopassport.text.toString() != "" && edt_nohp.text.toString() != ""
                     && edt_password.text.toString() != "" && edt_place.text.toString() != "" && edt_username.text.toString() != ""
                     && bitmapPf != null && bitmapTtd != null
@@ -54,7 +57,7 @@ class RegisterTkiFragment : BaseFormRegisterTkiFragment() {
                         edt_nopassport.text.toString(),
                         edt_noktp.text.toString(),
                         edt_place.text.toString(),
-                        edt_dateofbirth.text.toString(),
+                        tv_dateofbirth.text.toString(),
                         edt_nationality.text.toString(),
                         genderEnum.ordinal.toString(),
                         edt_address.text.toString(),
@@ -146,7 +149,7 @@ class RegisterTkiFragment : BaseFormRegisterTkiFragment() {
         tv_filepf.setText("")
         bitmapPf = null
         edt_password.setText("")
-        edt_dateofbirth.setText("")
+        tv_dateofbirth.setText("")
         edt_place.setText("")
         tv_filettd.setText("")
         bitmapTtd = null

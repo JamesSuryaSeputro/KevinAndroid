@@ -29,7 +29,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nama User  " />
+                android:text="Nama User:  " />
 
             <TextView
                 android:id="@+id/tv_nama"
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
             android:layout_marginTop="20dp"
-            android:text="User harap menyelsaikan Transaksi untuk pendaftaran Tki dengan mengirimankan uang tunai seharga yang tertera di bawah :" />
+            android:text="User harap menyelesaikan transaksi untuk pendaftaran TKI dengan mengirimkan uang tunai seharga yang tertera di bawah:" />
 
         <TextView
             android:layout_width="match_parent"
@@ -70,7 +70,9 @@
             android:layout_height="200dp"
             android:layout_gravity="center"
             android:layout_marginVertical="7dp"
+            android:scaleType="fitXY"
             android:background="@android:color/darker_gray"/>
+
         <Button
             android:id="@+id/btn_pick_photo"
             android:layout_width="wrap_content"

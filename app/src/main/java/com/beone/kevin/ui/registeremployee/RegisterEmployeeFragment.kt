@@ -28,7 +28,9 @@ class RegisterEmployeeFragment : BaseFormRegisterEmployeeFragment() {
         })
 
         btn_employeesignup.setOnClickListener {
-            if (edt_employeeusername.text.toString() != "" && edt_employeepassword.text.toString() != ""
+            if (edt_employeepassword.text.toString() != edt_employeeconfirmpassword.text.toString()){
+                Toast.makeText(this.requireContext(), "Password tidak sama", Toast.LENGTH_SHORT).show()
+            } else if (edt_employeeusername.text.toString() != "" && edt_employeepassword.text.toString() != ""
                 && edt_employeename.text.toString() != "" && edt_nip.text.toString() != "") {
                 vm.registerEmployee(
                     edt_employeeusername.text.toString(),

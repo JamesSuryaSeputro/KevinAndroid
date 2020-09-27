@@ -37,7 +37,7 @@
                 android:layout_weight="8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="kkkkksdsdsdsdsds" />
+                android:text="Upload ktp" />
 
             <ImageButton
                 android:id="@+id/btn_uploadKtp"
@@ -63,7 +63,7 @@
                 android:layout_weight="8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="kkkkksdsdsdsdsds" />
+                android:text="Upload kompensasi" />
 
             <ImageButton
                 android:id="@+id/btn_uploadKompensasi"
@@ -89,7 +89,7 @@
                 android:layout_weight="8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="kkkkksdsdsdsdsds" />
+                android:text="Upload Surat Kesehatan" />
 
             <ImageButton
                 android:layout_weight="1"
@@ -115,7 +115,7 @@
                 android:layout_weight="8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="kkkkksdsdsdsdsds" />
+                android:text="Upload Surat Kerja" />
 
             <ImageButton
                 android:id="@+id/btn_uploadSuratKerja"

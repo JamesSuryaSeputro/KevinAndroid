@@ -29,7 +29,9 @@ class RegisterCoachFragment : BaseFormRegisterCoachFragment() {
         })
 
         btn_coachsignup.setOnClickListener {
-            if (edt_coachusername.text.toString() != "" && edt_coachpassword.text.toString() != "" && edt_coachname.text.toString() != "") {
+            if (edt_coachpassword.text.toString() != edt_coachconfirmpassword.text.toString()){
+                Toast.makeText(this.requireContext(), "Password tidak sama", Toast.LENGTH_SHORT).show()
+            } else if (edt_coachusername.text.toString() != "" && edt_coachpassword.text.toString() != "" && edt_coachname.text.toString() != "") {
                 vm.registerCoach(
                     edt_coachusername.text.toString(),
                     edt_coachpassword.text.toString(),

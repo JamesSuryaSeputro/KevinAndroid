@@ -10,11 +10,25 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.beone.kevin.R
+import com.wdullaer.materialdatetimepicker.date.DatePickerDialog
 import kotlinx.android.synthetic.main.base_form_register_tki_fragment.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 
-abstract class BaseFormRegisterTkiFragment : Fragment() {
+abstract class BaseFormRegisterTkiFragment : Fragment(), DatePickerDialog.OnDateSetListener {
     private lateinit var genderArrayAdapter: ArrayAdapter<TypeGenderEnum>
+    val now = Calendar.getInstance()
+    private val dpd: DatePickerDialog = DatePickerDialog.newInstance(
+        this@BaseFormRegisterTkiFragment,
+        now[Calendar.YEAR],
+        now[Calendar.MONTH],
+        now[Calendar.DAY_OF_MONTH]
+    )
+
+    companion object {
+        private const val DATE_PICKER_TAG = "DatePicker"
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,7 +43,9 @@ abstract class BaseFormRegisterTkiFragment : Fragment() {
         tv_title.text = setTitleFragment()
         initSpinner()
         ll_register.setOnClickListener { hideKeyboard(ll_register) }
-
+        pick_date.setOnClickListener {
+            dpd.show(activity?.supportFragmentManager!!, DATE_PICKER_TAG)
+        }
     }
 
     abstract fun initUi()
@@ -69,5 +85,18 @@ abstract class BaseFormRegisterTkiFragment : Fragment() {
             }
             else -> throw Exception("Wrong type for gender")
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val dpd =
+            activity?.supportFragmentManager!!.findFragmentByTag(DATE_PICKER_TAG) as DatePickerDialog?
+        if (dpd != null) dpd.onDateSetListener = this
+    }
+
+    override fun onDateSet(view: DatePickerDialog?, year: Int, monthOfYear: Int, dayOfMonth: Int) {
+        now.set(year, monthOfYear, dayOfMonth)
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        tv_dateofbirth.text = dateFormat.format(now.time).toString()
     }
 }
