@@ -26,4 +26,9 @@
     <string name="time_format">hh:mm:ss</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="bahasa_mandarin">Bahasa Mandarin:</string>
+    <string name="tata_krama">Tata Krama:</string>
+    <string name="schedule">Schedule</string>
+    <string name="score">Score</string>
+    <string name="no_schedule">Anda belum memiliki jadwal</string>
 </resources>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="4dp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/tv_subjectuser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        tools:text="@string/bahasa_mandarin" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_pelatihuser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            tools:text="Pelatih: " />
+
+        <TextView
+            android:id="@+id/tv_namapelatihuser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/tv_pelatihuser"
+            android:textSize="20sp"
+            tools:text="Nama pelatih" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_hariuser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            tools:text="Senin, pk. " />
+
+        <TextView
+            android:id="@+id/tv_jadwaljammulaiuser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/tv_hariuser"
+            android:textSize="20sp"
+            tools:text="11:00 - " />
+
+        <TextView
+            android:id="@+id/tv_jadwaljamselesaiuser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/tv_jadwaljammulaiuser"
+            android:textSize="20sp"
+            tools:text="12:00" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="4dp">
+
+        <TextView
+            android:id="@+id/tv_jadwaltanggalmulaiuser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            tools:text="yyyy-mm-dd - " />
+
+        <TextView
+            android:id="@+id/tv_jadwaltanggalselesaiuser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/tv_jadwaltanggalmulaiuser"
+            android:textSize="20sp"
+            tools:text="yyyy-mm-dd" />
+
+    </RelativeLayout>
+
+</LinearLayout>

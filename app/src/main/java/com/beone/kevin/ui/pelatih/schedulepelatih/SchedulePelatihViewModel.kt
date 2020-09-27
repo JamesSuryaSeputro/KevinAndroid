@@ -83,6 +83,6 @@ class SchedulePelatihViewModel(private val retrofitService: RetrofitService) : V
     }
 
     companion object {
-        private const val TAG = "SchedulePelatihViewMode"
+        private const val TAG = "SchedulePelatihViewModel"
     }
 }

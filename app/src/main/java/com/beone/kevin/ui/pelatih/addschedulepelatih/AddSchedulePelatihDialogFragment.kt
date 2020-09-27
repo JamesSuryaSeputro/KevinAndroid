@@ -26,7 +26,7 @@ class AddSchedulePelatihDialogFragment : BottomSheetDialogFragment(),
 
     private lateinit var subjectArrayAdapter: ArrayAdapter<SubjectEnum>
     private lateinit var dayArrayAdapter: ArrayAdapter<DayEnum>
-   val now = Calendar.getInstance()
+    val now = Calendar.getInstance()
     private val dpd: DatePickerDialog = DatePickerDialog.newInstance(
         this@AddSchedulePelatihDialogFragment,
         now[Calendar.YEAR],
@@ -135,8 +135,8 @@ class AddSchedulePelatihDialogFragment : BottomSheetDialogFragment(),
 
     fun checkSpinnerSubject(): SubjectEnum {
         when (spnr_subject.selectedItem) {
-            SubjectEnum.Bahasa -> {
-                return SubjectEnum.Bahasa
+            SubjectEnum.Bahasa_Mandarin -> {
+                return SubjectEnum.Bahasa_Mandarin
             }
             SubjectEnum.Tata_Krama -> {
                 return SubjectEnum.Tata_Krama

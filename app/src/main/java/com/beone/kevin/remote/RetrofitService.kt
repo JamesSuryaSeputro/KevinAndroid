@@ -75,6 +75,12 @@ interface RetrofitService {
         @Field("iduser") iduser: String?
     ): Call<JadwalPelatihModel>
 
+    @POST("get_jadwal_pelatihan_user")
+    @FormUrlEncoded
+    fun getScheduleUser(
+        @Field("iduser") iduser: String?
+    ): Call<JadwalPelatihModel>
+
     @POST("registertki")
     @FormUrlEncoded
     fun registerTki(

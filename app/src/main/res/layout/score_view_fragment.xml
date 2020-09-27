@@ -14,21 +14,25 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Score"
+            android:text="@string/score"
             android:textSize="30sp"
+            android:paddingBottom="8dp"
             android:textAlignment="center" />
+
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bahasa : "
-            android:textSize="20sp"
+            android:text="@string/bahasa_mandarin"
+            android:textSize="24sp"
+            android:layout_marginEnd="4dp"
             android:textAlignment="textStart" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tata Krama : "
-            android:textSize="20sp"
+            android:text="@string/tata_krama"
+            android:textSize="24sp"
+            android:layout_marginEnd="4dp"
             android:textAlignment="textStart" />
 
     </LinearLayout>
