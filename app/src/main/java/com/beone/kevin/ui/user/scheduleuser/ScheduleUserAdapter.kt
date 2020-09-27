@@ -40,9 +40,8 @@ class ScheduleUserAdapter() : RecyclerView.Adapter<ScheduleUserAdapter.ScheduleU
             tv_hariuser.text = item.hari.toString() + ", "
             tv_jadwaljammulaiuser.text = "pk. " + item.jam_mulai + " - "
             tv_jadwaljamselesaiuser.text = item.jam_selesai
-            tv_jadwaltanggalmulaiuser.text = item.tgl_mulai
+            tv_jadwaltanggalmulaiuser.text = item.tgl_mulai + " - "
             tv_jadwaltanggalselesaiuser.text = item.tgl_selesai
-            tv_subjectuser.text = item.nama_subject
         }
     }
 }
