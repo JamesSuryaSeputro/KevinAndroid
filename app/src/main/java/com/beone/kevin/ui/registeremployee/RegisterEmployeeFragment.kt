@@ -33,7 +33,7 @@ class RegisterEmployeeFragment : BaseFormRegisterEmployeeFragment() {
             } else if (edt_employeeusername.text.toString() != "" && edt_employeepassword.text.toString() != ""
                 && edt_employeename.text.toString() != "" && edt_nip.text.toString() != "") {
                 vm.registerEmployee(
-                    edt_employeeusername.text.toString(),
+                    edt_employeeusername.text.toString().trim(),
                     edt_employeepassword.text.toString(),
                     edt_employeename.text.toString(),
                     edt_nip.text.toString()

@@ -11,6 +11,8 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.beone.kevin.R
 import com.beone.kevin.SharedPreferenceUtils
+import kotlinx.android.synthetic.main.add_detail_schedule_pelatih_dialog_fragment.*
+import kotlinx.android.synthetic.main.jadwal_item.*
 import kotlinx.android.synthetic.main.schedule_pelatih_fragment.*
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
@@ -27,9 +29,8 @@ class SchedulePelatihFragment : Fragment(),
 
     private val viewModel: SchedulePelatihViewModel by sharedViewModel<SchedulePelatihViewModel>()
     private val sharedPreferenceUtils: SharedPreferenceUtils by inject<SharedPreferenceUtils>()
-
-    private val adapter: JadwalAdapter =
-        JadwalAdapter(this)
+    private val adapter: JadwalAdapter = JadwalAdapter(this)
+    private val adapterDetail: DetailJadwalAdapter = DetailJadwalAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,6 +45,9 @@ class SchedulePelatihFragment : Fragment(),
         viewModel.initData().observe(viewLifecycleOwner, Observer {
             Log.d(TAG, "onActivityCreated: VM OBSERVE")
             adapter.swapData(it)
+            if (adapterDetail.itemCount != 0) {
+                adapterDetail.swapData(it)
+            }
         })
 
         viewModel.getData(sharedPreferenceUtils.getIdUser)
@@ -69,10 +73,36 @@ class SchedulePelatihFragment : Fragment(),
     override fun onDetail(id: String?) {
 //        Desti
         if (id != null) {
-          val action =    SchedulePelatihFragmentDirections.actionSchedulePelatihFragmentToSelectTkiForTrainingFragment(id)
+            val action =
+                SchedulePelatihFragmentDirections.actionSchedulePelatihFragmentToSelectTkiForTrainingFragment(
+                    id
+                )
             this.findNavController().navigate(action)
         }
-
     }
 
+    override fun onAddDetailJadwal(id: String?) {
+        if (id != null) {
+            val action =
+                SchedulePelatihFragmentDirections.actionNavigationAddscheduleToAddDetailSchedulePelatihDialogFragment(
+                    id
+                )
+            this.findNavController().navigate(action)
+        }
+    }
+
+    override fun onClickDropdown(id: String?) {
+        //viewModel.getData(sharedPreferenceUtils.getIdUser)
+        //viewModel.getDataDetailJadwal(sharedPreferenceUtils.getIdUser, id)
+//        rcv_detailjadwal.adapter = adapterDetail
+//        rcv_jadwal.adapter = adapter
+//        viewModel.getData(sharedPreferenceUtils.getIdUser)
+//        rcv_jadwal.adapter = adapter
+        // rcv_detailjadwal.adapter = adapterDetail
+//        if(rcv_detailjadwal!=null) {
+//            rcv_detailjadwal.adapter = adapterDetail
+//        } else {
+//            Toast.makeText(this.requireContext(), "rcv_detailjadwal null", Toast.LENGTH_SHORT).show()
+//        }
+    }
 }

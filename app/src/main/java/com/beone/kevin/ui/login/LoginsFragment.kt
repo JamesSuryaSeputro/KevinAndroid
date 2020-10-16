@@ -1,6 +1,7 @@
 package com.beone.kevin.ui.login
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -14,6 +15,8 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.beone.kevin.R
 import com.beone.kevin.SharedPreferenceUtils
+import com.beone.kevin.ui.pelatih.mainpelatih.MainPelatihActivity
+import com.beone.kevin.ui.user.mainuser.MainUserActivity
 import kotlinx.android.synthetic.main.logins_fragment.*
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -68,8 +71,9 @@ class LoginsFragment : Fragment() {
                                 .navigate(R.id.action_loginsFragment_to_nav_user)
                         }
                         TypeLoginEnum.PELATIH.jenis -> {
-                            this.findNavController()
-                                .navigate(R.id.action_loginsFragment_to_nav_pelatih)
+                            val intent = Intent(activity, MainPelatihActivity::class.java)
+                            intent.addFlags( Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+                            activity?.startActivity(intent)
                         }
                         TypeLoginEnum.PEGAWAI.jenis -> {
                             this.findNavController()

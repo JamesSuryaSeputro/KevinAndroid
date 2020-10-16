@@ -51,7 +51,7 @@ class RegisterTkiFragment : BaseFormRegisterTkiFragment() {
                     pasfoto = bitmapPf?.let { it1 -> CustomImageUtils.BitmapToString(it1) }
                     fotoTtd = bitmapTtd?.let { it1 -> CustomImageUtils.BitmapToString(it1) }
                     vm.registerTki(
-                        edt_username.text.toString(),
+                        edt_username.text.toString().trim(),
                         edt_password.text.toString(),
                         edt_name.text.toString(),
                         edt_nopassport.text.toString(),

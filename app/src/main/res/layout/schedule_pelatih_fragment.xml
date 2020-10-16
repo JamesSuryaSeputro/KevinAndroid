@@ -25,7 +25,7 @@
             android:layout_height="match_parent"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:itemCount="10"
-            tools:listitem="@layout/jadwalitem" />
+            tools:listitem="@layout/jadwal_item" />
 
     </LinearLayout>
 
@@ -36,6 +36,7 @@
         android:layout_gravity="end|bottom"
         android:layout_margin="10dp"
         android:src="@drawable/ic_action_add"
-        app:fabSize="normal" />
+        app:fabSize="normal"
+        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

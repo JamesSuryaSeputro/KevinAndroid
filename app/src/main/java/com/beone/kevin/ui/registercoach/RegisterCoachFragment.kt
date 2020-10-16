@@ -33,7 +33,7 @@ class RegisterCoachFragment : BaseFormRegisterCoachFragment() {
                 Toast.makeText(this.requireContext(), "Password tidak sama", Toast.LENGTH_SHORT).show()
             } else if (edt_coachusername.text.toString() != "" && edt_coachpassword.text.toString() != "" && edt_coachname.text.toString() != "") {
                 vm.registerCoach(
-                    edt_coachusername.text.toString(),
+                    edt_coachusername.text.toString().trim(),
                     edt_coachpassword.text.toString(),
                     edt_coachname.text.toString()
                 )

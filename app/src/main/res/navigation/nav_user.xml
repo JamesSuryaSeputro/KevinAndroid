@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_user"
-    app:startDestination="@id/uploadDocumentFragment"
-    tools:ignore="UnusedNavigation">
+    app:startDestination="@id/uploadDocumentFragment">
     <fragment
         android:id="@+id/uploadDocumentFragment"
         android:name="com.beone.kevin.ui.user.uploaddocument.UploadDocumentFragment"

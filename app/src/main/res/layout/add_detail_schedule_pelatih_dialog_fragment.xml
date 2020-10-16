@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.pelatih.addschedulepelatih.AddSchedulePelatihDialogFragment"
-    android:padding="8dp">
+    android:padding="8dp"
+    tools:context=".ui.pelatih.adddetailschedulepelatih.AddDetailSchedulePelatihDialogFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/add_schedule"
+        android:text="@string/add_detail_schedule"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
         android:textSize="30sp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/subject" />
+        android:text="@string/hari" />
 
     <Spinner
-        android:id="@+id/spnr_subject"
+        android:id="@+id/spnr_hari"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:listitem="@android:layout/simple_list_item_1"/>
@@ -30,24 +30,24 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/tv_tglmulai"
+            android:id="@+id/tv_tanggal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tanggal_mulai" />
+            android:text="@string/tanggal" />
 
         <ImageButton
-            android:id="@+id/pick_startdate"
+            android:id="@+id/pick_date"
             style="@style/Base.Widget.AppCompat.ImageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/tv_tglmulai"
+            android:layout_toEndOf="@+id/tv_tanggal"
             android:src="@drawable/calendar_18dp" />
 
         <TextView
-            android:id="@+id/tv_pickedstartdate"
+            android:id="@+id/tv_pickeddate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/pick_startdate"
+            android:layout_toEndOf="@+id/pick_date"
             tools:text="@string/date_format" />
     </RelativeLayout>
 
@@ -56,31 +56,56 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/tv_tglselesai"
+            android:id="@+id/tv_jammulai"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tanggal_selesai" />
+            android:text="@string/jam_mulai" />
 
         <ImageButton
-            android:id="@+id/pick_enddate"
+            android:id="@+id/pick_starttime"
             style="@style/Base.Widget.AppCompat.ImageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/tv_tglselesai"
-            android:src="@drawable/calendar_18dp" />
+            android:layout_toEndOf="@+id/tv_jammulai"
+            android:src="@drawable/time_18dp" />
 
         <TextView
-            android:id="@+id/tv_pickedenddate"
+            android:id="@+id/tv_pickedstarttime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/pick_enddate"
-            tools:text="@string/date_format" />
+            android:layout_toEndOf="@+id/pick_starttime"
+            tools:text="@string/time_format" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_jamselesai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/jam_selesai" />
+
+        <ImageButton
+            android:id="@+id/pick_endtime"
+            style="@style/Base.Widget.AppCompat.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/tv_jamselesai"
+            android:src="@drawable/time_18dp" />
+
+        <TextView
+            android:id="@+id/tv_pickedendtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/pick_endtime"
+            tools:text="@string/time_format" />
     </RelativeLayout>
 
     <Button
-        android:id="@+id/btn_add_jadwal"
+        android:id="@+id/btn_add_detailjadwal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/add" />
-
 </LinearLayout>

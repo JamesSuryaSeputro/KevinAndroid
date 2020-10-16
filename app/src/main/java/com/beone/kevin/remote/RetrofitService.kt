@@ -62,9 +62,16 @@ interface RetrofitService {
     fun addSchedule(
         @Field("iduser") iduser: String?,
         @Field("idsubject") idsubject: Int,
-        @Field("hari") hari: DayEnum,
         @Field("tglmulai") tglmulai: String?,
-        @Field("tglselesai") tglselesai: String?,
+        @Field("tglselesai") tglselesai: String?
+    ): Call<StatusDataModel>
+
+    @POST("adddetailjadwal")
+    @FormUrlEncoded
+    fun addScheduleDetail(
+        @Field("idjadwal") idjadwal: String?,
+        @Field("hari") hari: DayEnum,
+        @Field("tanggal") tanggal: String?,
         @Field("jammulai") jammulai: String?,
         @Field("jamselesai") jamselesai: String?
     ): Call<StatusDataModel>
@@ -73,6 +80,12 @@ interface RetrofitService {
     @FormUrlEncoded
     fun getSchedullerAllPelatih(
         @Field("iduser") iduser: String?
+    ): Call<JadwalPelatihModel>
+
+    @POST("get_detail_jadwal_pelatihan")
+    @FormUrlEncoded
+    fun getCoachDetailSchedule(
+        @Field("idjadwal") idjadwal: String?
     ): Call<JadwalPelatihModel>
 
     @POST("get_jadwal_pelatihan_user")

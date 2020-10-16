@@ -21,9 +21,6 @@
             android:id="@+id/action_loginsFragment_to_nav_hrd"
             app:destination="@id/nav_hrd" />
         <action
-            android:id="@+id/action_loginsFragment_to_nav_pelatih"
-            app:destination="@id/nav_pelatih" />
-        <action
             android:id="@+id/action_loginsFragment_to_nav_user"
             app:destination="@id/nav_user"
             app:popUpToInclusive="true" />
@@ -43,9 +40,7 @@
         android:id="@+id/action_global_loginsFragment"
         app:destination="@id/loginsFragment" />
 
-
     <include app:graph="@navigation/nav_hrd" />
-    <include app:graph="@navigation/nav_pelatih" />
     <include app:graph="@navigation/nav_user" />
 
 </navigation>

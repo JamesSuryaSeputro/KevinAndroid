@@ -25,7 +25,26 @@ class SchedulePelatihViewModel(private val retrofitService: RetrofitService) : V
 
     fun getData(iduser:String?){
         Log.d(TAG, "getData: ${iduser}")
-        retrofitService.getSchedullerAllPelatih(iduser).enqueue(object : Callback<JadwalPelatihModel>{
+        retrofitService.getSchedullerAllPelatih(iduser).enqueue(object :
+            Callback<JadwalPelatihModel> {
+            override fun onFailure(call: Call<JadwalPelatihModel>, t: Throwable) {
+                Log.e(TAG, "onFailure: ", t)
+            }
+
+            override fun onResponse(
+                call: Call<JadwalPelatihModel>,
+                response: Response<JadwalPelatihModel>
+            ) {
+                if (response.isSuccessful) {
+                    data.postValue(response.body())
+                    data2.postValue(StatusDataModel(0))
+                }
+            }
+        })
+    }
+
+    fun getDataDetailJadwal(iduser: String?, idjadwal: String?){
+        retrofitService.getCoachDetailSchedule(idjadwal).enqueue(object : Callback<JadwalPelatihModel>{
             override fun onFailure(call: Call<JadwalPelatihModel>, t: Throwable) {
                 Log.e(TAG, "onFailure: ",t )
             }
@@ -35,8 +54,8 @@ class SchedulePelatihViewModel(private val retrofitService: RetrofitService) : V
                 response: Response<JadwalPelatihModel>
             ) {
                 if (response.isSuccessful){
+                    getData(iduser)
                     data.postValue(response.body())
-                    data2.postValue(StatusDataModel(0))
                 }
             }
         })
@@ -60,9 +79,9 @@ class SchedulePelatihViewModel(private val retrofitService: RetrofitService) : V
         })
     }
 
-    fun addSchedule(iduser: String?, idsubject: SubjectEnum, hari: DayEnum, tglmulai: String, tglselesai: String, jammulai: String, jamselesai: String){
+    fun addSchedule(iduser: String?, idsubject: SubjectEnum, tglmulai: String, tglselesai: String){
 
-        retrofitService.addSchedule(iduser,idsubject.subjectdbposition,hari,tglmulai,tglselesai,jammulai,jamselesai).enqueue(object :
+        retrofitService.addSchedule(iduser,idsubject.subjectdbposition,tglmulai,tglselesai).enqueue(object :
             Callback<StatusDataModel>{
             override fun onFailure(call: Call<StatusDataModel>, t: Throwable) {
                 Log.e(TAG, "onFailure: ",t )
@@ -75,6 +94,28 @@ class SchedulePelatihViewModel(private val retrofitService: RetrofitService) : V
                 if (response.isSuccessful){
                     data2.postValue(StatusDataModel(1))
                     getData(iduser)
+                }else{
+                    data2.postValue(StatusDataModel(0))
+                }
+            }
+        })
+    }
+
+    fun addDetailSchedule(idjadwal: String?, hari: DayEnum, tanggal: String, jammulai: String, jamselesai: String){
+
+        retrofitService.addScheduleDetail(idjadwal, hari, tanggal, jammulai, jamselesai).enqueue(object :
+            Callback<StatusDataModel>{
+            override fun onFailure(call: Call<StatusDataModel>, t: Throwable) {
+                Log.e(TAG, "onFailure: ",t )
+            }
+
+            override fun onResponse(
+                call: Call<StatusDataModel>,
+                response: Response<StatusDataModel>
+            ) {
+                if (response.isSuccessful){
+                    data2.postValue(StatusDataModel(1))
+                    getData(idjadwal)
                 }else{
                     data2.postValue(StatusDataModel(0))
                 }
