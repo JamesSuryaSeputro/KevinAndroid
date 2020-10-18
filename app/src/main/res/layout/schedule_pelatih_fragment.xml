@@ -37,7 +37,6 @@
         android:layout_margin="10dp"
         android:src="@drawable/ic_action_add"
         app:fabSize="normal"
-        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

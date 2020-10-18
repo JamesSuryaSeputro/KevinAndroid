@@ -51,7 +51,7 @@ class CoachDetailScheduleAdapter : RecyclerView.Adapter<CoachDetailScheduleAdapt
         fun bind(item: DetailJadwalPelatihModelItem) = with(itemView) {
             tv_hari.text = item.hari + ", "
             tv_tanggal.text = item.tanggal
-            tv_jadwaljammulai.text = "(" + item.jam_mulai + "-"
+            tv_jadwaljammulai.text = " (" + item.jam_mulai + "-"
             tv_jadwaljamselesai.text = item.jam_selesai + ")"
         }
     }
