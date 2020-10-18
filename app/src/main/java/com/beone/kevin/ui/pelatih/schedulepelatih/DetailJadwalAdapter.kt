@@ -6,13 +6,15 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.beone.kevin.R
+import com.beone.kevin.remote.model.DetailJadwalPelatihModel
+import com.beone.kevin.remote.model.DetailJadwalPelatihModelItem
 import com.beone.kevin.remote.model.JadwalPelatihModel
 import com.beone.kevin.remote.model.JadwalPelatihModelItem
 import kotlinx.android.synthetic.main.jadwal_item_detail.view.*
 
 class DetailJadwalAdapter : RecyclerView.Adapter<DetailJadwalAdapter.DetailJadwalViewHolder>() {
 
-    private var data: JadwalPelatihModel = JadwalPelatihModel()
+    private var data: DetailJadwalPelatihModel = DetailJadwalPelatihModel()
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -33,25 +35,25 @@ class DetailJadwalAdapter : RecyclerView.Adapter<DetailJadwalAdapter.DetailJadwa
 
     override fun getItemCount() = data.size
 
-    fun swapData(newData: JadwalPelatihModel) {
-        val diffUtils = DiffUtil.calculateDiff(
-            JadwalDiffUtilCallBack(
-                data,
-                newData
-            )
-        )
-        this.data.clear()
-        this.data.addAll(newData)
-        diffUtils.dispatchUpdatesTo(this)
-    }
+//    fun swapData(newData: DetailJadwalPelatihModel) {
+//        val diffUtils = DiffUtil.calculateDiff(
+//            JadwalDetailDiffUtilCallBack(
+//                data,
+//                newData
+//            )
+//        )
+//        this.data.clear()
+//        this.data.addAll(newData)
+//        diffUtils.dispatchUpdatesTo(this)
+//    }
 
     class DetailJadwalViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bind(item: JadwalPelatihModelItem) = with(itemView) {
-//            tv_hari.text = item.hari.name + ", "
-//            tv_tanggal.text = item.tanggal
-//            tv_jadwaljammulai.text = item.jam_mulai
-//            tv_jadwaljamselesai.text = item.jam_selesai
+        fun bind(item: DetailJadwalPelatihModelItem) = with(itemView) {
+            tv_hari.text = item.hari + ", "
+            tv_tanggal.text = item.tanggal
+            tv_jadwaljammulai.text = item.jam_mulai
+            tv_jadwaljamselesai.text = item.jam_selesai
         }
     }
 }

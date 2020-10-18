@@ -22,24 +22,24 @@ class AddNilaiViewModel(private val retrofitService: RetrofitService) : ViewMode
     fun initStatus(): LiveData<StatusDataModel> = dataStatus
     fun initFragment2(): LiveData<UserModel> = datausernilai
 
-    fun getDataJadwal(iduser: String?) {
-        retrofitService.getSchedullerAllPelatih(iduser).enqueue(object :
-            Callback<JadwalPelatihModel> {
-            override fun onFailure(call: Call<JadwalPelatihModel>, t: Throwable) {
-
-            }
-
-            override fun onResponse(
-                call: Call<JadwalPelatihModel>,
-                response: Response<JadwalPelatihModel>
-            ) {
-                if (response.isSuccessful) {
-                    data.postValue(response.body())
-                    dataStatus.postValue(StatusDataModel(0))
-                }
-            }
-        })
-    }
+//    fun getDataJadwal(iduser: String?) {
+//        retrofitService.getSchedullerAllPelatih(iduser).enqueue(object :
+//            Callback<JadwalPelatihModel> {
+//            override fun onFailure(call: Call<JadwalPelatihModel>, t: Throwable) {
+//
+//            }
+//
+//            override fun onResponse(
+//                call: Call<JadwalPelatihModel>,
+//                response: Response<JadwalPelatihModel>
+//            ) {
+//                if (response.isSuccessful) {
+//                    data.postValue(response.body())
+//                    dataStatus.postValue(StatusDataModel(0))
+//                }
+//            }
+//        })
+//    }
 
     fun getDataSiswa(idJadwal: String?){
         retrofitService.getDetailUserNilai(idJadwal).enqueue(object : Callback<UserModel>{

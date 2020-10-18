@@ -72,7 +72,8 @@ class LoginsFragment : Fragment() {
                         }
                         TypeLoginEnum.PELATIH.jenis -> {
                             val intent = Intent(activity, MainPelatihActivity::class.java)
-                            intent.addFlags( Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
                             activity?.startActivity(intent)
                         }
                         TypeLoginEnum.PEGAWAI.jenis -> {

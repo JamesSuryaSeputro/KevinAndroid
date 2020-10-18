@@ -11,7 +11,7 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="8"
+        android:layout_weight="9"
         android:orientation="vertical">
 
         <TextView
@@ -49,52 +49,52 @@
 
         </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/rl_detailjadwal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/rl_detailjadwal"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content">-->
 
-            <TextView
-                android:id="@+id/tv_hari"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                tools:text="Senin, " />
+<!--            <TextView-->
+<!--                android:id="@+id/tv_hari"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textSize="16sp"-->
+<!--                tools:text="Senin, " />-->
 
-            <TextView
-                android:id="@+id/tv_tanggal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/tv_hari"
-                android:textSize="16sp"
-                tools:text="1998-10-18 " />
+<!--            <TextView-->
+<!--                android:id="@+id/tv_tanggal"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_toEndOf="@id/tv_hari"-->
+<!--                android:textSize="16sp"-->
+<!--                tools:text="1998-10-18 " />-->
 
-            <TextView
-                android:id="@+id/tv_jadwaljammulai"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/tv_tanggal"
-                android:textSize="16sp"
-                tools:text="(11:00 - " />
+<!--            <TextView-->
+<!--                android:id="@+id/tv_jadwaljammulai"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_toEndOf="@id/tv_tanggal"-->
+<!--                android:textSize="16sp"-->
+<!--                tools:text="(11:00 - " />-->
 
-            <TextView
-                android:id="@+id/tv_jadwaljamselesai"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/tv_jadwaljammulai"
-                android:textSize="16sp"
-                tools:text="12:00)" />
+<!--            <TextView-->
+<!--                android:id="@+id/tv_jadwaljamselesai"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_toEndOf="@id/tv_jadwaljammulai"-->
+<!--                android:textSize="16sp"-->
+<!--                tools:text="12:00)" />-->
 
-            <ImageButton
-                android:id="@+id/btn_deletedetail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="12dp"
-                android:layout_toEndOf="@+id/tv_jadwaljamselesai"
-                android:background="@android:color/transparent"
-                android:src="@drawable/ic_action_delete"
-                android:contentDescription="@string/delete_detail_jadwal" />
-        </RelativeLayout>
+<!--            <ImageButton-->
+<!--                android:id="@+id/btn_deletedetail"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:paddingHorizontal="12dp"-->
+<!--                android:layout_toEndOf="@+id/tv_jadwaljamselesai"-->
+<!--                android:background="@android:color/transparent"-->
+<!--                android:src="@drawable/ic_action_delete"-->
+<!--                android:contentDescription="@string/delete_detail_jadwal" />-->
+<!--        </RelativeLayout>-->
 
 <!--        <androidx.recyclerview.widget.RecyclerView-->
 <!--            android:id="@+id/rcv_detailjadwal"-->
@@ -128,13 +128,13 @@
         </RelativeLayout>
     </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/btn_dropdown"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:background="@android:color/transparent"
-        android:src="@drawable/ic_dropdown"/>
+<!--    <ImageButton-->
+<!--        android:id="@+id/btn_dropdown"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_weight="1"-->
+<!--        android:background="@android:color/transparent"-->
+<!--        android:src="@drawable/ic_dropdown"/>-->
 
     <ImageButton
         android:id="@+id/btn_delete"

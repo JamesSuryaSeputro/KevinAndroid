@@ -1,13 +1,14 @@
 package com.beone.kevin.ui.pelatih.schedulepelatih
 
 import androidx.recyclerview.widget.DiffUtil
+import com.beone.kevin.remote.model.JadwalModel
 import com.beone.kevin.remote.model.JadwalPelatihModel
 
-class JadwalDiffUtilCallBack(val oldData: JadwalPelatihModel, val newData: JadwalPelatihModel) :
+class JadwalDiffUtilCallBack(val oldData: ArrayList<JadwalModel>, val newData: ArrayList<JadwalModel>) :
     DiffUtil.Callback() {
 
     override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-        return oldData.get(oldItemPosition).id_jadwal == newData.get(newItemPosition).id_jadwal
+        return oldData.get(oldItemPosition).jadwalheader.id_jadwal == newData.get(newItemPosition).jadwalheader.id_jadwal
     }
 
     override fun getOldListSize(): Int {
