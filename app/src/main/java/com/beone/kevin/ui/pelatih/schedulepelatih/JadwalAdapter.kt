@@ -54,17 +54,17 @@ class JadwalAdapter(val itemOnClick: ItemOnClick) : RecyclerView.Adapter<JadwalA
                 itemOnClick.onDetail(item.jadwalheader.id_jadwal)
             }
 
-            btn_dropdown.setOnClickListener {
-                if(!isClicked) {
-                    isClicked = !isClicked
-                    Toast.makeText(this.context, "CLICK TRUE", Toast.LENGTH_SHORT).show()
-                    rl_adddetailjadwal.visibility = View.VISIBLE
-                } else {
-                    isClicked = !isClicked
-                    Toast.makeText(this.context, "CLICK FALSE", Toast.LENGTH_SHORT).show()
-                    rl_adddetailjadwal.visibility = View.GONE
-                }
-            }
+//            btn_dropdown.setOnClickListener {
+//                if(!isClicked) {
+//                    isClicked = !isClicked
+//                    Toast.makeText(this.context, "CLICK TRUE", Toast.LENGTH_SHORT).show()
+//                    rl_adddetailjadwal.visibility = View.VISIBLE
+//                } else {
+//                    isClicked = !isClicked
+//                    Toast.makeText(this.context, "CLICK FALSE", Toast.LENGTH_SHORT).show()
+//                    rl_adddetailjadwal.visibility = View.GONE
+//                }
+//            }
             rl_adddetailjadwal.setOnClickListener {
                 itemOnClick.onAddDetailJadwal(item.jadwalheader.id_jadwal)
             }
