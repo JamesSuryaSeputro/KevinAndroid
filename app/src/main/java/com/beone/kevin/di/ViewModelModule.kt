@@ -9,6 +9,7 @@ import com.beone.kevin.ui.hrd.checkuserpayment.CheckPembayaranViewModel
 import com.beone.kevin.ui.hrd.profilehrd.ProfileHrdViewModel
 import com.beone.kevin.ui.login.LoginsViewModel
 import com.beone.kevin.ui.pelatih.addnilai.AddNilaiViewModel
+import com.beone.kevin.ui.pelatih.coachdetailschedule.CoachDetailScheduleViewModel
 
 import com.beone.kevin.ui.pelatih.presensi.PresensiViewModel
 import com.beone.kevin.ui.pelatih.presensiujian.PresensiUjianViewModel
@@ -68,6 +69,10 @@ val viewModelModule = module {
 
     viewModel<SchedulePelatihViewModel> {
         SchedulePelatihViewModel(get())
+    }
+
+    viewModel<CoachDetailScheduleViewModel> {
+        CoachDetailScheduleViewModel(get())
     }
 
     viewModel<SelectTkiForTrainingViewModel> {

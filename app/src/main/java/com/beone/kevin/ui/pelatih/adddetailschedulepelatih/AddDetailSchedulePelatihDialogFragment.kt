@@ -30,8 +30,8 @@ class AddDetailSchedulePelatihDialogFragment : BottomSheetDialogFragment(),
     }
 
     private lateinit var dayArrayAdapter: ArrayAdapter<DayEnum>
-    private lateinit var idJadwal: String
-    val args: AddDetailSchedulePelatihDialogFragmentArgs by navArgs<AddDetailSchedulePelatihDialogFragmentArgs>()
+    //private lateinit var idJadwal: String
+//    val args: AddDetailSchedulePelatihDialogFragmentArgs by navArgs<AddDetailSchedulePelatihDialogFragmentArgs>()
     private val addDetailSchedulePelatihViewModel: SchedulePelatihViewModel by sharedViewModel()
 
     val now = Calendar.getInstance()
@@ -50,7 +50,7 @@ class AddDetailSchedulePelatihDialogFragment : BottomSheetDialogFragment(),
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        idJadwal = args.idJadwal
+        //idJadwal = args.idJadwal
     }
 
     override fun onCreateView(
@@ -83,7 +83,7 @@ class AddDetailSchedulePelatihDialogFragment : BottomSheetDialogFragment(),
             }
         })
 
-        btn_add_detailjadwal.setOnClickListener {
+        btn_adddetailjadwal.setOnClickListener {
             when {
                 tv_pickeddate.text.toString() == "" -> {
                     Toast.makeText(requireContext(), "Belum memilih tanggal", Toast.LENGTH_SHORT)
@@ -101,13 +101,13 @@ class AddDetailSchedulePelatihDialogFragment : BottomSheetDialogFragment(),
                     ).show()
                 }
                 else -> {
-                    addDetailSchedulePelatihViewModel.addDetailSchedule(
-                        idJadwal,
-                        checkSpinnerDay(),
-                        tv_pickeddate.text.toString(),
-                        tv_pickedstarttime.text.toString(),
-                        tv_pickedendtime.text.toString()
-                    )
+//                    addDetailSchedulePelatihViewModel.addDetailSchedule(
+//                        //idJadwal,
+//                        checkSpinnerDay(),
+//                        tv_pickeddate.text.toString(),
+//                        tv_pickedstarttime.text.toString(),
+//                        tv_pickedendtime.text.toString()
+//                    )
                 }
             }
         }

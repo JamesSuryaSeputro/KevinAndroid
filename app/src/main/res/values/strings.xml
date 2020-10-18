@@ -38,4 +38,6 @@
     <string name="add">Add</string>
     <string name="add_detail_jadwal">Add detail jadwal</string>
     <string name="delete_detail_jadwal">delete detail jadwal</string>
+    <string name="fab">Floating Action Button</string>
+    <string name="select_tki">Pilih TKI</string>
 </resources>

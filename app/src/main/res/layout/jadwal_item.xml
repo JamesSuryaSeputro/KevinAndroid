@@ -3,9 +3,9 @@
     android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="8dp"
     android:weightSum="10"
     android:orientation="horizontal"
+    android:paddingVertical="4dp"
     android:layout_height="wrap_content">
 
     <LinearLayout
@@ -104,28 +104,28 @@
 <!--            tools:itemCount="10"-->
 <!--            tools:listitem="@layout/jadwal_item_detail" />-->
 
-        <RelativeLayout
-            android:id="@+id/rl_adddetailjadwal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone">
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/rl_adddetailjadwal"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:visibility="gone">-->
 
-            <ImageButton
-                android:id="@+id/btn_adddetailjadwal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:src="@drawable/ic_action_add"/>
+<!--            <ImageButton-->
+<!--                android:id="@+id/btn_adddetailjadwal"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@android:color/transparent"-->
+<!--                android:src="@drawable/ic_action_add"/>-->
 
-            <TextView
-                android:id="@+id/tv_adddetailjadwal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/btn_adddetailjadwal"
-                android:textSize="16sp"
-                android:text="@string/add_detail_jadwal" />
+<!--            <TextView-->
+<!--                android:id="@+id/tv_adddetailjadwal"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_toEndOf="@id/btn_adddetailjadwal"-->
+<!--                android:textSize="16sp"-->
+<!--                android:text="@string/add_detail_jadwal" />-->
 
-        </RelativeLayout>
+<!--        </RelativeLayout>-->
     </LinearLayout>
 
 <!--    <ImageButton-->

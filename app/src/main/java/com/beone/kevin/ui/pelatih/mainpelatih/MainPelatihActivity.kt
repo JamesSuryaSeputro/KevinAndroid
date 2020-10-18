@@ -63,10 +63,11 @@ class MainPelatihActivity : AppCompatActivity() {
         val appBarConfiguration = AppBarConfiguration(
             topLevelDestinationIds = setOf(
                 R.id.navigation_coachhome,
-                R.id.navigation_addschedule,
-                R.id.navigation_addscore,
+                R.id.navigation_coachschedule,
+                R.id.navigation_coachscore,
                 R.id.navigation_testattendance,
                 R.id.item_profile,
+                R.id.coachDetailScheduleFragment,
                 R.id.selectTkiForTrainingFragment
             )
         )

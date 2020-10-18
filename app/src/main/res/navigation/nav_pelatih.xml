@@ -11,7 +11,7 @@
         android:label="@string/title_home"
         tools:layout="@layout/home_pelatih_fragment" />
     <fragment
-        android:id="@+id/navigation_addschedule"
+        android:id="@+id/navigation_coachschedule"
         android:name="com.beone.kevin.ui.pelatih.schedulepelatih.SchedulePelatihFragment"
         android:label="@string/title_schedule"
         tools:layout="@layout/schedule_pelatih_fragment">
@@ -20,15 +20,11 @@
             app:destination="@id/addSchedulePelatihDialogFragment"
             app:popUpToInclusive="false" />
         <action
-            android:id="@+id/action_schedulePelatihFragment_to_selectTkiForTrainingFragment"
-            app:destination="@id/selectTkiForTrainingFragment" />
-        <argument
-            android:name="idjadwal"
-            app:argType="string" />
-        <action
-            android:id="@+id/action_navigation_addschedule_to_addDetailSchedulePelatihDialogFragment"
-            app:destination="@id/addDetailSchedulePelatihDialogFragment"
-            app:popUpToInclusive="false" />
+            android:id="@+id/action_navigation_coachschedule_to_coachDetailScheduleFragment"
+            app:destination="@id/coachDetailScheduleFragment" />
+        <!--        <action-->
+        <!--            android:id="@+id/action_schedulePelatihFragment_to_selectTkiForTrainingFragment"-->
+        <!--            app:destination="@id/selectTkiForTrainingFragment" />-->
     </fragment>
     <dialog
         android:id="@+id/addSchedulePelatihDialogFragment"
@@ -37,12 +33,35 @@
         tools:layout="@layout/add_schedule_pelatih_fragment">
         <argument android:name="setOnCllickDialogFragment" />
     </dialog>
+    <fragment
+        android:id="@+id/coachDetailScheduleFragment"
+        android:name="com.beone.kevin.ui.pelatih.coachdetailschedule.CoachDetailScheduleFragment"
+        android:label="Detail Jadwal"
+        tools:layout="@layout/coach_detail_schedule_fragment">
+        <action
+            android:id="@+id/action_coachDetailScheduleFragment_to_addDetailSchedulePelatihDialogFragment"
+            app:destination="@id/addDetailSchedulePelatihDialogFragment"
+            app:popUpToInclusive="false" />
+        <argument
+            android:name="idJadwal"
+            app:argType="string" />
+        <argument
+            android:name="detailname"
+            app:argType="string" />
+        <argument
+            android:name="detailstartdate"
+            app:argType="string" />
+        <argument android:name="detailenddate"
+            app:argType="string" />
+
+    </fragment>
     <dialog
         android:id="@+id/addDetailSchedulePelatihDialogFragment"
         android:name="com.beone.kevin.ui.pelatih.adddetailschedulepelatih.AddDetailSchedulePelatihDialogFragment"
         android:label="add_detail_schedule_pelatih_dialog_fragment"
         tools:layout="@layout/add_detail_schedule_pelatih_dialog_fragment">
-        <argument android:name="idJadwal"
+        <argument
+            android:name="idJadwal"
             app:argType="string" />
     </dialog>
     <fragment
@@ -69,16 +88,16 @@
             android:name="idPilihan"
             app:argType="string" />
     </dialog>
-    <fragment
-        android:id="@+id/navigation_addscore"
-        android:name="com.beone.kevin.ui.pelatih.addnilai.AddNilaiFragment"
-        android:label="@string/title_score"
-        tools:layout="@layout/add_nilai_fragment" />
-    <fragment
-        android:id="@+id/navigation_testattendance"
-        android:name="com.beone.kevin.ui.pelatih.presensi.PresensiFragment"
-        android:label="@string/title_attendance"
-        tools:layout="@layout/presensi_fragment" />
+    <!--    <fragment-->
+    <!--        android:id="@+id/navigation_coachscore"-->
+    <!--        android:name="com.beone.kevin.ui.pelatih.addnilai.AddNilaiFragment"-->
+    <!--        android:label="@string/title_score"-->
+    <!--        tools:layout="@layout/add_nilai_fragment" />-->
+    <!--    <fragment-->
+    <!--        android:id="@+id/navigation_testattendance"-->
+    <!--        android:name="com.beone.kevin.ui.pelatih.presensi.PresensiFragment"-->
+    <!--        android:label="@string/title_attendance"-->
+    <!--        tools:layout="@layout/presensi_fragment" />-->
     <fragment
         android:id="@+id/item_profile"
         android:name="com.beone.kevin.ui.pelatih.profilecoach.ProfilePelatihFragment"

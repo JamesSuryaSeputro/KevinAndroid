@@ -5,11 +5,11 @@
         android:icon="@drawable/ic_home"
         android:title="@string/title_home" />
     <item
-        android:id="@+id/navigation_addschedule"
+        android:id="@+id/navigation_coachschedule"
         android:icon="@drawable/ic_schedule"
         android:title="@string/title_schedule" />
     <item
-        android:id="@+id/navigation_addscore"
+        android:id="@+id/navigation_coachscore"
         android:icon="@drawable/ic_score"
         android:title="@string/title_score" />
     <item

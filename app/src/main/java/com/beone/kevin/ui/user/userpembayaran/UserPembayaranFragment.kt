@@ -50,6 +50,7 @@ class UserPembayaranFragment : Fragment() {
                 if (it.status.equals("1")) {
 
                     val intent = Intent(activity, MainUserActivity::class.java)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
                     intent.addFlags( Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
                     activity?.startActivity(intent)
 

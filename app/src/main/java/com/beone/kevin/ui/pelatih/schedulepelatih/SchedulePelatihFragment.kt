@@ -46,12 +46,12 @@ class  SchedulePelatihFragment : Fragment(),
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        viewModel.dataJadwal.observe(viewLifecycleOwner, Observer {
+        viewModel.initData().observe(viewLifecycleOwner, Observer {
             adapter.swapData(it)
         })
 
-       // viewModel.getData(sharedPreferenceUtils.getIdUser)
-        viewModel.getAllDataSchedule(sharedPreferenceUtils.getIdUser)
+        viewModel.getData(sharedPreferenceUtils.getIdUser)
+       // viewModel.getAllDataSchedule(sharedPreferenceUtils.getIdUser)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -71,24 +71,19 @@ class  SchedulePelatihFragment : Fragment(),
         viewModel.deleteData(sharedPreferenceUtils.getIdUser, id)
     }
 
-    override fun onDetail(id: String?) {
+    override fun onDetail(id: String?, name: String?, startdate: String?, enddate: String?) {
 //        Desti
         if (id != null) {
             val action =
-                SchedulePelatihFragmentDirections.actionSchedulePelatihFragmentToSelectTkiForTrainingFragment(
-                    id
+                SchedulePelatihFragmentDirections.actionNavigationCoachscheduleToCoachDetailScheduleFragment(
+                    id, name.toString(), startdate.toString(), enddate.toString()
                 )
             this.findNavController().navigate(action)
-        }
-    }
-
-    override fun onAddDetailJadwal(id: String?) {
-        if (id != null) {
-            val action =
-                SchedulePelatihFragmentDirections.actionNavigationAddscheduleToAddDetailSchedulePelatihDialogFragment(
-                    id
-                )
-            this.findNavController().navigate(action)
+//            val action =
+//                SchedulePelatihFragmentDirections.actionSchedulePelatihFragmentToSelectTkiForTrainingFragment(
+//                    id
+//                )
+//            this.findNavController().navigate(action)
         }
     }
 }
