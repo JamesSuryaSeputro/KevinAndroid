@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_hrdhome"
+            android:title="@string/title_home" />
+        <item
+            android:id="@+id/navigation_addcoach"
+            android:title="@string/add_coach" />
+        <item
+            android:id="@+id/navigation_addhrd"
+            android:title="@string/add_hrd" />
+        <item
+            android:id="@+id/navigation_sendtki"
+            android:title="@string/send_tki" />
+        <item
+            android:id="@+id/navigation_checkpayment"
+            android:title="@string/check_payment" />
+        <item
+            android:id="@+id/navigation_checkdocument"
+            android:title="@string/check_document" />
+        <item
+            android:id="@+id/navigation_datatki"
+            android:title="@string/data_tki" />
+    </group>
+</menu>

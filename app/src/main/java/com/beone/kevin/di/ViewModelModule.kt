@@ -1,7 +1,7 @@
 package com.beone.kevin.di
 
 import com.beone.kevin.remote.RetrofitService
-import com.beone.kevin.ui.hrd.MainMenu.MenuHrdViewModel
+import com.beone.kevin.ui.hrd.homehrd.HomeHrdViewModel
 import com.beone.kevin.ui.hrd.approvetkidocument.ApproveUserDocumentViewModel
 import com.beone.kevin.ui.hrd.approvetkipayment.ApproveUserPaymentViewModel
 import com.beone.kevin.ui.hrd.checkuserdocument.CheckDocumentViewModel
@@ -39,8 +39,8 @@ val viewModelModule = module {
         UserPembayaranViewModel(get<RetrofitService>())
     }
 
-    viewModel<MenuHrdViewModel> {
-        MenuHrdViewModel(get<RetrofitService>())
+    viewModel<HomeHrdViewModel> {
+        HomeHrdViewModel(get<RetrofitService>())
     }
 
     viewModel<UploadDocumentViewModel> {

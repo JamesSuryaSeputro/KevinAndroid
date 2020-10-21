@@ -13,14 +13,24 @@ import com.beone.kevin.R
 import com.beone.kevin.SharedPreferenceUtils
 import com.beone.kevin.remote.model.DetailJadwalPelatihModel
 import com.beone.kevin.remote.model.JadwalPelatihModel
+import com.beone.kevin.ui.user.homeuser.HomeUserFragment
+import com.beone.kevin.ui.user.scheduleuser.ScheduleUserFragment
+import com.beone.kevin.ui.user.scoreview.ScoreViewFragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.activity_main_pelatih.*
+import kotlinx.android.synthetic.main.activity_main_pelatih.view.*
+import kotlinx.android.synthetic.main.activity_main_user.*
 import kotlinx.android.synthetic.main.add_detail_schedule_pelatih_dialog_fragment.*
+import kotlinx.android.synthetic.main.coach_detail_schedule_fragment.*
+import kotlinx.android.synthetic.main.coach_detail_schedule_fragment.view.*
 import kotlinx.android.synthetic.main.jadwal_item.*
+import kotlinx.android.synthetic.main.jadwal_item.view.*
 import kotlinx.android.synthetic.main.schedule_pelatih_fragment.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
-class  SchedulePelatihFragment : Fragment(),
+class SchedulePelatihFragment : Fragment(),
     ItemOnClick {
 
     companion object {
@@ -33,7 +43,6 @@ class  SchedulePelatihFragment : Fragment(),
     private val viewModel: SchedulePelatihViewModel by sharedViewModel<SchedulePelatihViewModel>()
     private val sharedPreferenceUtils: SharedPreferenceUtils by inject<SharedPreferenceUtils>()
     private val adapter: JadwalAdapter = JadwalAdapter(this)
-    private val adapterDetail: DetailJadwalAdapter = DetailJadwalAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,7 +60,8 @@ class  SchedulePelatihFragment : Fragment(),
         })
 
         viewModel.getData(sharedPreferenceUtils.getIdUser)
-       // viewModel.getAllDataSchedule(sharedPreferenceUtils.getIdUser)
+
+        // viewModel.getAllDataSchedule(sharedPreferenceUtils.getIdUser)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -72,18 +82,12 @@ class  SchedulePelatihFragment : Fragment(),
     }
 
     override fun onDetail(id: String?, name: String?, startdate: String?, enddate: String?) {
-//        Desti
         if (id != null) {
             val action =
                 SchedulePelatihFragmentDirections.actionNavigationCoachscheduleToCoachDetailScheduleFragment(
-                    id, name.toString(), startdate.toString(), enddate.toString()
+                    id, name.toString(), startdate.toString(), enddate.toString(), false
                 )
             this.findNavController().navigate(action)
-//            val action =
-//                SchedulePelatihFragmentDirections.actionSchedulePelatihFragmentToSelectTkiForTrainingFragment(
-//                    id
-//                )
-//            this.findNavController().navigate(action)
         }
     }
 }

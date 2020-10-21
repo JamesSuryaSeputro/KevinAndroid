@@ -5,11 +5,14 @@ import android.graphics.Bitmap
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.LayoutInflater
+import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.findNavController
 import com.beone.kevin.CustomImageUtils
 import com.beone.kevin.R
 import com.beone.kevin.SharedPreferenceUtils
@@ -38,8 +41,28 @@ class ProfileHrdFragment : Fragment() {
         return inflater.inflate(R.layout.profile_hrd_fragment, container, false)
     }
 
+    override fun onPrepareOptionsMenu(menu: Menu) {
+        menu.clear()
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val callback: OnBackPressedCallback =
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    setHasOptionsMenu(false)
+                    view.findNavController().navigate(R.id.action_item_profile_to_navigation_hrdhome)
+                }
+            }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
+    }
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
+        setHasOptionsMenu(true)
+
         viewModel.initdata().observe(viewLifecycleOwner, Observer {
             employee_name.text = it.nama_pegawai
             employee_username.text = it.username

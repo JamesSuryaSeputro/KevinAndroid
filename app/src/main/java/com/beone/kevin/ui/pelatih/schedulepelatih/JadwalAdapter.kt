@@ -1,16 +1,19 @@
 package com.beone.kevin.ui.pelatih.schedulepelatih
 
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.beone.kevin.R
-import com.beone.kevin.remote.model.JadwalModel
 import com.beone.kevin.remote.model.JadwalPelatihModel
 import com.beone.kevin.remote.model.JadwalPelatihModelItem
+import kotlinx.android.synthetic.main.activity_main_pelatih.view.*
+import kotlinx.android.synthetic.main.coach_detail_schedule_fragment.view.*
 import kotlinx.android.synthetic.main.jadwal_item.view.*
+
 
 class JadwalAdapter(val itemOnClick: ItemOnClick) :
     RecyclerView.Adapter<JadwalAdapter.JadwalViewHolder>() {
@@ -66,7 +69,12 @@ class JadwalAdapter(val itemOnClick: ItemOnClick) :
             tv_jadwaltanggalselesai.text = item.tgl_selesai
 
             setOnClickListener {
-                itemOnClick.onDetail(item.id_jadwal, item.nama_subject, item.tgl_mulai, item.tgl_selesai)
+                itemOnClick.onDetail(
+                    item.id_jadwal,
+                    item.nama_subject,
+                    item.tgl_mulai,
+                    item.tgl_selesai
+                )
             }
 
             btn_delete.setOnClickListener {

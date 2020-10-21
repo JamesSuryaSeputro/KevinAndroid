@@ -14,7 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.pelatih.mainpelatih.MainPelatihActivity"></activity>
+        <activity android:name=".ui.hrd.mainhrd.MainHrdActivity"
+            android:theme="@style/Theme.drawer.NoActionBar">
+        </activity>
+        <activity android:name=".ui.pelatih.mainpelatih.MainPelatihActivity" />
         <activity android:name=".ui.user.mainuser.MainUserActivity" />
         <activity
             android:name=".MainActivity"

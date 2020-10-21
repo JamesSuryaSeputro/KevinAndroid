@@ -3,15 +3,16 @@ package com.beone.kevin.ui.user.scheduleuser
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.beone.kevin.R
-import com.beone.kevin.remote.model.JadwalPelatihModel
-import com.beone.kevin.remote.model.JadwalPelatihModelItem
+import com.beone.kevin.remote.model.JadwalModel
 import kotlinx.android.synthetic.main.jadwal_user_item.view.*
 
-class ScheduleUserAdapter() : RecyclerView.Adapter<ScheduleUserAdapter.ScheduleUserViewHolder>() {
+class ScheduleUserAdapter : RecyclerView.Adapter<ScheduleUserAdapter.ScheduleUserViewHolder>() {
 
-    private var data: JadwalPelatihModel = JadwalPelatihModel()
+    private var data = ArrayList<JadwalModel>()
+    private val viewPool = RecyclerView.RecycledViewPool()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ScheduleUserViewHolder {
         return ScheduleUserViewHolder(
@@ -21,27 +22,34 @@ class ScheduleUserAdapter() : RecyclerView.Adapter<ScheduleUserAdapter.ScheduleU
 
     override fun onBindViewHolder(holder: ScheduleUserViewHolder, position: Int) {
         holder.bind(data[position])
+        val childLayoutManager = LinearLayoutManager(holder.recyclerView.context, RecyclerView.VERTICAL, false)
+        childLayoutManager.initialPrefetchItemCount = 4
+
+        holder.recyclerView.apply {
+            layoutManager = childLayoutManager
+            adapter = DetailScheduleUserAdapter(data[position].jadwaldetail)
+            setRecycledViewPool(viewPool)
+        }
     }
 
     override fun getItemCount() = data.size
 
-    fun showScheduleUser(list: JadwalPelatihModel) {
+    fun showScheduleUser(list: ArrayList<JadwalModel>) {
         data.clear()
         data.addAll(list)
         notifyDataSetChanged()
     }
 
-    class ScheduleUserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bind(item: JadwalPelatihModelItem) = with(itemView) {
-            tv_subjectuser.text = item.nama_subject
+    class ScheduleUserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val recyclerView: RecyclerView = itemView.rcv_detailjadwaluser
+
+        fun bind(item: JadwalModel) = with(itemView) {
+            tv_subjectuser.text = item.jadwalheader.id_jadwal + " - " + item.jadwalheader.nama_subject
             tv_pelatihuser.text = "Pelatih: "
-            tv_namapelatihuser.text = item.nama_pelatih
-//            tv_hariuser.text = item.hari.toString() + ", "
-//            tv_jadwaljammulaiuser.text = "pk. " + item.jam_mulai + " - "
-//            tv_jadwaljamselesaiuser.text = item.jam_selesai
-            tv_jadwaltanggalmulaiuser.text = item.tgl_mulai + " - "
-            tv_jadwaltanggalselesaiuser.text = item.tgl_selesai
+            tv_namapelatihuser.text = item.jadwalheader.nama_pelatih
+            tv_jadwaltanggalmulaiuser.text = item.jadwalheader.tgl_mulai + " s/d "
+            tv_jadwaltanggalselesaiuser.text = item.jadwalheader.tgl_selesai
         }
     }
 }

@@ -1,6 +1,7 @@
 package com.beone.kevin.ui.pelatih.adddetailschedulepelatih
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +10,7 @@ import android.widget.Toast
 import androidx.navigation.fragment.navArgs
 import com.beone.kevin.R
 import com.beone.kevin.ui.pelatih.DayEnum
-import com.beone.kevin.ui.pelatih.schedulepelatih.SchedulePelatihViewModel
+import com.beone.kevin.ui.pelatih.coachdetailschedule.CoachDetailScheduleViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog
 import com.wdullaer.materialdatetimepicker.time.TimePickerDialog
@@ -30,11 +31,13 @@ class AddDetailSchedulePelatihDialogFragment : BottomSheetDialogFragment(),
     }
 
     private lateinit var dayArrayAdapter: ArrayAdapter<DayEnum>
-    //private lateinit var idJadwal: String
-//    val args: AddDetailSchedulePelatihDialogFragmentArgs by navArgs<AddDetailSchedulePelatihDialogFragmentArgs>()
-    private val addDetailSchedulePelatihViewModel: SchedulePelatihViewModel by sharedViewModel()
+    private lateinit var mIdJadwal: String
+    private lateinit var detailStartDate: String
+    private lateinit var detailEndDate: String
+    val args: AddDetailSchedulePelatihDialogFragmentArgs by navArgs<AddDetailSchedulePelatihDialogFragmentArgs>()
+    private val coachDetailScheduleViewModel: CoachDetailScheduleViewModel by sharedViewModel()
 
-    val now = Calendar.getInstance()
+    private val now = Calendar.getInstance()
     private val dpd: DatePickerDialog = DatePickerDialog.newInstance(
         this@AddDetailSchedulePelatihDialogFragment,
         now[Calendar.YEAR],
@@ -50,7 +53,9 @@ class AddDetailSchedulePelatihDialogFragment : BottomSheetDialogFragment(),
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //idJadwal = args.idJadwal
+        mIdJadwal = args.idJadwal
+        detailStartDate = args.detailstartdate
+        detailEndDate = args.detailenddate
     }
 
     override fun onCreateView(
@@ -75,13 +80,15 @@ class AddDetailSchedulePelatihDialogFragment : BottomSheetDialogFragment(),
 
         spnr_hari.adapter = dayArrayAdapter
 
-        addDetailSchedulePelatihViewModel.initDialog().observe(viewLifecycleOwner, androidx.lifecycle.Observer {
-            if (it.status.equals(1)) {
-                Toast.makeText(requireContext(), "Sukses add detail jadwal", Toast.LENGTH_SHORT)
-                    .show()
-                dismiss()
-            }
-        })
+        coachDetailScheduleViewModel.initDialog().observe(
+            viewLifecycleOwner,
+            androidx.lifecycle.Observer {
+                if (it.status.equals(1)) {
+                    Toast.makeText(requireContext(), "Sukses add detail jadwal", Toast.LENGTH_SHORT)
+                        .show()
+                    dismiss()
+                }
+            })
 
         btn_adddetailjadwal.setOnClickListener {
             when {
@@ -101,29 +108,43 @@ class AddDetailSchedulePelatihDialogFragment : BottomSheetDialogFragment(),
                     ).show()
                 }
                 else -> {
-//                    addDetailSchedulePelatihViewModel.addDetailSchedule(
-//                        //idJadwal,
-//                        checkSpinnerDay(),
-//                        tv_pickeddate.text.toString(),
-//                        tv_pickedstarttime.text.toString(),
-//                        tv_pickedendtime.text.toString()
-//                    )
+                    coachDetailScheduleViewModel.addDetailSchedule(
+                        mIdJadwal,
+                        checkSpinnerDay(),
+                        tv_pickeddate.text.toString(),
+                        tv_pickedstarttime.text.toString(),
+                        tv_pickedendtime.text.toString()
+                    )
                 }
             }
         }
 
         pick_date.setOnClickListener {
             DATE_TIME_DIALOG = 1
+            val minCalendar = Calendar.getInstance()
+            val min: List<String> = detailStartDate.split("-")
+            val minYear = min[0].toInt()
+            val minMonth = min[1].toInt()
+            val minDate = min[2].toInt()
+            val maxCalendar = Calendar.getInstance()
+            val max: List<String> = detailEndDate.split("-")
+            val maxYear = max[0].toInt()
+            val maxMonth = max[1].toInt()
+            val maxDate = max[2].toInt()
+            minCalendar.set(minYear, minMonth, minDate)
+            maxCalendar.set(maxYear, maxMonth, maxDate)
+            dpd.minDate = minCalendar
+            dpd.maxDate = maxCalendar
             dpd.show(activity?.supportFragmentManager!!, DATE_PICKER_TAG)
         }
 
         pick_starttime.setOnClickListener {
-            DATE_TIME_DIALOG = 3
+            DATE_TIME_DIALOG = 2
             tpd.show(activity?.supportFragmentManager!!, START_TIME_PICKER_TAG)
         }
 
         pick_endtime.setOnClickListener {
-            DATE_TIME_DIALOG = 4
+            DATE_TIME_DIALOG = 3
             tpd.show(activity?.supportFragmentManager!!, END_TIME_PICKER_TAG)
         }
     }
@@ -175,8 +196,8 @@ class AddDetailSchedulePelatihDialogFragment : BottomSheetDialogFragment(),
         now.set(Calendar.MINUTE, minute)
         val timeFormat = SimpleDateFormat("HH:mm", Locale.getDefault())
         when(DATE_TIME_DIALOG){
-            3 -> tv_pickedstarttime.text = timeFormat.format(now.time).toString()
-            4 -> tv_pickedendtime.text = timeFormat.format(now.time).toString()
+            2 -> tv_pickedstarttime.text = timeFormat.format(now.time).toString()
+            3 -> tv_pickedendtime.text = timeFormat.format(now.time).toString()
         }
     }
 }

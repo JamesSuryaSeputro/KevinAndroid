@@ -22,14 +22,7 @@ import java.util.*
 class AddSchedulePelatihDialogFragment : BottomSheetDialogFragment(), DatePickerDialog.OnDateSetListener {
 
     private lateinit var subjectArrayAdapter: ArrayAdapter<SubjectEnum>
-
     val now = Calendar.getInstance()
-    private val dpd: DatePickerDialog = DatePickerDialog.newInstance(
-        this@AddSchedulePelatihDialogFragment,
-        now[Calendar.YEAR],
-        now[Calendar.MONTH],
-        now[Calendar.DAY_OF_MONTH]
-    )
 
     companion object {
         private const val TAG = "AddSchedulePelatihDialog"
@@ -88,12 +81,26 @@ class AddSchedulePelatihDialogFragment : BottomSheetDialogFragment(), DatePicker
 
         pick_startdate.setOnClickListener {
             DATE_DIALOG = 1
-            dpd.show(activity?.supportFragmentManager!!, START_DATE_PICKER_TAG)
+            val dpdStart: DatePickerDialog = DatePickerDialog.newInstance(
+                this@AddSchedulePelatihDialogFragment,
+                now[Calendar.YEAR],
+                now[Calendar.MONTH],
+                now[Calendar.DAY_OF_MONTH]
+            )
+            dpdStart.minDate = now
+            dpdStart.show(activity?.supportFragmentManager!!, START_DATE_PICKER_TAG)
         }
 
         pick_enddate.setOnClickListener {
             DATE_DIALOG = 2
-            dpd.show(activity?.supportFragmentManager!!, END_DATE_PICKER_TAG)
+            val dpdEnd: DatePickerDialog = DatePickerDialog.newInstance(
+                this@AddSchedulePelatihDialogFragment,
+                now[Calendar.YEAR],
+                now[Calendar.MONTH],
+                now[Calendar.DAY_OF_MONTH]
+            )
+            dpdEnd.minDate = now
+            dpdEnd.show(activity?.supportFragmentManager!!, END_DATE_PICKER_TAG)
         }
     }
 

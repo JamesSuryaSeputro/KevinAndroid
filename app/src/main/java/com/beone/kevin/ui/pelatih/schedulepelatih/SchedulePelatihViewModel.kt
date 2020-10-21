@@ -20,11 +20,11 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-sealed class Resource<out T> {
-    class Loading<out T> : Resource<T>()
-    data class Success<out T>(val data: T) : Resource<T>()
-    data class Failure<out T>(val throwable: Throwable) : Resource<T>()
-}
+//sealed class Resource<out T> {
+//    class Loading<out T> : Resource<T>()
+//    data class Success<out T>(val data: T) : Resource<T>()
+//    data class Failure<out T>(val throwable: Throwable) : Resource<T>()
+//}
 
 class SchedulePelatihViewModel(private val retrofitService: RetrofitService) : ViewModel() {
 
@@ -124,24 +124,6 @@ class SchedulePelatihViewModel(private val retrofitService: RetrofitService) : V
             }
         })
     }
-//
-//    fun getDataDetailJadwal(iduser: String?, idjadwal: String?){
-//        retrofitService.getCoachDetailSchedule(idjadwal).enqueue(object : Callback<JadwalPelatihModel>{
-//            override fun onFailure(call: Call<JadwalPelatihModel>, t: Throwable) {
-//                Log.e(TAG, "onFailure: ",t )
-//            }
-//
-//            override fun onResponse(
-//                call: Call<JadwalPelatihModel>,
-//                response: Response<JadwalPelatihModel>
-//            ) {
-//                if (response.isSuccessful){
-//                    getData(iduser)
-//                    data.postValue(response.body())
-//                }
-//            }
-//        })
-//    }
 
     fun deleteData(iduser: String?,idSubject:String?){
         retrofitService.deleteSchedulePelatih(idSubject).enqueue(object : Callback<StatusDataModel>{
@@ -182,28 +164,6 @@ class SchedulePelatihViewModel(private val retrofitService: RetrofitService) : V
             }
         })
     }
-
-//    fun addDetailSchedule(idjadwal: String?, hari: DayEnum, tanggal: String, jammulai: String, jamselesai: String){
-//
-//        retrofitService.addScheduleDetail(idjadwal, hari, tanggal, jammulai, jamselesai).enqueue(object :
-//            Callback<StatusDataModel>{
-//            override fun onFailure(call: Call<StatusDataModel>, t: Throwable) {
-//                Log.e(TAG, "onFailure: ",t )
-//            }
-//
-//            override fun onResponse(
-//                call: Call<StatusDataModel>,
-//                response: Response<StatusDataModel>
-//            ) {
-//                if (response.isSuccessful){
-//                    data2.postValue(StatusDataModel(1))
-//                    getData(idjadwal)
-//                }else{
-//                    data2.postValue(StatusDataModel(0))
-//                }
-//            }
-//        })
-//    }
 
     companion object {
         private const val TAG = "SchedulePelatihViewModel"

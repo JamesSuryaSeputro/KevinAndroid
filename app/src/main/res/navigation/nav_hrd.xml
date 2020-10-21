@@ -3,73 +3,53 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_hrd"
-    app:startDestination="@id/menuHrdFragment">
+    app:startDestination="@id/navigation_hrdhome">
 
     <fragment
-        android:id="@+id/menuHrdFragment"
-        android:name="com.beone.kevin.ui.hrd.MainMenu.MenuHrdFragment"
-        android:label="menu_hrd_fragment"
-        tools:layout="@layout/menu_hrd_fragment" >
-        <action
-            android:id="@+id/action_menuHrdFragment_to_registerCoachFragment"
-            app:destination="@id/registerCoachFragment"
-            />
-        <action
-            android:id="@+id/action_menuHrdFragment_to_registerEmployeeFragment"
-            app:destination="@id/registerEmployeeFragment"
-            app:popUpTo="@id/registerEmployeeFragment">
-        </action>
-        <action
-            android:id="@+id/action_menuHrdFragment_to_registerCoachFragment2"
-            app:popUpTo="@id/registerCoachFragment" />
-        <action
-            android:id="@+id/action_menuHrdFragment_to_checkDocumentFragment"
-            app:destination="@id/checkDocumentFragment"
-            app:popUpTo="@id/checkDocumentFragment" />
-        <action
-            android:id="@+id/action_menuHrdFragment_to_checkPembayaranFragment"
-            app:destination="@id/checkPembayaranFragment"
-            app:popUpTo="@id/checkPembayaranFragment" />
-        <action
-            android:id="@+id/action_menuHrdFragment_to_profileHrdFragment"
-            app:destination="@id/profileHrdFragment"
-            app:popUpTo="@id/profileHrdFragment" />
+        android:id="@+id/navigation_hrdhome"
+        android:name="com.beone.kevin.ui.hrd.homehrd.HomeHrdFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/home_hrd_fragment" />
+<!--        <action-->
+<!--            android:id="@+id/action_navigation_hrdhome_to_navigation_addcoach"-->
+<!--            app:destination="@id/navigation_addcoach"-->
+<!--            app:popUpTo="@id/navigation_addcoach"/>-->
+<!--        -->
+<!--        <action-->
+<!--            android:id="@+id/action_menuHrdFragment_to_registerEmployeeFragment"-->
+<!--            app:destination="@id/registerEmployeeFragment"-->
+<!--            app:popUpTo="@id/registerEmployeeFragment">-->
+<!--        </action>-->
+<!--        <action-->
+<!--            android:id="@+id/action_menuHrdFragment_to_checkDocumentFragment"-->
+<!--            app:destination="@id/checkDocumentFragment"-->
+<!--            app:popUpTo="@id/checkDocumentFragment" />-->
+<!--        <action-->
+<!--            android:id="@+id/action_menuHrdFragment_to_checkPembayaranFragment"-->
+<!--            app:destination="@id/checkPembayaranFragment"-->
+<!--            app:popUpTo="@id/checkPembayaranFragment" />-->
+<!--        <action-->
+<!--            android:id="@+id/action_menuHrdFragment_to_profileHrdFragment"-->
+<!--            app:destination="@id/profileHrdFragment"-->
+<!--            app:popUpTo="@id/profileHrdFragment" />-->
 
-    </fragment>
-
-    <action android:id="@+id/action_global_menuHrdFragment" app:destination="@id/menuHrdFragment" />
+    <action android:id="@+id/action_global_menuHrdFragment" app:destination="@id/navigation_hrdhome" />
 
     <fragment
-        android:id="@+id/registerCoachFragment"
+        android:id="@+id/navigation_addcoach"
         android:name="com.beone.kevin.ui.registercoach.RegisterCoachFragment"
-        android:label="base_form_register_coach_fragment"
+        android:label="Tambah Pelatih"
         tools:layout="@layout/base_form_register_coach_fragment" />
 
     <fragment
-        android:id="@+id/registerEmployeeFragment"
+        android:id="@+id/navigation_addhrd"
         android:name="com.beone.kevin.ui.registeremployee.RegisterEmployeeFragment"
-        android:label="base_form_register_employee_fragment"
+        android:label="Tambah HRD"
         tools:layout="@layout/base_form_register_employee_fragment" />
-
     <fragment
-        android:id="@+id/checkDocumentFragment"
-        android:name="com.beone.kevin.ui.hrd.checkuserdocument.CheckDocumentFragment"
-        android:label="check_document_fragment"
-        tools:layout="@layout/check_document_fragment" >
-        <action
-            android:id="@+id/action_checkDocumentFragment_to_approveUserDocumentFragment"
-            app:destination="@id/approveUserDocumentFragment"
-            app:popUpTo="@id/approveUserDocumentFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/approveUserDocumentFragment"
-        android:name="com.beone.kevin.ui.hrd.approvetkidocument.ApproveUserDocumentFragment"
-        android:label="approve_user_document_fragment"
-        tools:layout="@layout/approve_user_document_fragment" />
-    <fragment
-        android:id="@+id/checkPembayaranFragment"
+        android:id="@+id/navigation_checkpayment"
         android:name="com.beone.kevin.ui.hrd.checkuserpayment.CheckPembayaranFragment"
-        android:label="check_pembayaran_fragment"
+        android:label="List Pembayaran User"
         tools:layout="@layout/check_pembayaran_fragment" >
         <action
             android:id="@+id/action_checkPembayaranFragment_to_approveUserPaymentFragment"
@@ -79,12 +59,31 @@
     <fragment
         android:id="@+id/approveUserPaymentFragment"
         android:name="com.beone.kevin.ui.hrd.approvetkipayment.ApproveUserPaymentFragment"
-        android:label="approve_user_payment_fragment"
+        android:label="Periksa Pembayaran"
         tools:layout="@layout/approve_user_payment_fragment" />
     <fragment
-        android:id="@+id/profileHrdFragment"
+        android:id="@+id/navigation_checkdocument"
+        android:name="com.beone.kevin.ui.hrd.checkuserdocument.CheckDocumentFragment"
+        android:label="List Dokumen User"
+        tools:layout="@layout/check_document_fragment" >
+        <action
+            android:id="@+id/action_checkDocumentFragment_to_approveUserDocumentFragment"
+            app:destination="@id/approveUserDocumentFragment"
+            app:popUpTo="@id/approveUserDocumentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/approveUserDocumentFragment"
+        android:name="com.beone.kevin.ui.hrd.approvetkidocument.ApproveUserDocumentFragment"
+        android:label="Periksa Dokumen"
+        tools:layout="@layout/approve_user_document_fragment" />
+    <fragment
+        android:id="@+id/item_profile"
         android:name="com.beone.kevin.ui.hrd.profilehrd.ProfileHrdFragment"
-        android:label="profile_hrd_fragment"
-        tools:layout="@layout/profile_hrd_fragment" />
+        android:label="Profile"
+        tools:layout="@layout/profile_hrd_fragment">
+        <action
+            android:id="@+id/action_item_profile_to_navigation_hrdhome"
+            app:destination="@id/navigation_hrdhome" />
+    </fragment>
 
 </navigation>

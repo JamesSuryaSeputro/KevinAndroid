@@ -18,7 +18,7 @@
             android:layout_gravity="center"
             android:layout_marginVertical="8dp"
             android:scaleType="fitXY"
-            android:src="@drawable/pt_eco_tumbuh_makmur" />
+            android:src="@drawable/pt_eco_tumbuh_makmur1" />
 
         <TextView
             android:layout_width="match_parent"

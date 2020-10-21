@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="4dp"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:padding="4dp">
 
     <TextView
         android:id="@+id/tv_subjectuser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
         android:textSize="24sp"
+        android:textStyle="bold"
         tools:text="@string/bahasa_mandarin" />
 
     <RelativeLayout
@@ -22,7 +22,7 @@
             android:id="@+id/tv_pelatihuser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="18sp"
             tools:text="Pelatih: " />
 
         <TextView
@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/tv_pelatihuser"
-            android:textSize="20sp"
+            android:textSize="18sp"
             tools:text="Nama pelatih" />
 
     </RelativeLayout>
@@ -40,40 +40,10 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/tv_hariuser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            tools:text="Senin, pk. " />
-
-        <TextView
-            android:id="@+id/tv_jadwaljammulaiuser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/tv_hariuser"
-            android:textSize="20sp"
-            tools:text="11:00 - " />
-
-        <TextView
-            android:id="@+id/tv_jadwaljamselesaiuser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/tv_jadwaljammulaiuser"
-            android:textSize="20sp"
-            tools:text="12:00" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingBottom="4dp">
-
-        <TextView
             android:id="@+id/tv_jadwaltanggalmulaiuser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="16sp"
             tools:text="yyyy-mm-dd - " />
 
         <TextView
@@ -81,9 +51,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/tv_jadwaltanggalmulaiuser"
-            android:textSize="20sp"
+            android:textSize="16sp"
             tools:text="yyyy-mm-dd" />
 
     </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_detailjadwaluser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:itemCount="10"
+        tools:listitem="@layout/jadwal_user_item_detail" />
 
 </LinearLayout>

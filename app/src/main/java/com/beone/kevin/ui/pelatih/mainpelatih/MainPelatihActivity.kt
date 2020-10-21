@@ -71,6 +71,7 @@ class MainPelatihActivity : AppCompatActivity() {
                 R.id.selectTkiForTrainingFragment
             )
         )
+
         setupActionBarWithNavController(navController, appBarConfiguration)
     }
 }

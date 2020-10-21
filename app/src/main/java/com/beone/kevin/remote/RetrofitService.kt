@@ -102,9 +102,15 @@ interface RetrofitService {
 
     @POST("get_jadwal_pelatihan_user")
     @FormUrlEncoded
-    fun getScheduleUser(
+    suspend fun getScheduleUser(
         @Field("iduser") iduser: String?
-    ): Call<JadwalPelatihModel>
+    ): JadwalPelatihModel
+
+    @POST("get_detail_jadwal_pelatihan")
+    @FormUrlEncoded
+    suspend fun getDetailScheduleUser(
+        @Field("idjadwal") idjadwal: String?
+    ): List<DetailJadwalPelatihModelItem>
 
     @POST("registertki")
     @FormUrlEncoded
@@ -145,6 +151,12 @@ interface RetrofitService {
     @FormUrlEncoded
     fun deleteSchedulePelatih(
         @Field("idjadwal") idjadwal: String?
+    ): Call<StatusDataModel>
+
+    @POST("delete_detail_jadwal_pelatih")
+    @FormUrlEncoded
+    fun deleteCoachDetailSchedule(
+        @Field("idjadwaldetail") idjadwaldetail: String?
     ): Call<StatusDataModel>
 
     @POST("get_user_all")

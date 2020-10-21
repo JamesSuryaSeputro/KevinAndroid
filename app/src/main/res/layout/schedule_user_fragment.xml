@@ -27,7 +27,6 @@
             android:layout_height="wrap_content"
             android:text="@string/schedule"
             android:textSize="30sp"
-            android:paddingBottom="4dp"
             android:textAlignment="center" />
 
         <androidx.recyclerview.widget.RecyclerView

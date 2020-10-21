@@ -14,6 +14,7 @@ import com.beone.kevin.SharedPreferenceUtils
 import com.beone.kevin.ui.pelatih.schedulepelatih.JadwalAdapter
 import kotlinx.android.synthetic.main.schedule_pelatih_fragment.*
 import kotlinx.android.synthetic.main.schedule_user_fragment.*
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
@@ -35,10 +36,11 @@ class ScheduleUserFragment : Fragment() {
         return inflater.inflate(R.layout.schedule_user_fragment, container, false)
     }
 
+    @ExperimentalCoroutinesApi
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        viewModel.initData().observe(viewLifecycleOwner, Observer {
+        viewModel.dataJadwal.observe(viewLifecycleOwner, Observer {
             Log.d(TAG, "observer")
             if(it.isNotEmpty()) {
                 adapter.showScheduleUser(it)
@@ -50,7 +52,7 @@ class ScheduleUserFragment : Fragment() {
             }
         })
 
-        viewModel.getDataScheduleUser(sharedPreferenceUtils.getIdUser)
+        viewModel.getAllDataSchedule(sharedPreferenceUtils.getIdUser)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -15,6 +15,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.beone.kevin.R
 import com.beone.kevin.SharedPreferenceUtils
+import com.beone.kevin.ui.hrd.mainhrd.MainHrdActivity
 import com.beone.kevin.ui.pelatih.mainpelatih.MainPelatihActivity
 import com.beone.kevin.ui.user.mainuser.MainUserActivity
 import kotlinx.android.synthetic.main.logins_fragment.*
@@ -61,7 +62,6 @@ class LoginsFragment : Fragment() {
                     ).show()
 
                     Log.d(TAG, "putiduser: " + sharepreference.putIdUser(it.iduser))
-                    Log.d(TAG, "putnamauser: " + sharepreference.putIdUser(it.nama))
                     sharepreference.putIdUser(it.iduser)
                     sharepreference.putNamaUser(it.nama)
 
@@ -77,8 +77,10 @@ class LoginsFragment : Fragment() {
                             activity?.startActivity(intent)
                         }
                         TypeLoginEnum.PEGAWAI.jenis -> {
-                            this.findNavController()
-                                .navigate(R.id.action_loginsFragment_to_nav_hrd)
+                            val intent = Intent(activity, MainHrdActivity::class.java)
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+                            activity?.startActivity(intent)
                         }
                     }
                 }

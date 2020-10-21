@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/rl_detailjadwal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_hariuser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            tools:text="Senin, " />
+
+        <TextView
+            android:id="@+id/tv_tanggaluser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/tv_hariuser"
+            android:textSize="16sp"
+            tools:text="1998-10-18 " />
+
+        <TextView
+            android:id="@+id/tv_jadwaljammulaiuser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/tv_tanggaluser"
+            android:textSize="16sp"
+            tools:text="(11:00 - " />
+
+        <TextView
+            android:id="@+id/tv_jadwaljamselesaiuser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/tv_jadwaljammulaiuser"
+            android:textSize="16sp"
+            tools:text="12:00)" />
+    </RelativeLayout>
+</LinearLayout>

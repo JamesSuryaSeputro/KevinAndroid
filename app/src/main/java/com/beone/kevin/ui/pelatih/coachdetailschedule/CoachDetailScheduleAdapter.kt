@@ -8,11 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.beone.kevin.R
 import com.beone.kevin.remote.model.DetailJadwalPelatihModel
 import com.beone.kevin.remote.model.DetailJadwalPelatihModelItem
-import com.beone.kevin.remote.model.JadwalModel
-import com.beone.kevin.ui.pelatih.schedulepelatih.JadwalDiffUtilCallBack
 import kotlinx.android.synthetic.main.jadwal_item_detail.view.*
 
-class CoachDetailScheduleAdapter : RecyclerView.Adapter<CoachDetailScheduleAdapter.CoachDetailScheduleViewHolder>() {
+class CoachDetailScheduleAdapter(val onDetailClick: OnDetailClick) : RecyclerView.Adapter<CoachDetailScheduleAdapter.CoachDetailScheduleViewHolder>() {
 
     private var data: DetailJadwalPelatihModel = DetailJadwalPelatihModel()
 
@@ -27,7 +25,7 @@ class CoachDetailScheduleAdapter : RecyclerView.Adapter<CoachDetailScheduleAdapt
     }
 
     override fun onBindViewHolder(holder: CoachDetailScheduleViewHolder, position: Int) {
-        holder.bind(data[position])
+        holder.bind(data[position], onDetailClick)
     }
 
     override fun getItemCount() = data.size
@@ -48,11 +46,23 @@ class CoachDetailScheduleAdapter : RecyclerView.Adapter<CoachDetailScheduleAdapt
 
     class CoachDetailScheduleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bind(item: DetailJadwalPelatihModelItem) = with(itemView) {
+        fun bind(item: DetailJadwalPelatihModelItem, onDetailClick: OnDetailClick) = with(itemView) {
             tv_hari.text = item.hari + ", "
             tv_tanggal.text = item.tanggal
             tv_jadwaljammulai.text = " (" + item.jam_mulai + "-"
             tv_jadwaljamselesai.text = item.jam_selesai + ")"
+
+            btn_deletedetail.setOnClickListener {
+                onDetailClick.onDelete(
+                    item.id_jadwal_detail
+                )
+            }
+
+            setOnClickListener {
+                onDetailClick.onDetail(
+                    item.id_jadwal_detail
+                )
+            }
         }
     }
 }

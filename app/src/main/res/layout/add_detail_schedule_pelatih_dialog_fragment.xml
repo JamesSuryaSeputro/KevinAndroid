@@ -30,7 +30,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/tv_tanggal"
+            android:id="@+id/tv_tanggaladdjadwal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/tanggal" />
@@ -40,7 +40,7 @@
             style="@style/Base.Widget.AppCompat.ImageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/tv_tanggal"
+            android:layout_toEndOf="@+id/tv_tanggaladdjadwal"
             android:src="@drawable/calendar_18dp" />
 
         <TextView

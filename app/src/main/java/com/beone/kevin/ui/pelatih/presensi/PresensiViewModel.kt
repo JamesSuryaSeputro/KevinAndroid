@@ -17,24 +17,24 @@ class PresensiViewModel(private val retrofitService: RetrofitService) : ViewMode
     fun initSpinner(): LiveData<JadwalPelatihModel> = data
     fun initRecycler(): LiveData<UserModel> = data2
 
-//    fun getdatajadwal(iduser:String?){
-//        retrofitService.getSchedullerAllPelatih(iduser).enqueue(object :
-//            Callback<JadwalPelatihModel> {
-//            override fun onFailure(call: Call<JadwalPelatihModel>, t: Throwable) {
-//
-//            }
-//
-//            override fun onResponse(
-//                call: Call<JadwalPelatihModel>,
-//                response: Response<JadwalPelatihModel>
-//            ) {
-//                if (response.isSuccessful){
-//                    data.postValue(response.body())
-//                }
-//            }
-//
-//        })
-//    }
+    fun getdatajadwal(iduser:String?){
+        retrofitService.getSchedullerAllPelatih(iduser).enqueue(object :
+            Callback<JadwalPelatihModel> {
+            override fun onFailure(call: Call<JadwalPelatihModel>, t: Throwable) {
+
+            }
+
+            override fun onResponse(
+                call: Call<JadwalPelatihModel>,
+                response: Response<JadwalPelatihModel>
+            ) {
+                if (response.isSuccessful){
+                    data.postValue(response.body())
+                }
+            }
+
+        })
+    }
 
     fun getUser(idjadwal: String?){
         retrofitService.getAllUserPelatihan(idjadwal).enqueue(object : Callback<UserModel> {
