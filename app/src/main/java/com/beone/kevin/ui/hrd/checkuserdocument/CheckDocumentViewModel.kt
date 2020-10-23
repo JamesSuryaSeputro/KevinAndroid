@@ -18,7 +18,7 @@ class CheckDocumentViewModel(val retrofitService: RetrofitService) : ViewModel()
 
     private val data: MutableLiveData<CheckUserDataModel> = MutableLiveData()
 
-    fun initCheckDataUser(): LiveData<CheckUserDataModel> {
+    fun initData(): LiveData<CheckUserDataModel> {
         return data
     }
 

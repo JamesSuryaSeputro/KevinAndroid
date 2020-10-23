@@ -41,8 +41,8 @@ class AddNilaiViewModel(private val retrofitService: RetrofitService) : ViewMode
         })
     }
 
-    fun getDataSiswa(idJadwal: String?){
-        retrofitService.getDetailUserNilai(idJadwal).enqueue(object : Callback<UserModel>{
+    fun getDataSiswa(idDetailJadwal: String?){
+        retrofitService.getDetailUserNilai(idDetailJadwal).enqueue(object : Callback<UserModel>{
             override fun onFailure(call: Call<UserModel>, t: Throwable) {
             }
 
@@ -56,22 +56,22 @@ class AddNilaiViewModel(private val retrofitService: RetrofitService) : ViewMode
         })
     }
 
-    fun addNilaiSiswa(idUser:String?,nilai:String?,idJadwal: String?){
-        retrofitService.addNilaiUser(idUser,nilai).enqueue(object : Callback<StatusDataModel>{
-            override fun onFailure(call: Call<StatusDataModel>, t: Throwable) {
-            }
-
-            override fun onResponse(
-                call: Call<StatusDataModel>,
-                response: Response<StatusDataModel>
-            ) {
-                if (response.isSuccessful){
-                    dataStatus.postValue(StatusDataModel(1))
-                    getDataSiswa(idJadwal)
-                }
-            }
-
-        })
-    }
+//    fun addNilaiSiswa(idUser:String?,nilai:String?,idJadwal: String?){
+//        retrofitService.addNilaiUser(idUser,nilai).enqueue(object : Callback<StatusDataModel>{
+//            override fun onFailure(call: Call<StatusDataModel>, t: Throwable) {
+//            }
+//
+//            override fun onResponse(
+//                call: Call<StatusDataModel>,
+//                response: Response<StatusDataModel>
+//            ) {
+//                if (response.isSuccessful){
+//                    dataStatus.postValue(StatusDataModel(1))
+//                    getDataSiswa(idJadwal)
+//                }
+//            }
+//
+//        })
+//    }
 
 }

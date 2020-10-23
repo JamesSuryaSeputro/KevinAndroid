@@ -52,4 +52,10 @@
     <string name="check_document">Periksa Dokumen</string>
     <string name="data_tki">Data User (TKI)</string>
     <string name="pt_eco_tumbuh_makmur">PT ECO TUMBUH MAKMUR</string>
+    <string name="search_hint">Search name</string>
+    <string name="foto">foto</string>
+    <string name="id_user">ID user: 212020001</string>
+    <string name="biodata">Biodata</string>
+    <string name="dokumen">Dokumen</string>
+    <string name="year_active">Active since: 2020</string>
 </resources>

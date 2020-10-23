@@ -1,0 +1,30 @@
+package com.beone.kevin.remote.model
+
+data class DataTkiModel(
+    val alamat: String,
+    val date_created: String,
+    val datecreated: String,
+    val flag_data: String,
+    val id_pegawai: String,
+    val id_user: String,
+    val iddoc: String,
+    val iduser: String,
+    val jeniskelamin: String,
+    val kewarganegaraan: String,
+    val nama: String,
+    val no_ktp: String,
+    val no_passport: String,
+    val notelp: String,
+    val passfoto: String,
+    val password: String,
+    val scan_kompensasi: String,
+    val scan_ktp: String,
+    val scan_surat_kerja: String,
+    val scan_surat_kesehatan: String,
+    val status: String,
+    val tanggallahir: String,
+    val tempatlahir: String,
+    val ttdfoto: String,
+    val username: String,
+    val year: String
+)

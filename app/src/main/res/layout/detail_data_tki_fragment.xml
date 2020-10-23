@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    tools:context=".ui.hrd.detaildatatki.DetailDataTkiFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_dataphoto"
+                    android:layout_width="120dp"
+                    android:layout_height="160dp"
+                    android:contentDescription="@string/foto"
+                    android:layout_marginEnd="12dp"
+                    android:padding="8dp"
+                    tools:src="@drawable/account_18dp" />
+
+                <TextView
+                    android:id="@+id/tv_dataname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_toEndOf="@+id/iv_dataphoto"
+                    tools:text="@string/user"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline1"
+                    android:textSize="32sp" />
+
+                <TextView
+                    android:id="@+id/tv_dataiduser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_dataname"
+                    android:layout_toEndOf="@+id/iv_dataphoto"
+                    tools:text="@string/id_user"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline1"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tv_dataactivesince"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_dataiduser"
+                    android:layout_toEndOf="@+id/iv_dataphoto"
+                    tools:text="@string/year_active"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline1"
+                    android:textSize="20sp" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/biodata"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+            android:textSize="24sp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_biodata"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_datausername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+                    android:textSize="20sp"
+                    tools:text="Username" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_datapassport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+                    android:textSize="20sp"
+                    tools:text="No Passport" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_dataktp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+                    android:textSize="20sp"
+                    tools:text="No KTP" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_datatempatlahir"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+                    android:textSize="20sp"
+                    tools:text="Tempat lahir" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_datatanggallahir"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+                    android:textSize="20sp"
+                    tools:text="Tanggal lahir" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_datawn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+                    android:textSize="20sp"
+                    tools:text="Kewarganegaraan" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_datagender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+                    android:textSize="20sp"
+                    tools:text="Gender" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_dataalamat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+                    android:textSize="20sp"
+                    tools:text="Alamat" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_datatelp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+                    android:textSize="20sp"
+                    tools:text="No. Telepon" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dokumen"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scan KTP"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline1"
+            android:textSize="24sp" />
+
+        <ImageView
+            android:id="@+id/iv_dataktp"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:src="@android:color/holo_green_dark" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scan Kompensasi"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline1"
+            android:textSize="24sp" />
+
+        <ImageView
+            android:id="@+id/iv_datakompensasi"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:src="@android:color/holo_green_dark" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scan Surat Kesehatan"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline1"
+            android:textSize="24sp" />
+
+        <ImageView
+            android:id="@+id/iv_datasuratkesehatan"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:src="@android:color/holo_green_dark" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scan Surat Kerja"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline1"
+            android:textSize="24sp" />
+
+        <ImageView
+            android:id="@+id/iv_datasuratkerja"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:src="@android:color/holo_green_dark" />
+    </LinearLayout>
+</ScrollView>

@@ -149,6 +149,7 @@ class RegisterTkiFragment : BaseFormRegisterTkiFragment() {
         tv_filepf.setText("")
         bitmapPf = null
         edt_password.setText("")
+        edt_confirmpassword.setText("")
         tv_dateofbirth.setText("")
         edt_place.setText("")
         tv_filettd.setText("")

@@ -9,7 +9,6 @@ import com.beone.kevin.R
 import com.beone.kevin.remote.model.CheckUserDataModel
 import com.beone.kevin.remote.model.CheckUserDataModelItem
 import com.beone.kevin.ui.hrd.checkuserdocument.OnClickUser
-import com.beone.kevin.ui.hrd.checkuserdocument.UserDataDiffUtilCallback
 import kotlinx.android.synthetic.main.list_user.view.*
 
 class UserPaymentAdapter (val onClickUser: OnClickUser) :
@@ -44,7 +43,7 @@ class UserPaymentAdapter (val onClickUser: OnClickUser) :
         class UserPaymentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             fun bind(item: CheckUserDataModelItem, onClickUser: OnClickUser) = with(itemView) {
                 tv_user.text = item.nama
-                tv_datecreated.text = item.datecreated
+                tv_tgluser.text = "Tgl bayar: " + item.datecreated
                 setOnClickListener {
                     onClickUser.onClick(item.iduser, item.nama)
                 }

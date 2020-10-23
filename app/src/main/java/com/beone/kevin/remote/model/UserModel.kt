@@ -1,7 +1,5 @@
 package com.beone.kevin.remote.model
 
-import com.beone.kevin.ui.registertki.TypeGenderEnum
-
 class UserModel : ArrayList<UserModelItem>()
 
 data class UserModelItem(

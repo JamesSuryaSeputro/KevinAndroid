@@ -15,7 +15,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
         android:gravity="center"
-        android:text="Periksa Pembayaran Calon TKI"
+        android:text="List Pembayaran Calon TKI"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
 
     <androidx.recyclerview.widget.RecyclerView

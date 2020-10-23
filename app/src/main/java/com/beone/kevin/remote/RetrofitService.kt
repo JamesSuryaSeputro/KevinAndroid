@@ -4,10 +4,7 @@ package com.beone.kevin.remote
 import com.beone.kevin.remote.model.*
 import com.beone.kevin.ui.pelatih.DayEnum
 import retrofit2.Call
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface RetrofitService {
 
@@ -184,7 +181,7 @@ interface RetrofitService {
 
     @POST("get_detail_user_nilai")
     @FormUrlEncoded
-    fun getDetailUserNilai(@Field("idjadwal") idjadwal: String?): Call<UserModel>
+    fun getDetailUserNilai(@Field("iddetailjadwal") iddetailjadwal: String?): Call<UserModel>
 
     @POST("add_tabel_nilai")
     @FormUrlEncoded
@@ -262,4 +259,18 @@ interface RetrofitService {
         @Field("idpegawai") idpegawai: String?,
         @Field("status") status: String?
     ): Call<StatusDataModel>
+
+    @GET("getdatatkiuser")
+    fun getDataTkiUser(): Call<CheckUserDataModel>
+
+    @GET("searchdatatkiuser/{nama}")
+    fun searchDataTkiUser(
+        @Path("nama") nama: String?
+    ): Call<List<CheckUserDataModelItem>>
+
+    @POST("getdetaildatatki")
+    @FormUrlEncoded
+    fun getDetailDataTki(
+        @Field("iduser") iduser: String?
+    ): Call<DataTkiModel>
 }

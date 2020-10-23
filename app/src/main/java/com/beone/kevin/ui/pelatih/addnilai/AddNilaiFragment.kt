@@ -52,8 +52,8 @@ class AddNilaiFragment : Fragment(), AdapterView.OnItemSelectedListener,
         super.onViewCreated(view, savedInstanceState)
         arrayDataSpiner =
             ArrayAdapter(requireContext(), android.R.layout.simple_spinner_dropdown_item)
-        spnr_jadwal.adapter = arrayDataSpiner
-        spnr_jadwal.onItemSelectedListener = this
+//        spnr_jadwal.adapter = arrayDataSpiner
+//        spnr_jadwal.onItemSelectedListener = this
         rcv_nilai.adapter = nilaiAdapter
     }
 
@@ -67,10 +67,10 @@ class AddNilaiFragment : Fragment(), AdapterView.OnItemSelectedListener,
     }
 
     override fun onAddTki(idUser: String?, nilai: String?) {
-        viewModel.addNilaiSiswa(
-            idUser,
-            nilai,
-            arrayDataSpiner.getItem(spnr_jadwal.selectedItemPosition)?.id_jadwal
-        )
+//        viewModel.addNilaiSiswa(
+//            idUser,
+//            nilai,
+//            arrayDataSpiner.getItem(spnr_jadwal.selectedItemPosition)?.id_jadwal
+//        )
     }
 }

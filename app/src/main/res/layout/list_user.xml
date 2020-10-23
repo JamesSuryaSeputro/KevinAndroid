@@ -21,11 +21,11 @@
             tools:text="User" />
 
         <TextView
-            android:id="@+id/tv_datecreated"
+            android:id="@+id/tv_tgluser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            tools:text="date created" />
+            tools:text="2020-11-20" />
 
     </LinearLayout>
 </LinearLayout>

@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -14,16 +13,10 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.beone.kevin.CustomImageUtils
 import com.beone.kevin.MainActivity
 import com.beone.kevin.R
 import com.beone.kevin.SharedPreferenceUtils
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.activity_main_hrd.*
-import kotlinx.android.synthetic.main.nav_header_hrd.*
-import kotlinx.android.synthetic.main.profile_hrd_fragment.*
 import org.koin.android.ext.android.inject
 
 
@@ -49,6 +42,7 @@ class MainHrdActivity : AppCompatActivity() {
                 R.id.navigation_checkpayment,
                 R.id.navigation_checkdocument,
                 R.id.navigation_datatki,
+                R.id.detailDataTkiFragment,
                 R.id.approveUserPaymentFragment,
                 R.id.approveUserDocumentFragment,
                 R.id.item_profile

@@ -12,5 +12,6 @@ data class ProfileUserModel(
     val tanggallahir: String,
     val tempatlahir: String,
     val username: String,
-    val year: String
+    val year: String,
+    val id_user: String
 )

@@ -19,7 +19,7 @@ class CheckPembayaranViewModel(val retrofitService: RetrofitService) : ViewModel
 
     private val data: MutableLiveData<CheckUserDataModel> = MutableLiveData()
 
-    fun initCheckPaymentUser(): LiveData<CheckUserDataModel> {
+    fun initData(): LiveData<CheckUserDataModel> {
         return data
     }
 

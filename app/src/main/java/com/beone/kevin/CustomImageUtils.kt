@@ -3,9 +3,7 @@ package com.beone.kevin
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.util.Base64
-import android.util.Log
 import java.io.ByteArrayOutputStream
-import java.lang.Exception
 
 object CustomImageUtils {
 

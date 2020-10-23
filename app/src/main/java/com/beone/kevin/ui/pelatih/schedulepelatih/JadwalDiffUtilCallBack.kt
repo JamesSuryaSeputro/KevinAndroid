@@ -1,7 +1,6 @@
 package com.beone.kevin.ui.pelatih.schedulepelatih
 
 import androidx.recyclerview.widget.DiffUtil
-import com.beone.kevin.remote.model.JadwalModel
 import com.beone.kevin.remote.model.JadwalPelatihModel
 
 class JadwalDiffUtilCallBack(val oldData: JadwalPelatihModel, val newData: JadwalPelatihModel) :

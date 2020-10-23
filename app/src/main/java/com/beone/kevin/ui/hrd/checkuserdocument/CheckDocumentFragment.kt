@@ -34,7 +34,7 @@ class CheckDocumentFragment : Fragment(), OnClickUser {
 
         rcv_user.adapter = documentAdapter
 
-        viewModel.initCheckDataUser().observe(viewLifecycleOwner, Observer {
+        viewModel.initData().observe(viewLifecycleOwner, Observer {
             documentAdapter.swapData(it)
         })
 

@@ -54,7 +54,7 @@ class ProfileUserFragment : Fragment() {
             no_telp.text = it.notelp
             Glide.with(this)
                 .load(CustomImageUtils.stringToBitmap(it.passfoto))
-                .centerCrop()
+                .fitCenter()
                 .error(android.R.color.background_dark)
                 .into(img_pasfoto)
             tanggal_lahir.text = it.tanggallahir

@@ -42,7 +42,7 @@ class UserDocumentAdapter(val onClickUser: OnClickUser) :
     class UserDocumentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(item: CheckUserDataModelItem, onClickUser: OnClickUser) = with(itemView) {
             tv_user.text = item.nama
-            tv_datecreated.text = item.datecreated
+            tv_tgluser.text = "Tgl upload: " + item.datecreated
             setOnClickListener {
                 onClickUser.onClick(item.iduser, item.nama)
             }

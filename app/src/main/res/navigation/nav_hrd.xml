@@ -10,28 +10,6 @@
         android:name="com.beone.kevin.ui.hrd.homehrd.HomeHrdFragment"
         android:label="@string/title_home"
         tools:layout="@layout/home_hrd_fragment" />
-<!--        <action-->
-<!--            android:id="@+id/action_navigation_hrdhome_to_navigation_addcoach"-->
-<!--            app:destination="@id/navigation_addcoach"-->
-<!--            app:popUpTo="@id/navigation_addcoach"/>-->
-<!--        -->
-<!--        <action-->
-<!--            android:id="@+id/action_menuHrdFragment_to_registerEmployeeFragment"-->
-<!--            app:destination="@id/registerEmployeeFragment"-->
-<!--            app:popUpTo="@id/registerEmployeeFragment">-->
-<!--        </action>-->
-<!--        <action-->
-<!--            android:id="@+id/action_menuHrdFragment_to_checkDocumentFragment"-->
-<!--            app:destination="@id/checkDocumentFragment"-->
-<!--            app:popUpTo="@id/checkDocumentFragment" />-->
-<!--        <action-->
-<!--            android:id="@+id/action_menuHrdFragment_to_checkPembayaranFragment"-->
-<!--            app:destination="@id/checkPembayaranFragment"-->
-<!--            app:popUpTo="@id/checkPembayaranFragment" />-->
-<!--        <action-->
-<!--            android:id="@+id/action_menuHrdFragment_to_profileHrdFragment"-->
-<!--            app:destination="@id/profileHrdFragment"-->
-<!--            app:popUpTo="@id/profileHrdFragment" />-->
 
     <action android:id="@+id/action_global_menuHrdFragment" app:destination="@id/navigation_hrdhome" />
 
@@ -85,5 +63,24 @@
             android:id="@+id/action_item_profile_to_navigation_hrdhome"
             app:destination="@id/navigation_hrdhome" />
     </fragment>
+    <fragment
+        android:id="@+id/navigation_datatki"
+        android:name="com.beone.kevin.ui.hrd.datatki.DataTkiFragment"
+        android:label="List Data TKI"
+        tools:layout="@layout/data_tki_fragment" >
+        <action
+            android:id="@+id/action_navigation_datatki_to_detailDataTkiFragment"
+            app:destination="@id/detailDataTkiFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailDataTkiFragment"
+        android:name="com.beone.kevin.ui.hrd.detaildatatki.DetailDataTkiFragment"
+        android:label="Detail Data TKI"
+        tools:layout="@layout/detail_data_tki_fragment" >
+        <argument
+            android:name="iduser"
+            app:argType="string" />
+    </fragment>
+
 
 </navigation>
