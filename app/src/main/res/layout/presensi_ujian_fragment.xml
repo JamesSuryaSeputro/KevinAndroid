@@ -15,23 +15,32 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Presensi Ujian"
+            android:padding="8dp"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline1"
             android:textSize="30sp" />
 
-        <Spinner
-            android:id="@+id/spnr_jadwal"
+        <TextView
+            android:id="@+id/tv_tgldetailpresensi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:listitem="@android:layout/simple_dropdown_item_1line" />
+            tools:text="senin, 2010-10-07 (12:34:00-18:40:00)"
+            android:paddingHorizontal="8dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline1"
+            android:textSize="20sp" />
+
+<!--        <Spinner-->
+<!--            android:id="@+id/spnr_jadwal"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            tools:listitem="@android:layout/simple_dropdown_item_1line" />-->
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcv_presensiujian"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/add_item_nilai_user"
+            tools:listitem="@layout/add_presensi_item"
             tools:itemCount="10"/>
-
 
     </LinearLayout>
 </FrameLayout>

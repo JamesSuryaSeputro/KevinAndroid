@@ -11,7 +11,9 @@
         android:label="@string/title_home"
         tools:layout="@layout/home_hrd_fragment" />
 
-    <action android:id="@+id/action_global_menuHrdFragment" app:destination="@id/navigation_hrdhome" />
+    <action
+        android:id="@+id/action_global_menuHrdFragment"
+        app:destination="@id/navigation_hrdhome" />
 
     <fragment
         android:id="@+id/navigation_addcoach"
@@ -24,11 +26,18 @@
         android:name="com.beone.kevin.ui.registeremployee.RegisterEmployeeFragment"
         android:label="Tambah HRD"
         tools:layout="@layout/base_form_register_employee_fragment" />
+
+    <fragment
+        android:id="@+id/navigation_sendtki"
+        android:name="com.beone.kevin.ui.hrd.pengirimantki.PengirimanTkiFragment"
+        android:label="Pengiriman TKI"
+        tools:layout="@layout/pengiriman_tki_fragment" />
+
     <fragment
         android:id="@+id/navigation_checkpayment"
         android:name="com.beone.kevin.ui.hrd.checkuserpayment.CheckPembayaranFragment"
         android:label="List Pembayaran User"
-        tools:layout="@layout/check_pembayaran_fragment" >
+        tools:layout="@layout/check_pembayaran_fragment">
         <action
             android:id="@+id/action_checkPembayaranFragment_to_approveUserPaymentFragment"
             app:destination="@id/approveUserPaymentFragment"
@@ -39,11 +48,12 @@
         android:name="com.beone.kevin.ui.hrd.approvetkipayment.ApproveUserPaymentFragment"
         android:label="Periksa Pembayaran"
         tools:layout="@layout/approve_user_payment_fragment" />
+
     <fragment
         android:id="@+id/navigation_checkdocument"
         android:name="com.beone.kevin.ui.hrd.checkuserdocument.CheckDocumentFragment"
         android:label="List Dokumen User"
-        tools:layout="@layout/check_document_fragment" >
+        tools:layout="@layout/check_document_fragment">
         <action
             android:id="@+id/action_checkDocumentFragment_to_approveUserDocumentFragment"
             app:destination="@id/approveUserDocumentFragment"
@@ -54,6 +64,7 @@
         android:name="com.beone.kevin.ui.hrd.approvetkidocument.ApproveUserDocumentFragment"
         android:label="Periksa Dokumen"
         tools:layout="@layout/approve_user_document_fragment" />
+
     <fragment
         android:id="@+id/item_profile"
         android:name="com.beone.kevin.ui.hrd.profilehrd.ProfileHrdFragment"
@@ -63,24 +74,25 @@
             android:id="@+id/action_item_profile_to_navigation_hrdhome"
             app:destination="@id/navigation_hrdhome" />
     </fragment>
+
     <fragment
         android:id="@+id/navigation_datatki"
         android:name="com.beone.kevin.ui.hrd.datatki.DataTkiFragment"
         android:label="List Data TKI"
-        tools:layout="@layout/data_tki_fragment" >
+        tools:layout="@layout/data_tki_fragment">
         <action
             android:id="@+id/action_navigation_datatki_to_detailDataTkiFragment"
             app:destination="@id/detailDataTkiFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/detailDataTkiFragment"
         android:name="com.beone.kevin.ui.hrd.detaildatatki.DetailDataTkiFragment"
         android:label="Detail Data TKI"
-        tools:layout="@layout/detail_data_tki_fragment" >
+        tools:layout="@layout/detail_data_tki_fragment">
         <argument
             android:name="iduser"
             app:argType="string" />
     </fragment>
-
 
 </navigation>

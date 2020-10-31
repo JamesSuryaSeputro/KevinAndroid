@@ -46,7 +46,6 @@
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline1"
             android:textSize="15sp"
             android:textStyle="bold"
-
             tools:text="2020-0" />
     </LinearLayout>
 

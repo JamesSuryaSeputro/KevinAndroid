@@ -47,7 +47,7 @@ class AddSelectTkiForTrainingDialogFragment : BottomSheetDialogFragment(),
             adapter.swapData(it)
         })
 
-        viewModel.initStatuUpload().observe(viewLifecycleOwner, Observer {
+        viewModel.initStatusUpload().observe(viewLifecycleOwner, Observer {
             if (it.status.equals(1)) {
                 dismiss()
             }

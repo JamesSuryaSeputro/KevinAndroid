@@ -18,7 +18,7 @@ class SelectTkiForTrainingFragment : Fragment(),
 
     companion object {
         fun newInstance() = SelectTkiForTrainingFragment()
-        private const val TAG = "SelectTkiForTrainingFra"
+        private const val TAG = "SelectTkiForTrainingFragment"
     }
 
     private val viewModel: SelectTkiForTrainingViewModel by sharedViewModel<SelectTkiForTrainingViewModel>()
@@ -48,12 +48,12 @@ class SelectTkiForTrainingFragment : Fragment(),
             adapter.swapData(it)
         })
 
-        viewModel.initStatuUpload().observe(viewLifecycleOwner, Observer {
+        viewModel.initStatusUpload().observe(viewLifecycleOwner, Observer {
             if (it.status.equals(1)) {
-                viewModel.getDataFragemnt(idPilihan)
+                viewModel.getDataFragment(idPilihan)
             }
         })
-        viewModel.getDataFragemnt(idPilihan)
+        viewModel.getDataFragment(idPilihan)
 
     }
 

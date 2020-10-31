@@ -7,7 +7,7 @@
     <string name="already_registered">Already registered?</string>
     <string name="login">Login</string>
     <string name="profile">Profil</string>
-    <string name="comma">,&#032;</string>
+    <string name="comma">,\u0020</string>
     <string name="male">Laki-laki</string>
     <string name="female">Perempuan</string>
     <string name="title_home">Home</string>
@@ -30,6 +30,7 @@
     <string name="schedule">Schedule</string>
     <string name="score">Score</string>
     <string name="no_schedule">Anda belum memiliki jadwal</string>
+    <string name="no_score">Anda belum memiliki nilai</string>
     <string name="title_attendance">Kehadiran</string>
     <string name="pelatih">Pelatih</string>
     <string name="user">User</string>
@@ -58,4 +59,6 @@
     <string name="biodata">Biodata</string>
     <string name="dokumen">Dokumen</string>
     <string name="year_active">Active since: 2020</string>
+    <string name="nilai">Nilai</string>
+    <string name="siap_di_kirim">SIAP DI KIRIM</string>
 </resources>

@@ -109,4 +109,28 @@
             tools:text="012345" />
 
     </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_activesincehrd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="Active Since: "
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+            android:textSize="20sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/active_sincehrd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/tv_activesincehrd"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+            android:textSize="20sp"
+            tools:text="2020" />
+
+    </RelativeLayout>
 </LinearLayout>

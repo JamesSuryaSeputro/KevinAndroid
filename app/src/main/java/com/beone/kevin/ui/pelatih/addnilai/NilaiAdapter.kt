@@ -13,8 +13,6 @@ import com.beone.kevin.remote.model.UserModel
 import com.beone.kevin.remote.model.UserModelItem
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.add_item_nilai_user.view.*
-import kotlinx.android.synthetic.main.select_tki_item.view.*
-import kotlinx.android.synthetic.main.select_tki_item.view.img_profile
 import kotlinx.android.synthetic.main.select_tki_item.view.tv_gender
 import kotlinx.android.synthetic.main.select_tki_item.view.tv_nama
 
@@ -33,7 +31,7 @@ class NilaiAdapter(val onSelectTkiListener: OnSelectTkiListener) :
     override fun getItemCount() = data.size
 
     override fun onBindViewHolder(holder: SelectTkiViewHolder, position: Int) =
-        holder.bind(data[position],onSelectTkiListener)
+        holder.bind(data[position], onSelectTkiListener)
 
     fun swapData(newdata: UserModel) {
         val diffUtil = DiffUtil.calculateDiff(SelectTkiDiffUtilCallback(data, newdata))
@@ -57,41 +55,24 @@ class NilaiAdapter(val onSelectTkiListener: OnSelectTkiListener) :
                 edt_nilai.setText(item.nilai)
             }
 
+            btn_submitnilai.setOnClickListener {
+                onSelectTkiListener.onAddTki(item.id, edt_nilai.text.toString())
+            }
 
-            edt_nilai.addTextChangedListener(object : TextWatcher {
-                override fun afterTextChanged(p0: Editable?) {
-
-                }
-
-                override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                }
-
-                override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                    onSelectTkiListener.onAddTki(item.id, p0.toString())
-                }
-
-            })
+//            edt_nilai.addTextChangedListener(object : TextWatcher {
+//                override fun afterTextChanged(p0: Editable?) {
+//
+//                }
+//
+//                override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+////                    onSelectTkiListener.onAddTki(item.id, p0.toString())
+//                }
+//
+//                override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+//                    onSelectTkiListener.onAddTki(item.id, p0.toString())
+//                }
+//
+//            })
         }
     }
-
-    class SelectTkiDiffUtilCallback(val oldData: UserModel, val newData: UserModel) :
-        DiffUtil.Callback() {
-        override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-            return oldData.get(oldItemPosition).id == newData.get(newItemPosition).id
-        }
-
-        override fun getOldListSize(): Int = oldData.size
-
-        override fun getNewListSize(): Int = newData.size
-
-        override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-            return oldData.get(oldItemPosition).equals(newData.get(newItemPosition))
-        }
-
-    }
-
-    interface OnSelectTkiListener {
-        fun onAddTki(idUser: String?,nilai:String?)
-    }
-
 }

@@ -45,6 +45,9 @@
         <action
             android:id="@+id/action_coachDetailScheduleFragment_to_addNilaiFragment"
             app:destination="@id/addNilaiFragment" />
+        <action
+            android:id="@+id/action_coachDetailScheduleFragment_to_presensiUjianFragment"
+            app:destination="@id/presensiUjianFragment" />
         <argument
             android:name="idJadwal"
             app:argType="string" />
@@ -59,6 +62,9 @@
             app:argType="string" />
         <argument
             android:name="scoredetail"
+            app:argType="boolean" />
+        <argument
+            android:name="attendancedetail"
             app:argType="boolean" />
     </fragment>
     <dialog
@@ -117,19 +123,55 @@
         <argument
             android:name="idJadwalDetail"
             app:argType="string" />
+        <argument
+            android:name="idJadwal"
+            app:argType="string" />
+        <argument
+            android:name="hari"
+            app:argType="string" />
+        <argument
+            android:name="tanggal"
+            app:argType="string" />
+        <argument
+            android:name="jammulai"
+            app:argType="string" />
+        <argument
+            android:name="jamselesai"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/navigation_testattendance"
-        android:name="com.beone.kevin.ui.pelatih.schedulepelatih.SchedulePelatihFragment"
-        android:label="@string/title_schedule"
-        tools:layout="@layout/schedule_pelatih_fragment">
+        android:name="com.beone.kevin.ui.pelatih.testattendancecoach.TestAttendanceFragment"
+        android:label="Absensi Ujian"
+        tools:layout="@layout/test_attendance_fragment">
+        <action
+            android:id="@+id/action_navigation_testattendance_to_coachDetailScheduleFragment"
+            app:destination="@id/coachDetailScheduleFragment" />
     </fragment>
-
-    <!--        <fragment-->
-    <!--            android:id="@+id/navigation_testattendance"-->
-    <!--            android:name="com.beone.kevin.ui.pelatih.presensi.PresensiFragment"-->
-    <!--            android:label="@string/title_attendance"-->
-    <!--            tools:layout="@layout/presensi_fragment" />-->
+    <fragment
+        android:id="@+id/presensiUjianFragment"
+        android:name="com.beone.kevin.ui.pelatih.presensiujian.PresensiUjianFragment"
+        android:label="Presensi"
+        tools:layout="@layout/presensi_ujian_fragment" >
+        <argument
+            android:name="idJadwalDetail"
+            app:argType="string" />
+        <argument
+            android:name="idJadwal"
+            app:argType="string" />
+        <argument
+            android:name="hari"
+            app:argType="string" />
+        <argument
+            android:name="tanggal"
+            app:argType="string" />
+        <argument
+            android:name="jammulai"
+            app:argType="string" />
+        <argument
+            android:name="jamselesai"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/item_profile"
         android:name="com.beone.kevin.ui.pelatih.profilecoach.ProfilePelatihFragment"
@@ -139,5 +181,4 @@
             android:id="@+id/action_item_profile_to_navigation_coachhome"
             app:destination="@id/navigation_coachhome" />
     </fragment>
-
 </navigation>

@@ -54,14 +54,14 @@ class DetailDataTkiFragment : Fragment() {
             when (it.id_user.length) {
                 1 -> {
                     tv_dataiduser.text =
-                        "ID User: 21" + it.year + "00" + it.id_user
+                        "ID User: 20" + it.year + "00" + it.id_user
                 }
                 2 -> {
                     tv_dataiduser.text =
-                        "ID User: 21" + it.year + "0" + it.id_user
+                        "ID User: 20" + it.year + "0" + it.id_user
                 }
                 else -> {
-                    tv_dataiduser.text = "ID User: 21" + it.year + it.id_user
+                    tv_dataiduser.text = "ID User: 20" + it.year + it.id_user
                 }
             }
             tv_dataactivesince.text = "Active since: " + it.year

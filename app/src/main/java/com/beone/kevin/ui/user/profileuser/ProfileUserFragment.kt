@@ -54,13 +54,17 @@ class ProfileUserFragment : Fragment() {
             no_telp.text = it.notelp
             Glide.with(this)
                 .load(CustomImageUtils.stringToBitmap(it.passfoto))
-                .fitCenter()
                 .error(android.R.color.background_dark)
                 .into(img_pasfoto)
             tanggal_lahir.text = it.tanggallahir
             tempat_lahir.text = it.tempatlahir
             tki_username.text = it.username
             active_since.text = it.year
+            if (it.status.equals(1)) {
+                status_tki.text = "TKI"
+            } else {
+                status_tki.text = "Calon TKI"
+            }
         })
 
         viewModel.getProfile(sharedPreferenceUtils.getIdUser)

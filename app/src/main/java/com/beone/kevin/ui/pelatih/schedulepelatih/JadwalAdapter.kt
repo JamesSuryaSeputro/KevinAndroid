@@ -18,7 +18,6 @@ import kotlinx.android.synthetic.main.jadwal_item.view.*
 class JadwalAdapter(val itemOnClick: ItemOnClick) :
     RecyclerView.Adapter<JadwalAdapter.JadwalViewHolder>() {
 
-    //private var data = ArrayList<JadwalModel>()
     private var data: JadwalPelatihModel = JadwalPelatihModel()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JadwalViewHolder {
@@ -43,26 +42,10 @@ class JadwalAdapter(val itemOnClick: ItemOnClick) :
         this.data.clear()
         this.data.addAll(newData)
         diffUtils.dispatchUpdatesTo(this)
-
-//        notifyDataSetChanged()
     }
-//    fun swapData(newData: ArrayList<JadwalModel>) {
-//        val diffUtils = DiffUtil.calculateDiff(
-//            JadwalDiffUtilCallBack(
-//                data,
-//                newData
-//            )
-//        )
-//        this.data.clear()
-//        this.data.addAll(newData)
-//        diffUtils.dispatchUpdatesTo(this)
-//
-////        notifyDataSetChanged()
-//    }
 
     class JadwalViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        //        fun bind(item: JadwalModel,itemOnClick: ItemOnClick) = with(itemView) {
         fun bind(item: JadwalPelatihModelItem, itemOnClick: ItemOnClick) = with(itemView) {
             tv_subject.text = item.id_jadwal + " - " + item.nama_subject
             tv_jadwaltanggalmulai.text = item.tgl_mulai + " s/d "
@@ -83,19 +66,5 @@ class JadwalAdapter(val itemOnClick: ItemOnClick) :
                 )
             }
         }
-//            tv_subject.text = item.jadwalheader.id_jadwal + " - " + item.jadwalheader.nama_subject
-//            tv_jadwaltanggalmulai.text = item.jadwalheader.tgl_mulai + " s/d "
-//            tv_jadwaltanggalselesai.text = item.jadwalheader.tgl_selesai
-//
-//            setOnClickListener {
-//                itemOnClick.onDetail(item.jadwalheader.id_jadwal)
-//            }
-//
-//            btn_delete.setOnClickListener {
-//                itemOnClick.onDelete(
-//                    item.jadwalheader.id_jadwal
-//                )
-//            }
-//        }
     }
 }

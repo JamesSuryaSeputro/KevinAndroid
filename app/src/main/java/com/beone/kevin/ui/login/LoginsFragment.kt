@@ -2,6 +2,8 @@ package com.beone.kevin.ui.login
 
 
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,18 +13,16 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import com.beone.kevin.MainActivity
 import com.beone.kevin.R
 import com.beone.kevin.SharedPreferenceUtils
 import com.beone.kevin.ui.hrd.mainhrd.MainHrdActivity
 import com.beone.kevin.ui.pelatih.mainpelatih.MainPelatihActivity
-import com.beone.kevin.ui.user.mainuser.MainUserActivity
 import kotlinx.android.synthetic.main.logins_fragment.*
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import org.koin.core.qualifier.named
-import org.koin.java.KoinJavaComponent.inject
+
 
 class LoginsFragment : Fragment() {
 
@@ -64,6 +64,7 @@ class LoginsFragment : Fragment() {
                     Log.d(TAG, "putiduser: " + sharepreference.putIdUser(it.iduser))
                     sharepreference.putIdUser(it.iduser)
                     sharepreference.putNamaUser(it.nama)
+                    sharepreference.putYearUser(it.year)
 
                     when (it.TypeLogin) {
                         TypeLoginEnum.TKI.jenis -> {
@@ -123,6 +124,20 @@ class LoginsFragment : Fragment() {
         spr_categorylogin.dropDownVerticalOffset = 20
         spr_categorylogin.adapter = arrayAdapter
 
+        img_whatsapp.setOnClickListener {
+            val contact = "+62 81293480330"
+            val url = "https://api.whatsapp.com/send?phone=$contact"
+            try {
+                val pm = this.requireContext().packageManager
+                pm.getPackageInfo("com.whatsapp", PackageManager.GET_ACTIVITIES)
+                val intent = Intent(Intent.ACTION_VIEW)
+                intent.data = Uri.parse(url)
+                startActivity(intent)
+            } catch (e: PackageManager.NameNotFoundException) {
+                Toast.makeText(this.requireContext(), "Whatsapp not Installed", Toast.LENGTH_SHORT).show()
+                e.printStackTrace()
+            }
+        }
     }
 
 

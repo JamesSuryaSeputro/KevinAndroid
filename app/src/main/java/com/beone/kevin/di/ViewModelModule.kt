@@ -8,12 +8,13 @@ import com.beone.kevin.ui.hrd.checkuserdocument.CheckDocumentViewModel
 import com.beone.kevin.ui.hrd.checkuserpayment.CheckPembayaranViewModel
 import com.beone.kevin.ui.hrd.datatki.DataTkiViewModel
 import com.beone.kevin.ui.hrd.detaildatatki.DetailDataTkiViewModel
+import com.beone.kevin.ui.hrd.pengirimantki.PengirimanTkiViewModel
 import com.beone.kevin.ui.hrd.profilehrd.ProfileHrdViewModel
 import com.beone.kevin.ui.login.LoginsViewModel
 import com.beone.kevin.ui.pelatih.addnilai.AddNilaiViewModel
 import com.beone.kevin.ui.pelatih.coachdetailschedule.CoachDetailScheduleViewModel
 
-import com.beone.kevin.ui.pelatih.presensi.PresensiViewModel
+//import com.beone.kevin.ui.pelatih.presensi.PresensiViewModel
 import com.beone.kevin.ui.pelatih.presensiujian.PresensiUjianViewModel
 import com.beone.kevin.ui.pelatih.profilecoach.ProfilePelatihViewModel
 
@@ -85,9 +86,9 @@ val viewModelModule = module {
         AddNilaiViewModel(get())
     }
 
-    viewModel<PresensiViewModel> {
-        PresensiViewModel(get())
-    }
+//    viewModel<PresensiViewModel> {
+//        PresensiViewModel(get())
+//    }
 
     viewModel<PresensiUjianViewModel> {
         PresensiUjianViewModel(get())
@@ -127,5 +128,9 @@ val viewModelModule = module {
 
     viewModel<DetailDataTkiViewModel>{
         DetailDataTkiViewModel(get())
+    }
+
+    viewModel<PengirimanTkiViewModel>{
+        PengirimanTkiViewModel(get())
     }
 }

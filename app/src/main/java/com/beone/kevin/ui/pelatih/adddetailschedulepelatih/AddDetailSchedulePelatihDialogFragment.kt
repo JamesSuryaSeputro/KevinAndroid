@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
 import com.beone.kevin.R
 import com.beone.kevin.ui.pelatih.DayEnum
@@ -80,15 +81,13 @@ class AddDetailSchedulePelatihDialogFragment : BottomSheetDialogFragment(),
 
         spnr_hari.adapter = dayArrayAdapter
 
-        coachDetailScheduleViewModel.initDialog().observe(
-            viewLifecycleOwner,
-            androidx.lifecycle.Observer {
-                if (it.status.equals(1)) {
-                    Toast.makeText(requireContext(), "Sukses add detail jadwal", Toast.LENGTH_SHORT)
-                        .show()
-                    dismiss()
-                }
-            })
+        coachDetailScheduleViewModel.initDialog().observe(viewLifecycleOwner, Observer {
+            if (it.status.equals(1)) {
+                Toast.makeText(requireContext(), "Sukses add detail jadwal", Toast.LENGTH_SHORT)
+                    .show()
+                dismiss()
+            }
+        })
 
         btn_adddetailjadwal.setOnClickListener {
             when {
@@ -186,7 +185,7 @@ class AddDetailSchedulePelatihDialogFragment : BottomSheetDialogFragment(),
     override fun onDateSet(view: DatePickerDialog?, year: Int, monthOfYear: Int, dayOfMonth: Int) {
         now.set(year, monthOfYear, dayOfMonth)
         val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
-        if(DATE_TIME_DIALOG==1) {
+        if (DATE_TIME_DIALOG == 1) {
             tv_pickeddate.text = dateFormat.format(now.time).toString()
         }
     }
@@ -195,7 +194,7 @@ class AddDetailSchedulePelatihDialogFragment : BottomSheetDialogFragment(),
         now.set(Calendar.HOUR_OF_DAY, hourOfDay)
         now.set(Calendar.MINUTE, minute)
         val timeFormat = SimpleDateFormat("HH:mm", Locale.getDefault())
-        when(DATE_TIME_DIALOG){
+        when (DATE_TIME_DIALOG) {
             2 -> tv_pickedstarttime.text = timeFormat.format(now.time).toString()
             3 -> tv_pickedendtime.text = timeFormat.format(now.time).toString()
         }

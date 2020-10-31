@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="8dp"
     tools:context=".ui.pelatih.selecttkifortraining.AddSelectTkiForTrainingDialogFragment"
     android:orientation="vertical">
 
@@ -13,6 +12,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline1"
         android:textSize="30sp"
+        android:padding="8dp"
         android:text="@string/add_tki" />
 
     <androidx.recyclerview.widget.RecyclerView

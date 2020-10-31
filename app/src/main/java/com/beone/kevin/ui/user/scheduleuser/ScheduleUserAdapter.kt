@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.beone.kevin.R
 import com.beone.kevin.remote.model.JadwalModel
 import kotlinx.android.synthetic.main.jadwal_user_item.view.*
+import kotlinx.android.synthetic.main.jadwal_user_item_detail.view.*
 
 class ScheduleUserAdapter : RecyclerView.Adapter<ScheduleUserAdapter.ScheduleUserViewHolder>() {
 
@@ -40,7 +41,6 @@ class ScheduleUserAdapter : RecyclerView.Adapter<ScheduleUserAdapter.ScheduleUse
         notifyDataSetChanged()
     }
 
-
     class ScheduleUserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val recyclerView: RecyclerView = itemView.rcv_detailjadwaluser
 
@@ -50,6 +50,7 @@ class ScheduleUserAdapter : RecyclerView.Adapter<ScheduleUserAdapter.ScheduleUse
             tv_namapelatihuser.text = item.jadwalheader.nama_pelatih
             tv_jadwaltanggalmulaiuser.text = item.jadwalheader.tgl_mulai + " s/d "
             tv_jadwaltanggalselesaiuser.text = item.jadwalheader.tgl_selesai
+            tv_persentasekehadiran.text = "Persentase kehadiran\n${item.jadwalheader.presentaseAbsensi?:0}%"
         }
     }
 }

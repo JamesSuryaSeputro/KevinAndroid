@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:orientation="horizontal"
     xmlns:tools="http://schemas.android.com/tools">
 
     <RelativeLayout
         android:id="@+id/rl_detailjadwal"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="8"
         android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/tv_hariuser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
+            android:textSize="12sp"
             tools:text="Senin, " />
 
         <TextView
@@ -21,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/tv_hariuser"
-            android:textSize="16sp"
+            android:textSize="12sp"
             tools:text="1998-10-18 " />
 
         <TextView
@@ -29,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/tv_tanggaluser"
-            android:textSize="16sp"
+            android:textSize="12sp"
             tools:text="(11:00 - " />
 
         <TextView
@@ -37,7 +39,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/tv_jadwaljammulaiuser"
-            android:textSize="16sp"
+            android:textSize="12sp"
             tools:text="12:00)" />
+
+        <TextView
+            android:id="@+id/tv_absensiuser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_toEndOf="@+id/tv_jadwaljamselesaiuser"
+            android:text="Hadir"
+            android:textSize="12sp" />
     </RelativeLayout>
 </LinearLayout>

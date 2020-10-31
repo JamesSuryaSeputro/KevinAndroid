@@ -21,24 +21,4 @@ class JadwalDiffUtilCallBack(val oldData: JadwalPelatihModel, val newData: Jadwa
     override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
         return oldData.get(oldItemPosition).equals(newData.get(newItemPosition))
     }
-
-//class JadwalDiffUtilCallBack(val oldData: ArrayList<JadwalModel>, val newData: ArrayList<JadwalModel>) :
-//    DiffUtil.Callback() {
-//
-//    override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-//        return oldData.get(oldItemPosition).jadwalheader.id_jadwal == newData.get(newItemPosition).jadwalheader.id_jadwal
-//    }
-//
-//    override fun getOldListSize(): Int {
-//        return oldData.size
-//    }
-//
-//    override fun getNewListSize(): Int {
-//        return newData.size
-//    }
-//
-//    override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-//        return oldData.get(oldItemPosition).equals(newData.get(newItemPosition))
-//    }
-
 }

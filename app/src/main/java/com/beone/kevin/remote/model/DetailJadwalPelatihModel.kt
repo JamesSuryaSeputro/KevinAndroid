@@ -8,5 +8,10 @@ data class DetailJadwalPelatihModelItem(
     val hari:String,
     val tanggal:String,
     val jam_mulai:String,
-    val jam_selesai:String
+    val jam_selesai:String,
+    val id_presensi:String,
+    val id_user: String,
+    val status_presensi: Int,
+    val nilai: String,
+    val datecreated: String
 )

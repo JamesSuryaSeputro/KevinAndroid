@@ -1,6 +1,7 @@
 package com.beone.kevin.ui.pelatih.coachdetailschedule
 
 import android.os.Bundle
+import android.os.SystemClock
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,8 +26,10 @@ class CoachDetailScheduleFragment : Fragment(), OnDetailClick {
     private lateinit var detailStartDate: String
     private lateinit var detailEndDate: String
     private var detailScore: Boolean = false
+    private var detailAttendance: Boolean = false
     val args: CoachDetailScheduleFragmentArgs by navArgs()
-    private val adapter: CoachDetailScheduleAdapter = CoachDetailScheduleAdapter(this)
+    private lateinit var adapter: CoachDetailScheduleAdapter
+    private var mLastClickTime: Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +38,8 @@ class CoachDetailScheduleFragment : Fragment(), OnDetailClick {
         detailStartDate = args.detailstartdate
         detailEndDate = args.detailenddate
         detailScore = args.scoredetail
+        detailAttendance = args.attendancedetail
+        adapter = CoachDetailScheduleAdapter(this, detailScore, detailAttendance)
     }
 
     override fun onCreateView(
@@ -53,26 +58,30 @@ class CoachDetailScheduleFragment : Fragment(), OnDetailClick {
         detailstartdate.text = detailStartDate + " s/d "
         detailenddate.text = detailEndDate
 
-        if (!detailScore) {
+        if (detailScore || detailAttendance) {
+            fab_adddetailjadwal.visibility = View.GONE
+            btn_pilihtki.visibility = View.GONE
+        } else {
             fab_adddetailjadwal.setOnClickListener {
+
+                if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
+                    return@setOnClickListener
+                }
+                mLastClickTime = SystemClock.elapsedRealtime()
 
                 val action =
                     CoachDetailScheduleFragmentDirections.actionCoachDetailScheduleFragmentToAddDetailSchedulePelatihDialogFragment(
                         mIdJadwal, detailStartDate, detailEndDate
                     )
                 this.findNavController().navigate(action)
-
-                btn_pilihtki.setOnClickListener {
-                    val action =
-                        CoachDetailScheduleFragmentDirections.actionCoachDetailScheduleFragmentToSelectTkiForTrainingFragment(
-                            mIdJadwal
-                        )
-                    this.findNavController().navigate(action)
-                }
             }
-        } else {
-            fab_adddetailjadwal.visibility = View.GONE
-            btn_pilihtki.visibility = View.GONE
+            btn_pilihtki.setOnClickListener {
+                val action =
+                    CoachDetailScheduleFragmentDirections.actionCoachDetailScheduleFragmentToSelectTkiForTrainingFragment(
+                        mIdJadwal
+                    )
+                this.findNavController().navigate(action)
+            }
         }
     }
 
@@ -96,10 +105,18 @@ class CoachDetailScheduleFragment : Fragment(), OnDetailClick {
         viewModel.deleteDetailData(mIdJadwal, id)
     }
 
-    override fun onDetail(id: String?) {
+    override fun onDetailScore(idDetailJadwal: String?, idJadwal: String?, hari: String?, tanggal: String?, jamMulai: String?, jamSelesai: String?) {
         val action =
             CoachDetailScheduleFragmentDirections.actionCoachDetailScheduleFragmentToAddNilaiFragment(
-                id.toString()
+                idDetailJadwal.toString(), idJadwal.toString(), hari.toString(), tanggal.toString(), jamMulai.toString(), jamSelesai.toString()
+            )
+        this.findNavController().navigate(action)
+    }
+
+    override fun onDetailAtendance(idDetailJadwal: String?, idJadwal: String?, hari: String?, tanggal: String?, jammulai: String?, jamselesai: String?) {
+        val action =
+            CoachDetailScheduleFragmentDirections.actionCoachDetailScheduleFragmentToPresensiUjianFragment(
+               idDetailJadwal.toString(), idJadwal.toString(), hari.toString(), tanggal.toString(), jammulai.toString(), jamselesai.toString()
             )
         this.findNavController().navigate(action)
     }

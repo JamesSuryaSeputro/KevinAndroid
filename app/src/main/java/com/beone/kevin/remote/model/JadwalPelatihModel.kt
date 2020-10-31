@@ -4,11 +4,15 @@ class JadwalPelatihModel : ArrayList<JadwalPelatihModelItem>()
 
 data class JadwalPelatihModelItem(
     val id_jadwal: String,
+    val id_jadwal_detail: String,
     val id_subject: String,
     val nama_pelatih: String,
     val nama_subject: String,
     val tgl_mulai: String,
-    val tgl_selesai: String
+    val tgl_selesai: String,
+    val id_user: String,
+    var presentaseAbsensi:Int? = null,
+    val avg_score: String
 )
 
 //data class DetailJadwalPelatihModelItem(

@@ -10,7 +10,6 @@ import androidx.navigation.fragment.findNavController
 import com.beone.kevin.R
 import com.beone.kevin.SharedPreferenceUtils
 import com.beone.kevin.ui.pelatih.schedulepelatih.SchedulePelatihViewModel
-import kotlinx.android.synthetic.main.schedule_pelatih_fragment.*
 import kotlinx.android.synthetic.main.score_coach_fragment.*
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
@@ -18,7 +17,7 @@ import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 class ScoreCoachFragment : Fragment(), OnClickItem {
 
     companion object {
-        fun newInstance() = ScoreCoachFragment()
+        fun newInstance() = ScoreCoachFragment
     }
 
     private val viewModel: SchedulePelatihViewModel by sharedViewModel<SchedulePelatihViewModel>()
@@ -53,7 +52,7 @@ class ScoreCoachFragment : Fragment(), OnClickItem {
         if (id != null) {
             val action =
                 ScoreCoachFragmentDirections.actionNavigationCoachscoreToCoachDetailScheduleFragment(
-                    id, name.toString(), startdate.toString(), enddate.toString(), true
+                    id, name.toString(), startdate.toString(), enddate.toString(), true, false
                 )
             this.findNavController().navigate(action)
         }

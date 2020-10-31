@@ -42,16 +42,41 @@ class ScheduleUserViewModel(val retrofitService: RetrofitService) : ViewModel() 
                     is Resource.Success -> {
                         Log.d(TAG, "getAllDataSchedule:SUCCESS ${it.data.toString()}")
                         it.data.asFlow().onEach { datas ->
-                            getDataDetailJadwal(datas.id_jadwal).collect {
+                            getDataDetailJadwal(datas.id_jadwal, datas.id_user).collect {
                                 when (it) {
                                     is Resource.Success -> {
+                                        var counter = 0
+                                        var data = datas
+                                        var dataSize = it.data.size
+                                        it.data.asFlow().onStart {
+                                            counter = 0
+                                        }.onEach {
+                                            if (it.status_presensi.equals(1)) {
+                                                counter++
+                                                Log.d(TAG, "getAllDataSchedule: COUNTER RUNNING")
+                                            }
+                                        }.onCompletion {
+                                            if (dataSize > 0) {
+                                                data.presentaseAbsensi = (counter.toFloat().div(dataSize)*100).toInt()
+                                                Log.d(
+                                                    TAG,
+                                                    "getAllDataSchedule: PERSEN ${data.presentaseAbsensi} \n counter ${counter} \n datasize ${dataSize}"
+                                                )
+                                            }
+                                        }.collect {
+                                            Log.d(
+                                                TAG,
+                                                "getAllDataSchedule: Loading"
+                                            )
+                                        }
                                         tempData.add(
                                             JadwalModel(
-                                                datas,
+                                                data,
                                                 it.data
                                             )
                                         )
-                                        Log.d(TAG, "getAllDataSchedule: datas ${datas.toString()}")
+                                        Log.d(TAG, "getAllDataSchedule: counter ${counter}")
+                                        Log.d(TAG, "getAllDataSchedule: datas ${data.toString()}")
                                         Log.d(
                                             TAG, "getAllDataSchedule: ${
                                                 JadwalModel(
@@ -97,10 +122,10 @@ class ScheduleUserViewModel(val retrofitService: RetrofitService) : ViewModel() 
     }.flowOn(Dispatchers.IO)
 
     @ExperimentalCoroutinesApi
-    fun getDataDetailJadwal(idjadwal: String?) =
+    fun getDataDetailJadwal(idjadwal: String?, iduser: String?) =
         flow<Resource<List<DetailJadwalPelatihModelItem>>> {
             emit(Resource.Loading())
-            val result = retrofitService.getDetailScheduleUser(idjadwal)
+            val result = retrofitService.getDetailScheduleUser(idjadwal, iduser)
             emit(Resource.Success(result))
         }.catch { e ->
             Log.e(TAG, "getDataDetailJadwal: ", e)

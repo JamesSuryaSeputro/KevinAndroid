@@ -9,5 +9,7 @@ data class UserModelItem(
     val nama: String,
     val passfoto: String,
     val tanggalterdaftar: String,
-    val nilai:String
+    val nilai:String,
+    val status: String,
+    val status_presensi: Int
 )

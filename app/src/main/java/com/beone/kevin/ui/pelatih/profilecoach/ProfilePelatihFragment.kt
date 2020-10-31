@@ -81,6 +81,7 @@ class ProfilePelatihFragment : Fragment() {
         viewModel.initdata().observe(viewLifecycleOwner, Observer {
             coach_name.text = it.nama_pelatih
             coach_username.text = it.username
+            active_sincecoach.text = it.year
             Glide.with(this)
                 .load(CustomImageUtils.stringToBitmap(it.foto))
                 .apply(RequestOptions.skipMemoryCacheOf(true))

@@ -20,6 +20,8 @@
         android:layout_width="120dp"
         android:layout_height="160dp"
         android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
         android:layout_marginVertical="12dp"
         android:background="@android:color/darker_gray" />
 
@@ -278,6 +280,30 @@
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
             android:textSize="20sp"
             tools:text="2020" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_statustki"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="Status: "
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+            android:textSize="20sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/status_tki"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/tv_statustki"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+            android:textSize="20sp"
+            tools:text="Calon TKI / TKI" />
 
     </RelativeLayout>
 </LinearLayout>

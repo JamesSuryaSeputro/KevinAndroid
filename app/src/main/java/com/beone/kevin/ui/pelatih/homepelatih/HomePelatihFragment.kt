@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import com.beone.kevin.R
 import com.beone.kevin.SharedPreferenceUtils
 import kotlinx.android.synthetic.main.home_pelatih_fragment.*
+import kotlinx.android.synthetic.main.home_user_fragment.*
 import org.koin.android.ext.android.inject
 
 class HomePelatihFragment : Fragment() {
@@ -35,8 +36,17 @@ class HomePelatihFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
-        id_coach.text = sharepreference.getIdUser
+        when (sharepreference.getIdUser?.length) {
+            1 -> {
+                id_coach.text = "22" + sharepreference.getYearUser + "00" + sharepreference.getIdUser
+            }
+            2 -> {
+                id_coach.text = "22" + sharepreference.getYearUser + "0" + sharepreference.getIdUser
+            }
+            else -> {
+                id_coach.text = "22" + sharepreference.getYearUser + sharepreference.getIdUser
+            }
+        }
         tv_homenamecoach.text = sharepreference.getNamaUser
     }
 

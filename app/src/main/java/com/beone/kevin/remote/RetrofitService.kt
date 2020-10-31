@@ -85,28 +85,17 @@ interface RetrofitService {
         @Field("idjadwal") idjadwal: String?
     ): Call<DetailJadwalPelatihModel>
 
-//    @POST("get_jadwal_pelatihan_all")
-//    @FormUrlEncoded
-//    suspend fun getSchedullerAllPelatih(
-//        @Field("iduser") iduser: String?
-//    ): JadwalPelatihModel
-//
-//    @POST("get_detail_jadwal_pelatihan")
-//    @FormUrlEncoded
-//    suspend fun getCoachDetailSchedule(
-//        @Field("idjadwal") idjadwal: String?
-//    ): List<DetailJadwalPelatihModelItem>
-
     @POST("get_jadwal_pelatihan_user")
     @FormUrlEncoded
     suspend fun getScheduleUser(
         @Field("iduser") iduser: String?
     ): JadwalPelatihModel
 
-    @POST("get_detail_jadwal_pelatihan")
+    @POST("get_detail_jadwal_pelatihan_user")
     @FormUrlEncoded
     suspend fun getDetailScheduleUser(
-        @Field("idjadwal") idjadwal: String?
+        @Field("idjadwal") idjadwal: String?,
+        @Field("iduser") iduser: String?
     ): List<DetailJadwalPelatihModelItem>
 
     @POST("registertki")
@@ -166,6 +155,16 @@ interface RetrofitService {
     @FormUrlEncoded
     fun getDetailUserPelatihan(@Field("idjadwal") idjadwal: String?): Call<UserModel>
 
+    @POST("get_detail_user_pelatihan_presensi")
+    @FormUrlEncoded
+    fun getDetailUserPelatihanPresensi(@Field("idjadwal") idjadwal: String?,
+                                       @Field("idjadwaldetail") idjadwaldetail: String?): Call<UserModel>
+
+    @POST("get_detail_user_pelatihan_nilai")
+    @FormUrlEncoded
+    fun getDetailUserPelatihanNilai(@Field("idjadwal") idjadwal: String?,
+                                    @Field("idjadwaldetail") idjadwaldetail: String?): Call<UserModel>
+
     @POST("add_user_pelatihan")
     @FormUrlEncoded
     fun addUserPelatihan(
@@ -181,7 +180,7 @@ interface RetrofitService {
 
     @POST("get_detail_user_nilai")
     @FormUrlEncoded
-    fun getDetailUserNilai(@Field("iddetailjadwal") iddetailjadwal: String?): Call<UserModel>
+    fun getDetailUserNilai(@Field("idjadwal") idjadwal: String?): Call<UserModel>
 
     @POST("add_tabel_nilai")
     @FormUrlEncoded
@@ -190,17 +189,49 @@ interface RetrofitService {
         @Field("nilai") nilai: String?
     ): Call<StatusDataModel>
 
+    @POST("add_nilai")
+    @FormUrlEncoded
+    fun addNilai(
+        @Field("idpelatihan") idpelatihan: String?,
+        @Field("idjadwaldetail") idjadwaldetail: String?,
+        @Field("nilai") nilai: String?
+    ): Call<StatusDataModel>
+
+    @POST("update_nilai")
+    @FormUrlEncoded
+    fun updateNilai(
+        @Field("idpelatihan") idpelatihan: String?,
+        @Field("idjadwaldetail") idjadwaldetail: String?,
+        @Field("nilai") nilai: String?
+    ): Call<StatusDataModel>
+
+    @POST("check_nilai")
+    @FormUrlEncoded
+    fun checkNilai(
+        @Field("idpelatihan") idpelatihan: String?,
+        @Field("idjadwaldetail") idjadwaldetail: String?
+    ): Call<StatusDataModel>
+
     @POST("add_presensi_ujian")
     @FormUrlEncoded
     fun addPresensiUjian(
-        @Field("idjadwal") idjadwal: String?,
-        @Field("iduser") iduser: String?
+        @Field("idjadwaldetail") idjadwaldetail: String?,
+        @Field("iduser") iduser: String?,
+        @Field("statuspresensi") statuspresensi: String?
     ): Call<StatusDataModel>
 
-    @POST("add_presensi_test")
+    @POST("update_presensi_ujian")
     @FormUrlEncoded
-    fun addPresensiTest(
-        @Field("idjadwal") idjadwal: String?,
+    fun updatePresensiUjian(
+        @Field("idjadwaldetail") idjadwaldetail: String?,
+        @Field("iduser") iduser: String?,
+        @Field("statuspresensi") statuspresensi: String?
+    ): Call<StatusDataModel>
+
+    @POST("check_presensi")
+    @FormUrlEncoded
+    fun checkPresensi(
+        @Field("idjadwaldetail") idjadwaldetail: String?,
         @Field("iduser") iduser: String?
     ): Call<StatusDataModel>
 
@@ -259,6 +290,9 @@ interface RetrofitService {
         @Field("idpegawai") idpegawai: String?,
         @Field("status") status: String?
     ): Call<StatusDataModel>
+
+    @GET("get_pengiriman_tki")
+    fun getPengirimanTki(): Call<ShippingUserModel>
 
     @GET("getdatatkiuser")
     fun getDataTkiUser(): Call<CheckUserDataModel>

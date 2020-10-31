@@ -1,5 +1,7 @@
 package com.beone.kevin.remote.model
 
+class ShippingUserModel : ArrayList<ProfileUserModel>()
+
 data class ProfileUserModel(
     val alamat: String,
     val jeniskelamin: String,
@@ -13,5 +15,7 @@ data class ProfileUserModel(
     val tempatlahir: String,
     val username: String,
     val year: String,
-    val id_user: String
+    val id_user: String,
+    val status: Int,
+    val id: String
 )

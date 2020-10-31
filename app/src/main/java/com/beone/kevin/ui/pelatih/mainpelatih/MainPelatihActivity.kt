@@ -68,7 +68,9 @@ class MainPelatihActivity : AppCompatActivity() {
                 R.id.navigation_testattendance,
                 R.id.item_profile,
                 R.id.coachDetailScheduleFragment,
-                R.id.selectTkiForTrainingFragment
+                R.id.selectTkiForTrainingFragment,
+                R.id.addNilaiFragment,
+                R.id.presensiUjianFragment
             )
         )
 

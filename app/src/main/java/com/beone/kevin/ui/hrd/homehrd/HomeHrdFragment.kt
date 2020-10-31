@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import com.beone.kevin.R
 import com.beone.kevin.SharedPreferenceUtils
 import kotlinx.android.synthetic.main.home_hrd_fragment.*
+import kotlinx.android.synthetic.main.home_pelatih_fragment.*
 import kotlinx.android.synthetic.main.home_user_fragment.*
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -35,7 +36,17 @@ class HomeHrdFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         Log.d(ContentValues.TAG, "getiduser: " + sharepreference.getIdUser)
-        id_hrd.text = sharepreference.getIdUser
+        when (sharepreference.getIdUser?.length) {
+            1 -> {
+                id_hrd.text = "21" + sharepreference.getYearUser + "00" + sharepreference.getIdUser
+            }
+            2 -> {
+                id_hrd.text = "21" + sharepreference.getYearUser + "0" + sharepreference.getIdUser
+            }
+            else -> {
+                id_hrd.text = "21" + sharepreference.getYearUser + sharepreference.getIdUser
+            }
+        }
         tv_homenamehrd.text = sharepreference.getNamaUser
     }
 }

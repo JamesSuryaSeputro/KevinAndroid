@@ -1,5 +1,6 @@
 package com.beone.kevin.ui.pelatih.selecttkifortraining
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -13,16 +14,16 @@ import retrofit2.Response
 class SelectTkiForTrainingViewModel(private val retrofitService: RetrofitService) : ViewModel() {
 
     private val dataFragment: MutableLiveData<UserModel> = MutableLiveData()
-    private val dataDialog:MutableLiveData<UserModel> = MutableLiveData()
-    private val dataStatus:MutableLiveData<StatusDataModel> = MutableLiveData()
+    private val dataDialog: MutableLiveData<UserModel> = MutableLiveData()
+    private val dataStatus: MutableLiveData<StatusDataModel> = MutableLiveData()
 
     fun initFragment(): LiveData<UserModel> =  dataFragment
 
-    fun initDialog():LiveData<UserModel> =  dataDialog
+    fun initDialog(): LiveData<UserModel> =  dataDialog
 
-    fun initStatuUpload():LiveData<StatusDataModel> = dataStatus
+    fun initStatusUpload(): LiveData<StatusDataModel> = dataStatus
     
-    fun getDataFragemnt(idjadwal:String?){
+    fun getDataFragment(idjadwal:String?){
         retrofitService.getDetailUserPelatihan(idjadwal).enqueue(object :Callback<UserModel>{
             override fun onFailure(call: Call<UserModel>, t: Throwable) {
 
@@ -37,6 +38,20 @@ class SelectTkiForTrainingViewModel(private val retrofitService: RetrofitService
 
         })
     }
+
+//    fun getDataStatus(idjadwal: String?){
+//        retrofitService.getDataStatus().enqueue(object : Callback<UserModel> {
+//            override fun onFailure(call: Call<UserModel>, t: Throwable) {
+//
+//            }
+//
+//            override fun onResponse(call: Call<UserModel>, response: Response<UserModel>) {
+//                Log.d("", "onResponse: status")
+//                getDataFragment(idjadwal)
+//            }
+//
+//        })
+//    }
     
     fun getDataDialog(idjadwal: String?){
         retrofitService.getAllUserPelatihan(idjadwal).enqueue(object : Callback<UserModel> {
@@ -49,11 +64,10 @@ class SelectTkiForTrainingViewModel(private val retrofitService: RetrofitService
                     dataDialog.postValue(response.body())
                 }
             }
-
         })
     }
 
-    fun addUserToJadwal(iduser:String?, idjadwal: String?){
+    fun addUserToJadwal(iduser: String?, idjadwal: String?){
         retrofitService.addUserPelatihan(idjadwal,iduser).enqueue(object : Callback<StatusDataModel>{
             override fun onFailure(call: Call<StatusDataModel>, t: Throwable) {
 
@@ -65,11 +79,12 @@ class SelectTkiForTrainingViewModel(private val retrofitService: RetrofitService
             ) {
                 if (response.isSuccessful){
                     dataStatus.postValue(StatusDataModel(1))
-                    getDataFragemnt(idjadwal)
+                    getDataFragment(idjadwal)
                 }
             }
         })
     }
+
     fun deleteUserToJadwal(iduser:String?){
         retrofitService.deleteUserPelatihan(iduser).enqueue(object : Callback<StatusDataModel>{
             override fun onFailure(call: Call<StatusDataModel>, t: Throwable) {
@@ -86,5 +101,4 @@ class SelectTkiForTrainingViewModel(private val retrofitService: RetrofitService
             }
         })
     }
-
 }

@@ -37,6 +37,7 @@ class CoachDetailScheduleViewModel(private val retrofitService: RetrofitService)
                 response: Response<DetailJadwalPelatihModel>
             ) {
                 data.postValue(response.body())
+                data2.postValue(StatusDataModel(0))
             }
         })
     }

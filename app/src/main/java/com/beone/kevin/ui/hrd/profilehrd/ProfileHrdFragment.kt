@@ -20,6 +20,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.profile_hrd_fragment.*
+import kotlinx.android.synthetic.main.profile_pelatih_fragment.*
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
@@ -67,6 +68,8 @@ class ProfileHrdFragment : Fragment() {
             employee_name.text = it.nama_pegawai
             employee_username.text = it.username
             employee_nip.text = it.nip
+            active_sincehrd.text = it.year
+
             Glide.with(this)
                 .load(CustomImageUtils.stringToBitmap(it.foto))
                 .apply(RequestOptions.skipMemoryCacheOf(true))
