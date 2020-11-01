@@ -69,12 +69,13 @@ class AddNilaiFragment : Fragment(), AdapterView.OnItemSelectedListener, OnSelec
         })
 
         viewModel.initStatus().observe(viewLifecycleOwner, Observer {
-            if (it.status.equals(1)) {
-
-                Toast.makeText(this.requireContext(), "Berhasil submit", Toast.LENGTH_SHORT)
-                    .show()
-            } else {
-                Toast.makeText(this.requireContext(), "Error", Toast.LENGTH_SHORT).show()
+            it.status?.run {
+                if (it.status.equals(1)) {
+                    Toast.makeText(this@AddNilaiFragment.requireContext(), "Berhasil submit", Toast.LENGTH_SHORT)
+                        .show()
+                } else {
+                    Toast.makeText(this@AddNilaiFragment.requireContext(), "Error", Toast.LENGTH_SHORT).show()
+                }
             }
         })
 
@@ -103,11 +104,13 @@ class AddNilaiFragment : Fragment(), AdapterView.OnItemSelectedListener, OnSelec
 
     }
 
-    override fun onAddTki(idpelatihan: String?, nilai: String?) {
+    override fun onAddTki(idpelatihan: String?, nilai: String?, iduser: String?) {
         viewModel.checkNilai(
             idpelatihan,
             idJadwalDetail,
-            nilai
+            nilai,
+            idJadwal,
+            iduser
         )
     }
 }

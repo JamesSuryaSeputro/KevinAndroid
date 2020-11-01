@@ -56,7 +56,7 @@ class NilaiAdapter(val onSelectTkiListener: OnSelectTkiListener) :
             }
 
             btn_submitnilai.setOnClickListener {
-                onSelectTkiListener.onAddTki(item.id, edt_nilai.text.toString())
+                onSelectTkiListener.onAddTki(item.id, edt_nilai.text.toString(), item.id_user)
             }
 
 //            edt_nilai.addTextChangedListener(object : TextWatcher {

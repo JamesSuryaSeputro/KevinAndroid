@@ -182,12 +182,12 @@ interface RetrofitService {
     @FormUrlEncoded
     fun getDetailUserNilai(@Field("idjadwal") idjadwal: String?): Call<UserModel>
 
-    @POST("add_tabel_nilai")
-    @FormUrlEncoded
-    fun addNilaiUser(
-        @Field("idpelatihan") idPelatihan: String?,
-        @Field("nilai") nilai: String?
-    ): Call<StatusDataModel>
+//    @POST("add_tabel_nilai")
+//    @FormUrlEncoded
+//    fun addNilaiUser(
+//        @Field("idpelatihan") idPelatihan: String?,
+//        @Field("nilai") nilai: String?
+//    ): Call<StatusDataModel>
 
     @POST("add_nilai")
     @FormUrlEncoded
@@ -195,6 +195,12 @@ interface RetrofitService {
         @Field("idpelatihan") idpelatihan: String?,
         @Field("idjadwaldetail") idjadwaldetail: String?,
         @Field("nilai") nilai: String?
+    ): Call<StatusDataModel>
+
+    @POST("add_score_average")
+    @FormUrlEncoded
+    fun addScoreAverage(
+        @Field("idjadwal") idjadwal: String?
     ): Call<StatusDataModel>
 
     @POST("update_nilai")
@@ -205,12 +211,26 @@ interface RetrofitService {
         @Field("nilai") nilai: String?
     ): Call<StatusDataModel>
 
+    @POST("update_score_average")
+    @FormUrlEncoded
+    fun updateScoreAverage(
+        @Field("idjadwal") idjadwal: String?,
+        @Field("iduser") iduser: String?
+    ): Call<StatusDataModel>
+
     @POST("check_nilai")
     @FormUrlEncoded
     fun checkNilai(
         @Field("idpelatihan") idpelatihan: String?,
         @Field("idjadwaldetail") idjadwaldetail: String?
-    ): Call<StatusDataModel>
+    ): Call<StatusDataModel2>
+
+    @POST("check_score_average")
+    @FormUrlEncoded
+    fun checkScoreAverage(
+        @Field("idjadwal") idjadwal: String?,
+        @Field("iduser") iduser: String?
+    ): Call<StatusDataModel2>
 
     @POST("add_presensi_ujian")
     @FormUrlEncoded
