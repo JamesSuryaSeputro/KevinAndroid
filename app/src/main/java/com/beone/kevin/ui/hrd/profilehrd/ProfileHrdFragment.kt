@@ -70,12 +70,14 @@ class ProfileHrdFragment : Fragment() {
             employee_nip.text = it.nip
             active_sincehrd.text = it.year
 
-            Glide.with(this)
-                .load(CustomImageUtils.stringToBitmap(it.foto))
-                .apply(RequestOptions.skipMemoryCacheOf(true))
-                .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE))
-                .error(android.R.color.background_dark)
-                .into(img_view_employeeprofile)
+            if (it.foto!=null) {
+                Glide.with(this)
+                    .load(CustomImageUtils.stringToBitmap(it.foto))
+                    .apply(RequestOptions.skipMemoryCacheOf(true))
+                    .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE))
+                    .error(android.R.color.background_dark)
+                    .into(img_view_employeeprofile)
+            }
         })
 
         viewModel.initdata2().observe(viewLifecycleOwner, Observer {

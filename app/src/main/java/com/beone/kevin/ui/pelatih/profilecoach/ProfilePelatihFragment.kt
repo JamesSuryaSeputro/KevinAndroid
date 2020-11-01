@@ -82,12 +82,14 @@ class ProfilePelatihFragment : Fragment() {
             coach_name.text = it.nama_pelatih
             coach_username.text = it.username
             active_sincecoach.text = it.year
-            Glide.with(this)
-                .load(CustomImageUtils.stringToBitmap(it.foto))
-                .apply(RequestOptions.skipMemoryCacheOf(true))
-                .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE))
-                .error(android.R.color.background_dark)
-                .into(img_view_coachprofile)
+            if (it.foto!=null) {
+                Glide.with(this)
+                    .load(CustomImageUtils.stringToBitmap(it.foto))
+                    .apply(RequestOptions.skipMemoryCacheOf(true))
+                    .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE))
+                    .error(android.R.color.background_dark)
+                    .into(img_view_coachprofile)
+            }
         })
 
         viewModel.initdata2().observe(viewLifecycleOwner, Observer {
