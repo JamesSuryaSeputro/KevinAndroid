@@ -6,5 +6,7 @@ data class StatusLogin (
     val iduser:String,
     val username:String,
     val nama:String,
-    val year:String
+    val year:String,
+    val status_document:String,
+    val status_pembayaran:String
 )

@@ -15,6 +15,24 @@ interface RetrofitService {
         @Field("password") password: String?
     ): Call<StatusLogin>
 
+    @POST("check_passed_user")
+    @FormUrlEncoded
+    fun checkPassedUser(
+        @Field("iduser") iduser: String?
+    ): Call<StatusDataModel2>
+
+    @POST("update_status_tki")
+    @FormUrlEncoded
+    fun updateStatusTki(
+        @Field("iduser") iduser: String?
+    ): Call<StatusDataModel2>
+
+    @POST("update_status_calontki")
+    @FormUrlEncoded
+    fun updateStatusCalonTki(
+        @Field("iduser") iduser: String?
+    ): Call<StatusDataModel2>
+
     @POST("loginpelatih")
     @FormUrlEncoded
     fun checkLoginPelatih(
