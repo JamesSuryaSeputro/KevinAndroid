@@ -88,7 +88,9 @@ class AddSchedulePelatihDialogFragment : BottomSheetDialogFragment(), DatePicker
                 now[Calendar.DAY_OF_MONTH]
             )
             dpdStart.minDate = now
-            dpdStart.show(activity?.supportFragmentManager!!, START_DATE_PICKER_TAG)
+            if(!dpdStart.isAdded) {
+                dpdStart.show(activity?.supportFragmentManager!!, START_DATE_PICKER_TAG)
+            }
         }
 
         pick_enddate.setOnClickListener {
@@ -100,7 +102,9 @@ class AddSchedulePelatihDialogFragment : BottomSheetDialogFragment(), DatePicker
                 now[Calendar.DAY_OF_MONTH]
             )
             dpdEnd.minDate = now
-            dpdEnd.show(activity?.supportFragmentManager!!, END_DATE_PICKER_TAG)
+            if(!dpdEnd.isAdded) {
+                dpdEnd.show(activity?.supportFragmentManager!!, END_DATE_PICKER_TAG)
+            }
         }
     }
 

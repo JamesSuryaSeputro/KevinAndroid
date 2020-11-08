@@ -123,28 +123,34 @@ class AddDetailSchedulePelatihDialogFragment : BottomSheetDialogFragment(),
             val minCalendar = Calendar.getInstance()
             val min: List<String> = detailStartDate.split("-")
             val minYear = min[0].toInt()
-            val minMonth = min[1].toInt()
+            val minMonth = min[1].toInt() - 1
             val minDate = min[2].toInt()
             val maxCalendar = Calendar.getInstance()
             val max: List<String> = detailEndDate.split("-")
             val maxYear = max[0].toInt()
-            val maxMonth = max[1].toInt()
+            val maxMonth = max[1].toInt() - 1
             val maxDate = max[2].toInt()
             minCalendar.set(minYear, minMonth, minDate)
             maxCalendar.set(maxYear, maxMonth, maxDate)
             dpd.minDate = minCalendar
             dpd.maxDate = maxCalendar
-            dpd.show(activity?.supportFragmentManager!!, DATE_PICKER_TAG)
+            if(!dpd.isAdded) {
+                dpd.show(activity?.supportFragmentManager!!, DATE_PICKER_TAG)
+            }
         }
 
         pick_starttime.setOnClickListener {
             DATE_TIME_DIALOG = 2
-            tpd.show(activity?.supportFragmentManager!!, START_TIME_PICKER_TAG)
+            if(!tpd.isAdded) {
+                tpd.show(activity?.supportFragmentManager!!, START_TIME_PICKER_TAG)
+            }
         }
 
         pick_endtime.setOnClickListener {
             DATE_TIME_DIALOG = 3
+            if(!tpd.isAdded){
             tpd.show(activity?.supportFragmentManager!!, END_TIME_PICKER_TAG)
+            }
         }
     }
 
