@@ -13,9 +13,9 @@
         <item
             android:id="@+id/navigation_addhrd"
             android:title="@string/add_hrd" />
-        <item
-            android:id="@+id/navigation_sendtki"
-            android:title="@string/send_tki" />
+<!--        <item-->
+<!--            android:id="@+id/navigation_sendtki"-->
+<!--            android:title="@string/send_tki" />-->
         <item
             android:id="@+id/navigation_checkpayment"
             android:title="@string/check_payment" />
