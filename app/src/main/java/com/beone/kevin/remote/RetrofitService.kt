@@ -15,9 +15,15 @@ interface RetrofitService {
         @Field("password") password: String?
     ): Call<StatusLogin>
 
-    @POST("check_passed_user")
+    @POST("check_passed_user_lower_than")
     @FormUrlEncoded
-    fun checkPassedUser(
+    fun checkPassedUserLowerThan(
+        @Field("iduser") iduser: String?
+    ): Call<StatusDataModel2>
+
+    @POST("check_passed_user_greater_than")
+    @FormUrlEncoded
+    fun checkPassedUserGreaterThan(
         @Field("iduser") iduser: String?
     ): Call<StatusDataModel2>
 

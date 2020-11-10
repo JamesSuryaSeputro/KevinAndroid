@@ -70,7 +70,7 @@ class LoginsFragment : Fragment() {
                     when (it.TypeLogin) {
                         TypeLoginEnum.TKI.jenis -> {
                             Log.d(TAG, "checkPassedUser: " + it.iduser)
-                            vm.checkPassedUser(it.iduser)
+                            vm.checkPassedUserLowerThan(it.iduser)
                             if (it.status_document.equals("1") && it.status_pembayaran.equals("1")) {
                                 val intent = Intent(activity, MainUserActivity::class.java)
                                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)

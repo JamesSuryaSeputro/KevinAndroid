@@ -82,20 +82,45 @@ class LoginsViewModel(val retrofitService: RetrofitService) : ViewModel() {
         })
     }
 
-    fun checkPassedUser(iduser: String?) {
+    fun checkPassedUserGreaterThan(iduser: String?) {
 
-        retrofitService.checkPassedUser(iduser).enqueue(object : Callback<StatusDataModel2> {
+        retrofitService.checkPassedUserGreaterThan(iduser).enqueue(object : Callback<StatusDataModel2> {
+            override fun onResponse(
+                call: Call<StatusDataModel2>,
+                response: Response<StatusDataModel2>
+            ) {
+                response.body()?.apply {
+                    if (this.status.equals("1")) {
+                        Log.d("checkpassed", "TKI")
+                        updateStatusTki(iduser)
+                    } else {
+                        Log.d("checkpassed", "Calon TKI")
+                        updateStatusCalonTki(iduser)
+                    }
+                }
+
+            }
+
+            override fun onFailure(call: Call<StatusDataModel2>, t: Throwable) {
+                Log.e("checkpassed", "onFailure: $t")
+            }
+
+        })
+    }
+
+    fun checkPassedUserLowerThan(iduser: String?) {
+
+        retrofitService.checkPassedUserLowerThan(iduser).enqueue(object : Callback<StatusDataModel2> {
             override fun onResponse(
                 call: Call<StatusDataModel2>,
                 response: Response<StatusDataModel2>
             ) {
                 response.body()?.apply {
                     if (this.status.equals("0")) {
-                        Log.d("checkpassed", "TKI")
-                        updateStatusTki(iduser)
+                        checkPassedUserGreaterThan(iduser)
                     } else {
-                        Log.d("checkpassed", "Calon TKI")
                         updateStatusCalonTki(iduser)
+                        Log.d("checkpassed", "Calon TKI")
                     }
                 }
 
