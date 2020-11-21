@@ -13,7 +13,8 @@ import java.util.concurrent.TimeUnit
 
 
 const val HostLocal = "http://192.168.1.9/apitki/public/"
-const val HostGCP = "https://krisjaya-2020.et.r.appspot.com/"
+const val HostGCP = "http://kevin-test.xyz/public/"
+//https://krisjaya-2020.et.r.appspot.com/
 
 fun provideIP(): String {
     if (BuildConfig.DEBUG) {
