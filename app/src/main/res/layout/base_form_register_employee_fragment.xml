@@ -28,7 +28,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
-                android:text="Register Pegawai"
+                android:text="Register HRD"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
 
             <EditText

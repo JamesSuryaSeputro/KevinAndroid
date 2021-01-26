@@ -4,5 +4,5 @@ enum class TypeLoginEnum(val type:String,val jenis:Int) {
     PILIH_LOGIN("Pilih Login",0),
     TKI("Tki",1),
     PELATIH("Pelatih",2),
-    PEGAWAI("Pegawai",3)
+    HRD("HRD",3)
 }

@@ -87,7 +87,7 @@ class LoginsFragment : Fragment() {
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
                             activity?.startActivity(intent)
                         }
-                        TypeLoginEnum.PEGAWAI.jenis -> {
+                        TypeLoginEnum.HRD.jenis -> {
                             val intent = Intent(activity, MainHrdActivity::class.java)
                             intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -124,8 +124,8 @@ class LoginsFragment : Fragment() {
                     Log.d(TAG, "onActivityCreated: ${TypeLoginEnum.PELATIH.type}")
                     vm.loginPelatih(edt_username.text.toString(), edt_password.text.toString())
                 }
-                TypeLoginEnum.PEGAWAI.jenis -> {
-                    Log.d(TAG, "onActivityCreated: ${TypeLoginEnum.PEGAWAI.type}")
+                TypeLoginEnum.HRD.jenis -> {
+                    Log.d(TAG, "onActivityCreated: ${TypeLoginEnum.HRD.type}")
                     vm.loginPegawai(edt_username.text.toString(), edt_password.text.toString())
                 }
                 else -> { // Note the block

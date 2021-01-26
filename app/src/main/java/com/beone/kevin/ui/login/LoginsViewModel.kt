@@ -54,7 +54,7 @@ class LoginsViewModel(val retrofitService: RetrofitService) : ViewModel() {
 
                 if (response.isSuccessful && response.body()!=null) {
                     val tmpData = response.body()
-                    tmpData?.TypeLogin = TypeLoginEnum.PEGAWAI.jenis
+                    tmpData?.TypeLogin = TypeLoginEnum.HRD.jenis
                     data.postValue(tmpData)
                 } else {
                     data.value?.isFailedFetch = true
